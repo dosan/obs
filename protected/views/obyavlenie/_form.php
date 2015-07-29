@@ -20,9 +20,7 @@
 	<p class="note">Fields with <span class="required">*</span> are required.</p>
 	<?php echo $form->errorSummary($model); ?>
 	<div class="row">
-		<?php echo $form->labelEx($model, 'Type') ?>
-		<?php echo $form->radioButton($model,'type',array('value'=>0)) . 'Продам'; ?>
-		<?php echo $form->radioButton($model,'type',array('value'=>1)) . 'Куплю'; ?>
+		<?php echo $form->radioButtonList($model,'type',array('0'=>'Продам','1'=>'Куплю'),array('separator'=>' <b>/</b> ', 'labelOptions'=>array('style'=>'display:inline'))); ?>
 		<?php echo $form->error($model,'type'); ?>
 	</div>
 	<div class="row">
@@ -62,16 +60,14 @@
 		<?php echo $form->error($model,'contact'); ?>
 	</div>
 	<div class="row">
-		<?php echo $form->labelEx($model,'image'); ?>
-		<?php echo $form->fileField($model, 'name');?>
-		<?php echo $form->error($model,'image'); ?>
+		
+		<?php $this->widget('CMultiFileUpload', array(
+			'name' => 'images',
+			'accept' => 'jpeg|jpg|gif|png',
+			'duplicate' => 'Duplicate file!',
+			'denied' => 'Invalid file type'
+		)); ?>
 	</div>
-	<?php if($model->isNewRecord!='1'){ ?>
-		<div class="row">
-		<?php echo CHtml::image(Yii::app()->request->baseUrl.'/images/'.$model->images->name,"images",array("width"=>200)); ?>
-		</div>
-	<?php } ?>
-
 	<div class="row buttons">
 		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); ?>
 	</div>

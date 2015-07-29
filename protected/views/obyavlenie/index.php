@@ -34,7 +34,6 @@ $this->menu=array(
 		<tr>
 			<td><?php echo $value['title'] ?></td>	
 			<td><?php echo $value['description'] ?></td>	
-			<td><?php echo $value['img'] ?></td>	
 		</tr>
 <?php endforeach ?>
 </table>

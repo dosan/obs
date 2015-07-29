@@ -61,11 +61,11 @@ class ObyavlenieController extends Controller
 			->where('ob.id=:id', array(':id'=>$id))
 			->queryRow();
 		$inFavs = Favorites::model()->find('user_id=:user_id AND ob_id=:ob_id', array(':user_id'=>$user_id, ':ob_id'=>$id));
-		$images = Yii::app()->db->createCommand("SELECT name FROM images WHERE ob_id = {$id}")->queryAll();
+		//$images = file_get_contents();
 		$this->render('view',array(
 			'obyavlenie'=>$obyavlenie,
-			'images'=>$images,
-			'inFavs'=>$inFavs
+			'inFavs'=>$inFavs,
+		//	'images'=>$images
 		));
 	}
 
@@ -77,27 +77,25 @@ class ObyavlenieController extends Controller
 	{
 		$model=new Obyavlenie;
 		$user_id = 1;
-		// Uncomment the following line if AJAX validation is needed
-		// $this->performAjaxValidation($model);
 
 		if(isset($_POST['Obyavlenie']))
 		{
-			$model->images = new Images;
-			$user_id = 1;
-			$rnd = rand(0,9999);  // generate random number between 0-9999
-			$data = date('H-i-s');
 			$model->attributes=$_POST['Obyavlenie'];
-			$uploadedFile=CUploadedFile::getInstance($model,'name');
-			$fileName = "{$rnd}-{$data}.".$uploadedFile->getExtensionName();  // random number + file name
-
-			$model->images->name = $fileName;
 			$model->author_id = $user_id;
 			$model->category_id = $_POST['Obyavlenie']['category_id'];
+			$uploadedFile = CUploadedFile::getInstancesByName('images');
+			$data = date('H-i-s');
 			if($model->save())
 			{
-				$model->images->ob_id = $model->id;
-				$uploadedFile->saveAs(Yii::app()->basePath.'/../images/'.$fileName);  // image will uplode to rootDirectory/banner/
-				$model->images->save();
+				if (isset($uploadedFile) && count($uploadedFile) > 0) {
+
+					$data = mkdir(realpath(Yii::app()->basePath.'/../images/obs').'/ob-'.$model->id, 0777);
+					// go through each uploaded image
+					foreach ($uploadedFile as $image => $pic) {
+						$fileName = md5(time()).'.'.$pic->getExtensionName();
+						$pic->saveAs(Yii::app()->basePath.'/../images/obs/ob-'.$model->id.'/'.$fileName);
+					}
+				}
 				$this->redirect(array('view', 'id'=>$model->id));
 			}
 		}
@@ -153,9 +151,8 @@ class ObyavlenieController extends Controller
 	{
 		$categories = Categories::model()->getCategories();
 		$obyavlenies = Yii::app()->db->createCommand()
-			->select('ob.id, ob.title, ob.description, im.name as img')
+			->select('ob.id, ob.title, ob.description')
 			->from('obyavlenie ob')
-			->leftJoin('images im', 'im.ob_id = ob.id')
 			->limit(4)
 			->group('ob.title')
 			->queryAll();
@@ -183,9 +180,8 @@ class ObyavlenieController extends Controller
 		$user_id = 1;
 
 		$obyavlenies = Yii::app()->db->createCommand()
-			->select('ob.id, ob.title, ob.description, im.name as img')
+			->select('ob.id, ob.title, ob.description')
 			->from('obyavlenie ob')
-			->leftJoin('images im', 'im.ob_id = ob.id')
 			->where('author_id = :user_id', array(':user_id'=>$user_id))
 			->group('ob.title')
 			->queryAll();
@@ -197,9 +193,8 @@ class ObyavlenieController extends Controller
 		$user_id = 1;
 		
 		$obyavlenies = Yii::app()->db->createCommand()
-			->select('ob.id, ob.title, ob.description, im.name as img')
+			->select('ob.id, ob.title, ob.description')
 			->from('obyavlenie ob')
-			->leftJoin('images im', 'im.ob_id = ob.id')
 			->leftJoin('favorites fav', 'ob.id = fav.ob_id')
 			->where('fav.user_id = :user_id', array(':user_id'=>$user_id))
 			->group('ob.title')
@@ -243,7 +238,7 @@ class ObyavlenieController extends Controller
 		$instance->ob_id = $ob_id;
 		$record = Favorites::model()->find('user_id=:user_id AND ob_id=:ob_id', array(':user_id'=>$user_id, ':ob_id'=>$ob_id));
 		if ($record != null && $record->delete()){
-			 // delete the row from the database table
+			// delete the row from the database table
 			print_r(array('succes' => true, 'message' => 'deleted successful'));
 		}else{
 			$instance->addError('notexist', 'This obyavlenie not exist in your favorites.');
