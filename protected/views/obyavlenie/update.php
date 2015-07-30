@@ -18,4 +18,4 @@ $this->menu=array(
 
 <h1>Update Obyavlenie <?php echo $model->id; ?></h1>
 
-<?php $this->renderPartial('_updateform', array('model'=>$model)); ?>
+<?php $this->renderPartial('_updateform', array('model'=>$model, 'images'=>$images, 'imageModel' =>$imageModel)); ?>

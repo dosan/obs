@@ -13,8 +13,8 @@
 		// See class documentation of CActiveForm for details on this.
 		'enableAjaxValidation'=>false,
 			'htmlOptions' => array(
-	        'enctype' => 'multipart/form-data',
-	    ),
+			'enctype' => 'multipart/form-data',
+		),
 	)); ?>
 
 	<p class="note">Fields with <span class="required">*</span> are required.</p>
@@ -60,7 +60,6 @@
 		<?php echo $form->error($model,'contact'); ?>
 	</div>
 	<div class="row">
-		
 		<?php $this->widget('CMultiFileUpload', array(
 			'name' => 'images',
 			'accept' => 'jpeg|jpg|gif|png',

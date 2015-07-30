@@ -7,7 +7,8 @@ class ObyavlenieController extends Controller
 	 * using two-column layout. See 'protected/views/layouts/column2.php'.
 	 */
 	public $layout='//layouts/main';
-
+	public $imgsPath='';
+	public $obImages;
 	public $type=0;
 	/**
 	 * @return array action filters
@@ -55,17 +56,18 @@ class ObyavlenieController extends Controller
 		//user_id change to Yii::app()->user->id
 		$user_id =1;
 		$obyavlenie = Yii::app()->db->createCommand()
-			->select('ob.id, ob.title, ob.description, ob.contact,ob.price,  ob.category_id as cat_id,cat.title as cat_name')
+			->select('ob.id, ob.title, ob.description, ob.contact, ob.price,  ob.category_id as cat_id,cat.title as cat_name')
 			->from('obyavlenie ob')
 			->join('categories cat', 'cat.id = ob.category_id')
 			->where('ob.id=:id', array(':id'=>$id))
 			->queryRow();
+		$files = CFileHelper::findFiles(Yii::app()->basePath."/../images/obs/ob-".$id);
+		$images = array_map(function($n){return end(explode('/', $n));}, $files);
 		$inFavs = Favorites::model()->find('user_id=:user_id AND ob_id=:ob_id', array(':user_id'=>$user_id, ':ob_id'=>$id));
-		//$images = file_get_contents();
 		$this->render('view',array(
 			'obyavlenie'=>$obyavlenie,
 			'inFavs'=>$inFavs,
-		//	'images'=>$images
+			'images'=>$images
 		));
 	}
 
@@ -87,15 +89,16 @@ class ObyavlenieController extends Controller
 			$data = date('H-i-s');
 			if($model->save())
 			{
+				$data = mkdir(realpath(Yii::app()->basePath.'/../images/obs').'/ob-'.$model->id, 0777);
 				if (isset($uploadedFile) && count($uploadedFile) > 0) {
-
-					$data = mkdir(realpath(Yii::app()->basePath.'/../images/obs').'/ob-'.$model->id, 0777);
 					// go through each uploaded image
-					foreach ($uploadedFile as $image => $pic) {
-						$fileName = md5(time()).'.'.$pic->getExtensionName();
+					foreach ($uploadedFile as $pic) {
+						$fileName = md5(rand(0,9999)).'.'.$pic->getExtensionName();
 						$pic->saveAs(Yii::app()->basePath.'/../images/obs/ob-'.$model->id.'/'.$fileName);
 					}
 				}
+				$verifyCode = md5(rand(0,9999));
+				$this->sendActivationCode('email@dot.com', 'user_name', $verifyCode);
 				$this->redirect(array('view', 'id'=>$model->id));
 			}
 		}
@@ -105,6 +108,33 @@ class ObyavlenieController extends Controller
 		));
 	}
 
+	public function sendActivationCode($email, $name, $verification_code){
+		return true;
+		/*$message = 'Hello World!';
+		$mailer = Yii::createComponent('application.extensions.mailer.EMailer');
+		$mailer->Host = <your smtp host>;
+		$mailer->IsSMTP();
+		$mailer->From = 'wei@example.com';
+		$mailer->AddReplyTo('wei@example.com');
+		$mailer->AddAddress('qiang@example.com');
+		$mailer->FromName = 'Wei Yard';
+		$mailer->CharSet = 'UTF-8';
+		$mailer->Subject = Yii::t('demo', 'Yii rulez!');
+		$mailer->Body = $message;
+		$mailer->Send();
+
+		$mail=Yii::app()->Smtpmail;
+		$mail->SetFrom('sandor@sandor.cu.cc', 'dosan');
+		$mail->Subject = 'subject';
+		$message = "Dear ".$name.",\nPlease click on below URL or paste into your browser to verify your Email Address\n\n ".Yii::app()->basePath.'obyavlenie/verify/'.$verification_code."\n"."\n\nThanks\nAdmin Team";
+		$mail->MsgHTML($message);
+		$mail->AddAddress($email, "");
+		if(!$mail->Send()) {
+			die($mail->ErrorInfo);
+		}else {
+			die("Message sent!");
+		}*/
+	}
 	/**
 	 * Updates a particular model.
 	 * If update is successful, the browser will be redirected to the 'view' page.
@@ -117,17 +147,34 @@ class ObyavlenieController extends Controller
 		$user_id = 1;
 		// Uncomment the following line if AJAX validation is needed
 		$this->performAjaxValidation($model);
-
+		$files = CFileHelper::findFiles(Yii::app()->basePath."/../images/obs/ob-".$id);
+		$images = array_map(function($n){return end(explode('/', $n));}, $files);
 		if(isset($_POST['Obyavlenie']))
 		{
 			$model->attributes=$_POST['Obyavlenie'];
-			$model->author_id = $user_id;
-			if($model->save())
-				$this->redirect(array('view','id'=>$model->id));
-		}
+			$model->author_id=$user_id;
+			$uploadedFile = CUploadedFile::getInstancesByName('images');
+			if($model->save()){
+				if (isset($uploadedFile) && count($uploadedFile) > 0) {
+					// go through each uploaded image
+					foreach ($uploadedFile as $pic) {
+						$fileName = md5(rand(0,9999)).'.'.$pic->getExtensionName();
+						$pic->saveAs(Yii::app()->basePath.'/../images/obs/ob-'.$id.'/'.$fileName);
+					}
+				}
+				if (isset($_POST['Obyavlenie']['remove']))
+					foreach ($_POST['Obyavlenie']['remove'] as $image => $isTrue)
+						if ($isTrue)
+							unlink(Yii::app()->basePath."/../images/obs/ob-".$id.'/'.$image);
 
+				$this->redirect(array('view','id'=>$model->id));
+			}
+		}
+		$imageModel = new Images;
 		$this->render('update',array(
 			'model'=>$model,
+			'imageModel'=>$imageModel,
+			'images'=>$images
 		));
 	}
 
@@ -224,6 +271,7 @@ class ObyavlenieController extends Controller
 			print_r($instance->getErrors());
 		}
 	}
+
 	/**
 	 * add to favorites the obyavlenie.
 	 * @param integer $ob_id the obyavlenie ID of the model to be updated
@@ -245,6 +293,17 @@ class ObyavlenieController extends Controller
 			print_r($instance->getErrors());
 		}
 
+	}
+
+	public function verify($verification_code = null){
+		if ($verification_code == null && $verification_code == '') show_404();
+		$records = $this->users_model->verifyEmailAddress($verification_code);  
+		if ($records > 0)
+			$message = array( 'success' => "Email Verified Successfully!"); 
+		else
+			$message = array( 'error' => "Sorry Unable to Verify Your Email!"); 
+		$data['message'] = $message; 
+		$this->load->view('activated.php', $data);   
 	}
 
 	public function loadModel($id)

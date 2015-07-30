@@ -50,9 +50,8 @@ class CategoriesController extends Controller
 		$category = Yii::app()->db->createCommand("SELECT id, title, parent_id FROM categories WHERE id = {$id}")->queryRow();
 		if ($category['parent_id'] == 0) {
 			$obyavlenies= Yii::app()->db->createCommand()
-			->select('ob.id, ob.title, ob.description, im.name as ob_img')
+			->select('ob.id, ob.title, ob.description')
 			->from('obyavlenie ob')
-			->leftJoin('images im', 'ob.id = im.ob_id')
 			->leftJoin('categories cat', 'ob.category_id = cat.id')
 			->leftJoin('categories pcat', 'cat.parent_id = pcat.id')
 			->where('pcat.id = '.$id)
@@ -60,9 +59,8 @@ class CategoriesController extends Controller
 			->queryAll();
 		}else{
 			$obyavlenies = Yii::app()->db->createCommand()
-				->select('ob.id, ob.title, ob.description, im.name as ob_img')
+				->select('ob.id, ob.title, ob.description')
 				->from('obyavlenie ob')
-				->leftJoin('images im', 'ob.id = im.ob_id')
 				->where('ob.category_id=:id', array(':id'=>$id))
 				->group('ob.title')
 				->queryAll();

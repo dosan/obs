@@ -15,6 +15,10 @@
  */
 class Obyavlenie extends CActiveRecord
 {
+	const IMG_PATH = '';
+	public $remove;
+	public $images = array();
+	public $imageUrl;
 	/**
 	 * @return string the associated database table name
 	 */
@@ -55,7 +59,6 @@ class Obyavlenie extends CActiveRecord
 		// class name for the relations automatically generated below.
 		return array(
 			'categories'   => array(self::HAS_MANY,   'Categories',    'id'),
-			'images'   => array(self::HAS_MANY,   'Images',    'id'),
 		);
 	}
 

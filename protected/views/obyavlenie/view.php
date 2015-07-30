@@ -20,9 +20,11 @@ $this->menu=array(
 <p><?= $obyavlenie['description'] ?></p>
 <span><?= $obyavlenie['contact'] ?></span>
 <span><?php echo $obyavlenie['price'] ?></span>
-<?php //foreach ($images as $image): ?>
-	<img width="600" src="<?php // echo Yii::app()->baseUrl.'/images/obs/ob-'.$model->id.'/'. $image['name'] ?>"><br>
-<?php echo '';// endforeach ?>
+<div class="row">
+<?php foreach ($images as $image): ?>
+	<img width="300" src="<?php echo Yii::app()->baseUrl.'/images/obs/ob-'.$obyavlenie['id'].'/'. $image ?>">
+<?php  endforeach ?>
+</div>
 
 <a href="<?php echo Yii::app()->baseUrl ?>/index.php?r=obyavlenie/update&id=<?php echo $obyavlenie['id'] ?>">update</a>
 <?php if ($inFavs): ?>
