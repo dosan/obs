@@ -18,3 +18,4 @@ $this->menu=array(
 	'dataProvider'=>$dataProvider,
 	'itemView'=>'_view',
 )); ?>
+<img src="" alt="aooaeuthsaueohtsoauehtaueo">
