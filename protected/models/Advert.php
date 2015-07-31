@@ -1,60 +1,34 @@
 <?php
 
 /**
- * This is the model class for table "categories".
+ * This is the model class for table "advert".
  *
- * The followings are the available columns in table 'categories':
+ * The followings are the available columns in table 'advert':
  * @property integer $id
- * @property integer $parent_id
  * @property string $title
  * @property string $description
- *
- * The followings are the available model relations:
- * @property Advert[] $adverts
+ * @property string $price
+ * @property integer $contact
+ * @property string $created_at
+ * @property string $updated_at
+ * @property integer $author_id
  */
-class Categories extends CActiveRecord
+class Advert extends CActiveRecord
 {
+	const IMG_PATH = '';
+	public $remove;
+	public $images = array();
+	public $imageUrl;
 	/**
 	 * @return string the associated database table name
 	 */
 	public function tableName()
 	{
-		return 'categories';
+		return 'adverts';
 	}
-/*	public function getCategoryOptions()
-    {
-    	$result = array();
-    	$categories =  Yii::app()->db->createCommand()
-			->select('id, title')
-			->from('categories')
-			->where('parent_id = 0')
-			->queryAll();
-		foreach ($categories as $category) {
-			$result[$category['title']] = Yii::app()->db->createCommand()
-			->select('id, title')
-			->from('categories')
-			->where('parent_id ='.$category['id'])
-			->queryAll();
-		}
-		return $result;
-    }	*/
-	public function getCategories(){
-		$categories =  Yii::app()->db->createCommand()
-		->select('id, title')
-		->from('categories')
-		->where('parent_id = 0')
-		->queryAll();
-		foreach($categories as $key => $category){
-			$childs = Yii::app()->db->createCommand()
-			->select('id, title, parent_id')
-			->from('categories')
-			->where('parent_id ='.$category['id'])
-			->queryAll();
-			$categories[$key]['childs'] = $childs;
-		}
-		return $categories;
+	public function getData(){
+		return self::model()->findAll();
 	}
-	
 	/**
 	 * @return array validation rules for model attributes.
 	 */
@@ -63,12 +37,16 @@ class Categories extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('parent_id, title, description', 'required'),
-			array('parent_id', 'numerical', 'integerOnly'=>true),
-			array('title', 'length', 'max'=>25),
+			array('type, title, description, category_id, price, contact, author_id', 'required'),
+			array('type, contact, author_id', 'numerical', 'integerOnly'=>true,),
+			array('category_id','numerical', 'min'=>1,'tooSmall'=>'You should choose one Category.'),
+			array('type','numerical', 'max'=>1, 'tooBig'=>'Something went wrong.'),
+			array('title', 'length', 'max'=>255),
+			array('price', 'length', 'max'=>10),
+			array('updated_at', 'safe'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, parent_id, title, description', 'safe', 'on'=>'search'),
+			array('title, description, price, contact, created_at, updated_at, author_id', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -80,7 +58,7 @@ class Categories extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			'adverts' => array(self::HAS_MANY, 'Advert', 'category_id'),
+			'categories'   => array(self::HAS_MANY,   'Categories',    'id'),
 		);
 	}
 
@@ -91,9 +69,13 @@ class Categories extends CActiveRecord
 	{
 		return array(
 			'id' => 'ID',
-			'parent_id' => 'Parent',
 			'title' => 'Title',
 			'description' => 'Description',
+			'price' => 'Price',
+			'contact' => 'Contact',
+			'created_at' => 'Created At',
+			'updated_at' => 'Updated At',
+			'author_id' => 'Author',
 		);
 	}
 
@@ -115,10 +97,12 @@ class Categories extends CActiveRecord
 
 		$criteria=new CDbCriteria;
 
-		$criteria->compare('id',$this->id);
-		$criteria->compare('parent_id',$this->parent_id);
 		$criteria->compare('title',$this->title,true);
 		$criteria->compare('description',$this->description,true);
+		$criteria->compare('price',$this->price,true);
+		$criteria->compare('contact',$this->contact);
+		$criteria->compare('created_at',$this->created_at,true);
+		$criteria->compare('author_id',$this->author_id);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
@@ -129,7 +113,7 @@ class Categories extends CActiveRecord
 	 * Returns the static model of the specified AR class.
 	 * Please note that you should have this exact method in all your CActiveRecord descendants!
 	 * @param string $className active record class name.
-	 * @return Categories the static model class
+	 * @return Advert the static model class
 	 */
 	public static function model($className=__CLASS__)
 	{

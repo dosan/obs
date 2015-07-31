@@ -49,25 +49,25 @@ class CategoriesController extends Controller
 	{
 		$category = Yii::app()->db->createCommand("SELECT id, title, parent_id FROM categories WHERE id = {$id}")->queryRow();
 		if ($category['parent_id'] == 0) {
-			$obyavlenies= Yii::app()->db->createCommand()
-			->select('ob.id, ob.title, ob.description')
-			->from('obyavlenie ob')
-			->leftJoin('categories cat', 'ob.category_id = cat.id')
+			$adverts= Yii::app()->db->createCommand()
+			->select('ad.id, ad.title, ad.description')
+			->from('adverts ad')
+			->leftJoin('categories cat', 'ad.category_id = cat.id')
 			->leftJoin('categories pcat', 'cat.parent_id = pcat.id')
 			->where('pcat.id = '.$id)
-			->group('ob.id')
+			->group('ad.id')
 			->queryAll();
 		}else{
-			$obyavlenies = Yii::app()->db->createCommand()
-				->select('ob.id, ob.title, ob.description')
-				->from('obyavlenie ob')
-				->where('ob.category_id=:id', array(':id'=>$id))
-				->group('ob.title')
+			$adverts = Yii::app()->db->createCommand()
+				->select('ad.id, ad.title, ad.description')
+				->from('adverts ad')
+				->where('ad.category_id=:id', array(':id'=>$id))
+				->group('ad.title')
 				->queryAll();
 		}
 		$this->render('view',array(
 			'category'=>$category,
-			'obyavlenies'=>$obyavlenies
+			'adverts'=>$adverts
 		));
 	}
 

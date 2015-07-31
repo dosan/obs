@@ -10,7 +10,7 @@
  * @property string $description
  *
  * The followings are the available model relations:
- * @property Obyavlenie[] $obyavlenies
+ * @property Advert[] $adverts
  */
 class Favorites extends CActiveRecord
 {
