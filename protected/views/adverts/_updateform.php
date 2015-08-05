@@ -22,6 +22,11 @@
 		<?php echo $form->textField($model,'title',array('size'=>60,'maxlength'=>255)); ?>
 		<?php echo $form->error($model,'title'); ?>
 	</div>
+<!-- 	<div class="row">
+	<?php echo $form->labelEx($model,'category_id'); ?><br />
+	<?php echo $form->dropDownList($model,'category_id', AdvertsCategories::getAssocList()); ?><br />
+	<?php echo $form->error($model,'category_id'); ?>
+</div> -->
 	<?php echo $form->labelEx($model, 'Category'); ?>
 		<select name="Adverts[category_id]" id="Adverts_category_id">
 			<?php foreach (Categories::model()->getCategories() as $mainCategories): ?>

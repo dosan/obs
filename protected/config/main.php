@@ -32,6 +32,9 @@ return array(
 
 	// application components
 	'components'=>array(
+  		'request' => array(
+            'baseUrl' => 'http://localhost/yii/blog/',
+        ),
 		'user'=>array(
 			// enable cookie-based authentication
 			'allowAutoLogin'=>true,
@@ -43,16 +46,27 @@ return array(
 		  'pathLayouts' => 'application.views.email.layouts'
 		),
 		// uncomment the following to enable URLs in path-format
-		/*
+		
 		'urlManager'=>array(
 			'urlFormat'=>'path',
 			'rules'=>array(
-				'<controller:\w+>/<id:\d+>'=>'<controller>/view',
-				'<controller:\w+>/<action:\w+>/<id:\d+>'=>'<controller>/<action>',
-				'<controller:\w+>/<action:\w+>'=>'<controller>/<action>',
+				//'adverts/<title>' => 'adverts/category/<title>',
+				// site.com/adverts/printers/home/laser/15
+                'cell/category/<cat_url:.+>/<id:\d+>'=>'adverts/category/',
+                'buy/category/<cat_url:.+>/<id:\d+>'=>'adverts/category/',
+                'cell/category/<cat_url:.+>'=>'adverts/category/',
+                'buy/category/<cat_url:.+>'=>'adverts/category/',
+                
+				//'cell/<_a>'=>'adverts/<_a>',
+				//'buy/<_a>'=>'adverts/<_a>',
+                // site.com/adverts/printers/home/laser
+
+				//'cell/<cat_name:\w+>'=>'adverts/category/?type=1',
+				//'<controller:\w+>/<action:\w+>/<id:\d+>'=>'<controller>/<action>',
+				//'<controller:\w+>/<action:\w+>'=>'<controller>/<action>',
 			),
 		),
-		*/
+		
 /*		'db'=>array(
 			'connectionString' => 'sqlite:'.dirname(__FILE__).'/../data/testdrive.db',
 		),*/

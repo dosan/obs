@@ -10,43 +10,24 @@ $this->menu=array(
 );
 ?>
 
-<h1>Categories</h1>
+<h1>Buy</h1>
 <ul>
 <?php foreach ($categories as $key => $value): ?>
-		<li><a href="<?php echo Yii::app()->baseUrl ?>/index.php?r=categories/view&id=<?php echo $value['id'] ?>"><?php echo $value['title'] ?></a></li>
+		<li><?php echo CHtml::link($value['title'],array('buy/category/'.$value['cat_url'])); ?></li>
 		<?php foreach ($value['childs'] as $childs): ?>
-			<li><a href="<?php echo Yii::app()->baseUrl ?>/index.php?r=categories/view&id=<?php echo $childs['id'] ?>">--<?php echo $childs['title'] ?></a></li>
+			<li>==<?php echo CHtml::link($childs['title'],array('buy/category/'.$value['cat_url'])); ?></li>
+		<?php endforeach ?>
+<?php endforeach ?>
+</ul>
+<h1>Cell</h1>
+<ul>
+<?php foreach ($categories as $key => $value): ?>
+		<li><?php echo CHtml::link($value['title'],array('cell/category/'.$value['cat_url'])); ?></li>
+		<?php foreach ($value['childs'] as $childs): ?>
+			<li>==<?php echo CHtml::link($childs['title'],array('cell/category/'.$value['cat_url'])); ?></li>
 		<?php endforeach ?>
 <?php endforeach ?>
 </ul>
 
-
-<h1>Buy</h1>
-<table >
-	<tr>
-		<th>title</th>
-		<th>description</th>
-		<th>image</th>
-	</tr>
-<?php foreach ($buyAdverts as $value): ?>
-		<tr>
-			<td><?php echo $value['title'] ?></td>	
-			<td><?php echo $value['description'] ?></td>	
-		</tr>
-<?php endforeach ?>
-</table>
-<h1>Cell</h1>
-<table >
-	<tr>
-		<th>title</th>
-		<th>description</th>
-		<th>image</th>
-	</tr>
-<?php foreach ($adverts as $value): ?>
-		<tr>
-			<td><?php echo $value['title'] ?></td>	
-			<td><?php echo $value['description'] ?></td>	
-		</tr>
-<?php endforeach ?>
-</table>
-<a href="<?php echo Yii::app()->baseUrl ?>/index.php?r=adverts/create">Create new advert</a>
+<?php echo CHtml::link('Create new Advert',array('adverts/create')); ?> / 
+<?php echo CHtml::link('Favorites',array('adverts/my')); ?>

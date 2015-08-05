@@ -11,7 +11,9 @@ $this->menu=array(
 	array('label'=>'Manage Categories', 'url'=>array('admin')),
 );
 ?>
+<h1>Adverts in favorites </h1>
+
 
 <?php foreach ($adverts as $key => $value): ?>
-	<h1><a href="<?php echo Yii::app()->baseUrl ?>/index.php?r=adverts/view&id=<?php echo $value['id'] ?>"><?php echo $value['title'] ?></a></h1>
+	<h2><?php echo CHtml::link($value['title'],array('adverts/view', 'id'=>$value['id'])); ?></h2>
 <?php endforeach ?>

@@ -40,13 +40,13 @@ class Categories extends CActiveRecord
     }	*/
 	public function getCategories(){
 		$categories =  Yii::app()->db->createCommand()
-		->select('id, title')
+		->select('id, title, cat_url')
 		->from('categories')
 		->where('parent_id = 0')
 		->queryAll();
 		foreach($categories as $key => $category){
 			$childs = Yii::app()->db->createCommand()
-			->select('id, title, parent_id')
+			->select('id, title, parent_id, cat_url')
 			->from('categories')
 			->where('parent_id ='.$category['id'])
 			->queryAll();
@@ -80,7 +80,8 @@ class Categories extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			'adverts' => array(self::HAS_MANY, 'Advert', 'category_id'),
+            'Childs' => array(self::HAS_MANY, 'Categories', 'parent_id'),
+			'adverts' => array(self::HAS_MANY, 'Adverts', 'category_id'),
 		);
 	}
 

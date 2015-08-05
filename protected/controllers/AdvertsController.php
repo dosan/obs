@@ -1,18 +1,10 @@
 <?php
-
+use yii\helpers\Url;
 class AdvertsController extends Controller
 {
-		/**
-	 * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
-	 * using two-column layout. See 'protected/views/layouts/column2.php'.
-	 */
+
 	public $layout='//layouts/main';
-	public $imgsPath='';
-	public $obImages;
-	public $type=0;
-	/**
-	 * @return array action filters
-	 */
+	public $type=0;	
 	public function filters()
 	{
 		return array(
@@ -20,67 +12,62 @@ class AdvertsController extends Controller
 			'postOnly + delete', // we only allow deletion via POST request
 		);
 	}
-	/**
-	 * Specifies the access control rules.
-	 * This method is used by the 'accessControl' filter.
-	 * @return array access control rules
-	 */
+
 	public function accessRules()
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','view'),
+				'actions'=>array('index','view', 'adverts'),
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','update','addtofavorites', 'removefromfavorites', 'my', 'favorites'),
+				'actions'=>array('create','addtofavorites', 'removefromfavorites', 'my', 'favorites', 'category'),
 				'users'=>array('@'),
 			),
+			array('allow',
+				'actions'=>array('update'),
+				'users'=>array(Yii::app()->user->name),
+				'expression'=>array('AdvertsController', 'allowOnlyOwner'),
+				),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
-				'actions'=>array('admin','delete', 'setIsActive'),
-				'users'=>array('admin'),
+				'actions'=>array('admin','delete', 'setIsActive', 'update'),
+				'users'=>array('donald'),
 			),
 			array('deny',  // deny all users
 				'users'=>array('*'),
 			),
 		);
 	}
-	/**
-	 * Displays a particular model.
-	 * @param integer $id the ID of the model to be displayed
-	 */
+
 	public function actionView($id)
 	{
-		//user_id change to Yii::app()->user->id
-		$user_id =1;
-		$advert = Yii::app()->db->createCommand()
-			->select('ad.id, ad.title, ad.description, ad.contact, ad.price,  ad.category_id as cat_id,cat.title as cat_name')
-			->from('adverts ad')
-			->join('categories cat', 'cat.id = ad.category_id')
-			->where('ad.id=:id', array(':id'=>$id))
-			->queryRow();
-		$files = CFileHelper::findFiles(Yii::app()->basePath."/../images/obs/ob-".$id);
-		$images = array_map(function($n){return end(explode('/', $n));}, $files);
-		$inFavs = Favorites::model()->find('user_id=:user_id AND ob_id=:ad_id', array(':user_id'=>$user_id, ':ad_id'=>$id));
+		$model = $this->loadModel($id);
+
+		$dir = realpath(Yii::app()->basePath.'/../images/obs').'/ob-'.$model->id;
+		if (!file_exists($dir) && !is_dir($dir)) {
+			mkdir($dir, 0777);
+		}
+		$model->watches++;
+		$advert = $model->getAdvert($id);
+		$inFavs = Favorites::model()->find('user_id=:user_id AND ob_id=:ad_id', array(':user_id'=>Yii::app()->user->id, ':ad_id'=>$id));
+		$model->save();
 		$this->render('view',array(
 			'advert'=>$advert,
 			'inFavs'=>$inFavs,
-			'images'=>$images
 		));
 	}
-	/**
-	 * Creates a new model.
-	 * If creation is successful, the browser will be redirected to the 'view' page.
-	 */
+
 	public function actionCreate()
 	{
+		$user = Users::model()->findByPk(Yii::app()->user->id);
 		$model=new Adverts;
-		$user_id = 1;
 		if(isset($_POST['Adverts']))
 		{
 			$model->attributes=$_POST['Adverts'];
-			$model->author_id = $user_id;
-			$model->category_id = $_POST['Adverts']['category_id'];
+			$model->author_id=Yii::app()->user->id;
+			$model->category_id=$_POST['Adverts']['category_id'];
+			$verifyCode = md5(rand(0,9999));
+			$model->verify_code = $verifyCode;
 			$uploadedFile = CUploadedFile::getInstancesByName('images');
 			$data = date('H-i-s');
 			if($model->save())
@@ -93,8 +80,7 @@ class AdvertsController extends Controller
 						$pic->saveAs(Yii::app()->basePath.'/../images/obs/ob-'.$model->id.'/'.$fileName);
 					}
 				}
-				$verifyCode = md5(rand(0,9999));
-				$this->sendActivationCode('email@dot.com', 'user_name', $verifyCode);
+				$this->sendActivationCode($user->email, $user->username, $verifyCode);
 				$this->redirect(array('view', 'id'=>$model->id));
 			}
 		}
@@ -103,49 +89,45 @@ class AdvertsController extends Controller
 		));
 	}
 	public function sendActivationCode($email, $name, $verification_code){
-		return true;
-		/*$message = 'Hello World!';
+		$message = 'Hello World! verify your advert '.Yii::app()->baseUrl.'adverts/verify/'.$verification_code;
+		die($message);
 		$mailer = Yii::createComponent('application.extensions.mailer.EMailer');
-		$mailer->Host = <your smtp host>;
+		$mailer->Host = 'smtp.gmail.com';
 		$mailer->IsSMTP();
-		$mailer->From = 'wei@example.com';
-		$mailer->AddReplyTo('wei@example.com');
-		$mailer->AddAddress('qiang@example.com');
-		$mailer->FromName = 'Wei Yard';
+		$mailer->SMTPAuth = true;
+		$mailer->From = 'foo@gmail.com';
+		$mailer->AddAddress('bratdonald@gmail.com');
+		$mailer->FromName = 'Dosan';
 		$mailer->CharSet = 'UTF-8';
 		$mailer->Subject = Yii::t('demo', 'Yii rulez!');
 		$mailer->Body = $message;
 		$mailer->Send();
-		$mail=Yii::app()->Smtpmail;
-		$mail->SetFrom('sandor@sandor.cu.cc', 'dosan');
-		$mail->Subject = 'subject';
-		$message = "Dear ".$name.",\nPlease click on below URL or paste into your browser to verify your Email Address\n\n ".Yii::app()->basePath.'adverts/verify/'.$verification_code."\n"."\n\nThanks\nAdmin Team";
-		$mail->MsgHTML($message);
-		$mail->AddAddress($email, "");
-		if(!$mail->Send()) {
-			die($mail->ErrorInfo);
-		}else {
-			die("Message sent!");
-		}*/
+	/*	$name='=?UTF-8?B?'.base64_encode($name).'?=';
+		$subject='=?UTF-8?B?'.base64_encode('it works!').'?=';
+		$headers="From: $name <{$email}>\r\n".
+			"Reply-To: {$email}\r\n".
+			"MIME-Version: 1.0\r\n".
+			"Content-Type: text/plain; charset=UTF-8";
+
+		die(mail('mr.seitkanov@gmail.com',$subject,'Hello World!'.$verification_code,$headers));
+		Yii::app()->user->setFlash('contact','Thank you for contacting us. We will respond to you as soon as possible.');
+		$this->refresh();*/
+		
 	}
-	/**
-	 * Updates a particular model.
-	 * If update is successful, the browser will be redirected to the 'view' page.
-	 * @param integer $id the ID of the model to be updated
-	 */
+
 	public function actionUpdate($id)
 	{
 		$model=$this->loadModel($id);
+		$user = $model->author_id;
 		//change user_id to Yii::app()->user-id
-		$user_id = 1;
+
 		// Uncomment the following line if AJAX validation is needed
 		$this->performAjaxValidation($model);
-		$files = CFileHelper::findFiles(Yii::app()->basePath."/../images/obs/ob-".$id);
-		$images = array_map(function($n){return end(explode('/', $n));}, $files);
+		$images = $model->getImagesById($id);
 		if(isset($_POST['Adverts']))
 		{
 			$model->attributes=$_POST['Adverts'];
-			$model->author_id=$user_id;
+			$model->author_id=Yii::app()->user->id;
 			$uploadedFile = CUploadedFile::getInstancesByName('images');
 			if($model->save()){
 				if (isset($uploadedFile) && count($uploadedFile) > 0) {
@@ -156,62 +138,93 @@ class AdvertsController extends Controller
 					}
 				}
 				if (isset($_POST['Adverts']['remove']))
-					foreach ($_POST['Adverts']['remove'] as $image => $isTrue)
-						if ($isTrue)
+					foreach ($_POST['Adverts']['remove'] as $image => $checked)
+						if ($checked)
 							unlink(Yii::app()->basePath."/../images/obs/ob-".$id.'/'.$image);
 				$this->redirect(array('view','id'=>$model->id));
 			}
 		}
-		$imageModel = new Images;
 		$this->render('update',array(
 			'model'=>$model,
-			'imageModel'=>$imageModel,
 			'images'=>$images
 		));
 	}
-	/**
-	 * Deletes a particular model.
-	 * If deletion is successful, the browser will be redirected to the 'admin' page.
-	 * @param integer $id the ID of the model to be deleted
-	 */
+
 	public function actionDelete($id)
 	{
 		$this->loadModel($id)->delete();
+		$dir = realpath(Yii::app()->basePath.'/../images/obs').'/ob-'.$model->id;
+		if (!file_exists($dir) && !is_dir($dir)) {
+			mkdir($dir, 0777);
+		}
 		CFileHelper::removeDirectory(Yii::app()->basePath."/../images/obs/ob-".$id);
 		// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
 		if(!isset($_GET['ajax'])){
 			$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
 		}
 	}
-	/**
-	 * Lists all models.
-	 */
+
+	public function actionCategory(){
+		$actions = explode('/',Yii::app()->request->pathInfo);
+		if ($actions[0] == 'buy') {
+			$type = 1;
+		}elseif($actions[0] == 'cell'){
+			$type = 0;
+		}
+		if (isset($_GET['cat_url']) AND $_GET['cat_url'] != '') {
+			$cat_url = trim($_GET['cat_url']);
+			//$categories = explode('/', $cat_url);
+			$category = AdvertsCategories::model()->findByAttributes(array('cat_url'=>$cat_url));
+			if($category){
+				if ($category->parent_id == 0) {
+					$adverts= Yii::app()->db->createCommand()
+					->select('ad.id, ad.title, ad.description')
+					->from('adverts ad')
+					->leftJoin('categories cat', 'ad.category_id = cat.id')
+					->leftJoin('categories pcat', 'cat.parent_id = pcat.id')
+					->where('pcat.id = '.$category->id)
+					->group('ad.id')
+					->queryAll();
+				}else{
+					$adverts = Adverts::model()->findAll('category_id = '.$category->id);
+				}
+				$this->render('category',array(
+					'category'=>$category,
+					'adverts'=>$adverts
+				));
+				/*if (isset($categories[1])) {
+					$child = AdvertsCategories::model()->findByAttributes(array('cat_url'=>$categories[1],'parent_id'=>$category->id));
+					if ($child) {
+						echo 'child works';
+					}else{
+						throw new CHttpException(405,'Указанная запись не найдена');
+					}
+				}*/
+			}else{
+				throw new CHttpException(405,'Указанная запись не найдена');
+			}
+		}else{
+			echo 'something wrong';
+		}
+	}
+	public function actionAdverts(){
+		$actions = explode('/',Yii::app()->request->pathInfo);
+		$type = $actions[0] == 'buy' ? 1 : 0;
+
+
+	}
 	public function actionIndex()
 	{
 		$categories = Categories::model()->getCategories();
-		$buyAdverts = Yii::app()->db->createCommand()
-			->select('ad.id, ad.title, ad.description')
-			->from('adverts ad')
-			->limit(4)
-			->where('type = :type', array(':type'=> 1))
-			->group('ad.title')
-			->queryAll();
-		$adverts = Yii::app()->db->createCommand()
-			->select('ad.id, ad.title, ad.description')
-			->from('adverts ad')
-			->limit(4)
-			->where('type = :type', array(':type'=> 1))
-			->group('ad.title')
-			->queryAll();
+		$buyAdverts = Adverts::getAdvertsByType(1);
+		$cellAdverts = Adverts::getAdvertsByType(0);
 		$this->render('index',array(
 			'categories'=>$categories,
 			'buyAdverts'=>$buyAdverts,
-			'adverts'=>$adverts,
+			'cellAdverts'=>$cellAdverts,
 		));
 	}
-	/**
-	 * Manages all models.
-	 */
+
 	public function actionAdmin()
 	{
 		$model=new Adverts('search');
@@ -223,87 +236,73 @@ class AdvertsController extends Controller
 		));
 	}
 	public function actionMy(){
-		$user_id = 1;
-		$adverts = Yii::app()->db->createCommand()
-			->select('ad.id, ad.title, ad.description')
-			->from('adverts ad')
-			->where('author_id = :user_id', array(':user_id'=>$user_id))
-			->group('ad.title')
-			->queryAll();
-		$this->render('my',array(
-			'adverts'=>$adverts,
-		));
-	}
-	public function actionFavorites(){
-		$user_id = 1;
-		
 		$adverts = Yii::app()->db->createCommand()
 			->select('ad.id, ad.title, ad.description')
 			->from('adverts ad')
 			->leftJoin('favorites fav', 'ad.id = fav.ob_id')
-			->where('fav.user_id = :user_id', array(':user_id'=>$user_id))
+			->where('fav.user_id = :user_id', array(':user_id'=>Yii::app()->user->id))
 			->group('ad.title')
 			->queryAll();
 		$this->render('my',array(
 			'adverts'=>$adverts,
 		));
 	}
-	/**
-	 * add to favorites the advert.
-	 * @param integer $ad_id the advert ID of the model to be updated
-	 * @return bolean updated or not
-	 */
+
+	public function actionFavorites(){
+		$adverts = Yii::app()->db->createCommand()
+			->select('ad.id, ad.title, ad.description')
+			->from('adverts ad')
+			->where('ad.author_id = :user_id', array(':user_id'=>Yii::app()->user->id))
+			->group('ad.title')
+			->queryAll();
+		$this->render('my',array(
+			'adverts'=>$adverts,
+		));
+	}
+
 	public function actionAddToFavorites($ad_id)
 	{
-		// user_id should change Yii:app()->user->id
-		$instance = new Favorites();
-		$user_id = 1;
-		$instance->user_id = $user_id;
-		$instance->ob_id = $ad_id;
-		$record = Favorites::model()->find('user_id=:user_id AND ob_id=:ob_id', array(':user_id'=>$user_id, ':ob_id'=>$ad_id));
-		if ($record == null){
-			$instance->save();
-			print_r(array('succes' => true, 'message' => 'added successful'));
+		$model = new Favorites();
+		$model->user_id = Yii::app()->user->id;
+		$model->ob_id = $ad_id;
+		$record = Favorites::model()->find('user_id=:user_id AND ob_id=:ob_id',
+									array(':user_id'=>Yii::app()->user->id, ':ob_id'=>$ad_id));
+		if ($record == null && $model->save()){
+			$this->redirect(array('view', 'id'=>$ad_id));
 		}else{
-			$instance->addError('duplicate', 'You already added into your favorites.');
-			print_r($instance->getErrors());
+			$model->addError('duplicate', 'This advert is into your favorites.');
+			echo json_encode($model->getErrors());
 		}
 	}
-	/**
-	 * add to favorites the advert.
-	 * @param integer $ad_id the advert ID of the model to be updated
-	 * @return bolean updated or not
-	 */
+
 	public function actionRemoveFromFavorites($ad_id)
 	{
-		// user_id should change Yii:app()->user->id
-		$instance = new Favorites();
-		$user_id = 1;
-		$instance->user_id = $user_id;
-		$instance->ob_id = $ad_id;
-		$record = Favorites::model()->find('user_id=:user_id AND ob_id=:ad_id', array(':user_id'=>$user_id, ':ad_id'=>$ad_id));
+		$model = new Favorites();
+		$record = $model->find('user_id=:user_id AND ob_id=:ad_id',
+					array(':user_id'=>Yii::app()->user->id, ':ad_id'=>$ad_id));
 		if ($record != null && $record->delete()){
-			// delete the row from the database table
-			print_r(array('succes' => true, 'message' => 'deleted successful'));
+			$this->redirect(array('view', 'id'=>$ad_id));
 		}else{
-			$instance->addError('notexist', 'This advert not exist in your favorites.');
-			print_r($instance->getErrors());
+			$model->addError('notexist', 'This advert not exist in your favorites.');
+			echo print_r($model->getErrors());
 		}
 	}
+
 	public function actionSetIsActive(){
 		$model = $this->loadModel($_POST['item']);
 		$model->activate = (int)$_POST['checked'];
 		echo $model->save() ? 'success' : false;
 	}
+
 	public function verify($verification_code = null){
-		if ($verification_code == null && $verification_code == '') show_404();
-		$records = $this->users_model->verifyEmailAddress($verification_code);  
+		if ($verification_code == null && $verification_code == '') throw new CHttpException(404,"Error Processing Request");
+		$records = Adverts::model()->findByAttributes(array('verify_code'=>$verification_code));  
 		if ($records > 0)
 			$message = array( 'success' => "Email Verified Successfully!"); 
 		else
 			$message = array( 'error' => "Sorry Unable to Verify Your Email!"); 
 		$data['message'] = $message; 
-		$this->load->view('activated.php', $data);   
+		$this->render('activated.php', $data);   
 	}
 	public function loadModel($id)
 	{
@@ -312,10 +311,7 @@ class AdvertsController extends Controller
 			throw new CHttpException(404,'The requested page does not exist.');
 		return $model;
 	}
-	/**
-	 * Performs the AJAX validation.
-	 * @param Advert $model the model to be validated
-	 */
+
 	protected function performAjaxValidation($model)
 	{
 		if(isset($_POST['ajax']) && $_POST['ajax']==='advert-form')
@@ -323,5 +319,13 @@ class AdvertsController extends Controller
 			echo CActiveForm::validate($model);
 			Yii::app()->end();
 		}
+	}
+	/**
+	 * Allow only the owner to do the action
+	 * @return boolean whether or not the user is the owner
+	 */
+	public function allowOnlyOwner(){
+		$model = Adverts::model()->findByPk($_GET["id"]);
+		return $model->author_id === Yii::app()->user->id;
 	}
 }

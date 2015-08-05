@@ -60,11 +60,7 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 			'name' => 'activate',
 			'actionUrl' => array('setIsActive'),
 		),
-		/*
-		'created_at',
-		'updated_at',
-		'author_id',
-		*/
+
 		array(
 			'class'=>'CButtonColumn',
 		),

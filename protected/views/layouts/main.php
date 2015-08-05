@@ -31,27 +31,55 @@
 				array('label'=>'Home', 'url'=>array('/site/index')),
 				array('label'=>'About', 'url'=>array('/site/page', 'view'=>'about')),
 				array('label'=>'Contact', 'url'=>array('/site/contact')),
-				array('label'=>'Advert', 'url'=>array('/adverts/index')),
-				array('label'=>'Categories', 'url'=>array('/categories/index')),
+				array('label'=>'Adverts', 'url'=>array('/adverts/index')),
 				array('label'=>'Login', 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest),
 				array('label'=>'Logout ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest)
 			),
 		)); ?>
 	</div><!-- mainmenu -->
-	<?php if(isset($this->breadcrumbs)):?>
-		<?php $this->widget('zii.widgets.CBreadcrumbs', array(
-			'links'=>$this->breadcrumbs,
-		)); ?><!-- breadcrumbs -->
-	<?php endif?>
+	<div class="column">
+		<?php if(isset($this->breadcrumbs)):?>
+			<?php $this->widget('zii.widgets.CBreadcrumbs', array(
+				'links'=>$this->breadcrumbs,
+			)); ?><!-- breadcrumbs -->
+		<?php endif?>
+		<div class="span-17">
+			<?php echo $content; ?>
+		</div>
+		<div class="span-5">
 
-	<?php echo $content; ?>
-
-	<div class="clear"></div>
-
+<!-- 			<div class='portlet'>
+	<div class="portlet-decoration">
+		<div class="portlet-title">Categories</div>
+	</div>
+	<div class="portlet-content">
+	<?php 
+	$this->widget('zii.widgets.CMenu', array(
+		'items' =>Adverts::getMenuTree(),
+	)); ?>
+	</div>
+</div> -->
+			<?php $this->beginWidget('LastAdverts',array(
+				'params'=>array(
+					'action' => Yii::app()->getController()->getAction()->getId(),
+				)));
+			$this->endWidget(); ?>
+			<?php $this->beginWidget('BuyAdverts',array(
+				'params'=>array(
+					'action' => Yii::app()->getController()->getAction()->getId(),
+				)));
+			$this->endWidget(); ?>
+			<?php $this->beginWidget('CellAdverts',array(
+				'params'=>array(
+					//получаем текущее действие чтобы подсветить активный элемент меню
+					'action' => Yii::app()->getController()->getAction()->getId(),
+				)));
+			$this->endWidget(); ?>
+		</div>
+	</div>
 	<div id="footer">
 		Copyright &copy; <?php echo date('Y'); ?> by My Company.<br/>
 		All Rights Reserved.<br/>
-		<?php echo Yii::powered(); ?>
 	</div><!-- footer -->
 
 </div><!-- page -->
