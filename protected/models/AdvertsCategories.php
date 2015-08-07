@@ -29,7 +29,9 @@ class AdvertsCategories extends CActiveRecord
 	public function relations()
 	{
 		return array_merge(parent::relations(), array(
-			'parent' => array(self::BELONGS_TO, 'AdvertsCategories', 'parent_id'),
+			'childs' => array(self::HAS_MANY, 'AdvertsCategories', 'parent_id'),
+			'adverts' => array(self::HAS_MANY, 'Adverts', 'category_id'),
+			//'childadverts' => array(self::MANY_MANY, 'Adverts', 'categories(parent_id, id)'),
 		));
 	}  
 }

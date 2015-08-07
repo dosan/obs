@@ -7,6 +7,7 @@ class Adverts extends CActiveRecord
 	public $remove;
 	public $images = array();
 	public $imageUrl;
+	public $maxImage = 5;
 	/**
 	 * @return string the associated database table name
 	 */
@@ -16,11 +17,14 @@ class Adverts extends CActiveRecord
 	}
 
 	public function findRecent($limit = null){
-		return $this->findAll(array(
-			'order'=>'t.created_at DESC',
-			'limit'=>$limit,
-		));
+		$criteria=new CDbCriteria;
+		$criteria->select='id, title, description';
+		$criteria->limit=$limit;
+		$criteria->condition='status = :status AND activate = :activate';
+		$criteria->params=array(':status'=>1, ':activate'=>1);
+		return $this->findAll($criteria);
 	}
+	
 	public function rules()
 	{
 		// NOTE: you should only define rules for those attributes that
@@ -44,7 +48,8 @@ class Adverts extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			'categories'   => array(self::HAS_MANY,   'Categories',    'id'),
+			'categories'   => array(self::BELONGS_TO,   'AdvertsCategories',    'id'),
+			'author'   => array(self::BELONGS_TO,   'Users',    'author_id'),
 		);
 	}
 
@@ -62,30 +67,33 @@ class Adverts extends CActiveRecord
 		);
 	}
 
-	public function getImagesById($id){
-		$files = CFileHelper::findFiles(Yii::app()->basePath."/../images/obs/ob-".$id);
-		return  array_map(function($n){return end(explode('/', $n));}, $files); 
+	public function getImages($id = false){
+/*		if ($id) {
+			$this->id = $id;	
+		}
+		$files = CFileHelper::findFiles(Yii::app()->basePath."/../images/obs/ob-".$this->id);
+		$img = array();
+		foreach ($files as $image) {
+			$tmp = explode('/', $image);
+			$img[] = end($tmp);
+		}
+		return $img;*/
+		$files = CFileHelper::findFiles(Yii::app()->basePath."/../images/obs/ob-".$this->id);
+		$img = array();
+		foreach ($files as $image) {
+			$tmp = explode('/', $image);
+			$img[] = end($tmp);
+		}
+		return $img; 
 	}
 
-	public function getAdvertsByType($limit, $type = 0){
+	public function getAdvertsByType($type = 0, $limit){
 		$criteria=new CDbCriteria;
 		$criteria->select='id, title, description';
 		$criteria->limit=$limit;
-		$criteria->condition='type=:type';
-		$criteria->params=array(':type'=>$type);
+		$criteria->condition='type=:type AND status = :status AND activate = :activate';
+		$criteria->params=array(':type'=>$type, ':status'=>1, ':activate'=>1);
 		return self::model()->findAll($criteria);
-	}
-	public function getAdvert($id, $withImage = 1){
-		$data = Yii::app()->db->createCommand()
-			->select('ad.id, ad.title, ad.description, ad.author_id, ad.watches, ad.contact, ad.price,  ad.category_id as cat_id,cat.title as cat_name')
-			->from('adverts ad')
-			->join('categories cat', 'cat.id = ad.category_id')
-			->where('ad.id=:id', array(':id'=>$id))
-			->queryRow();
-		if ($withImage) {
-			$data['images'] = $this->getImagesById($id);
-		}
-		return $data;
 	}
 	public function search()
 	{

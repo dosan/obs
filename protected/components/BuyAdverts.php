@@ -10,7 +10,7 @@ class BuyAdverts extends CPortlet {
 	public function getRecent()
 	{
 		// 1 is type of advert it means buy
-		return Adverts::model()->getAdvertsByType($this->maxComments, 1);
+		return Adverts::model()->getAdvertsByType(1, $this->maxComments);
 	}
 
 	protected function renderContent()

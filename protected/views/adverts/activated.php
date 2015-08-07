@@ -1,0 +1,1 @@
+activated php in view/adverts/activated.php

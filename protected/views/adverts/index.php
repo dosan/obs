@@ -15,7 +15,7 @@ $this->menu=array(
 <?php foreach ($categories as $key => $value): ?>
 		<li><?php echo CHtml::link($value['title'],array('buy/category/'.$value['cat_url'])); ?></li>
 		<?php foreach ($value['childs'] as $childs): ?>
-			<li>==<?php echo CHtml::link($childs['title'],array('buy/category/'.$value['cat_url'])); ?></li>
+			<li>==<?php echo CHtml::link($childs['title'],array('buy/category/'.$childs['cat_url'])); ?></li>
 		<?php endforeach ?>
 <?php endforeach ?>
 </ul>
@@ -24,10 +24,11 @@ $this->menu=array(
 <?php foreach ($categories as $key => $value): ?>
 		<li><?php echo CHtml::link($value['title'],array('cell/category/'.$value['cat_url'])); ?></li>
 		<?php foreach ($value['childs'] as $childs): ?>
-			<li>==<?php echo CHtml::link($childs['title'],array('cell/category/'.$value['cat_url'])); ?></li>
+			<li>==<?php echo CHtml::link($childs['title'],array('cell/category/'.$childs['cat_url'])); ?></li>
 		<?php endforeach ?>
 <?php endforeach ?>
 </ul>
 
 <?php echo CHtml::link('Create new Advert',array('adverts/create')); ?> / 
-<?php echo CHtml::link('Favorites',array('adverts/my')); ?>
+<?php echo CHtml::link('Favorites',array('adverts/favorites')); ?> / 
+<?php echo CHtml::link('My',array('adverts/my')); ?>

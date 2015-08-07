@@ -5265,3 +5265,1483 @@ Stack trace:
 REQUEST_URI=/yii/blog/index.php/adverts/view/id/237
 HTTP_REFERER=http://localhost/yii/blog/index.php/adverts/view/id/218
 ---
+2015/08/05 18:32:58 [warning] [application] Failed to set unsafe attribute "remove" of "Adverts".
+in /var/www/yii/blog/protected/controllers/AdvertsController.php (129)
+in /var/www/yii/blog/index.php (13)
+2015/08/05 18:33:35 [warning] [application] Failed to set unsafe attribute "remove" of "Adverts".
+in /var/www/yii/blog/protected/controllers/AdvertsController.php (129)
+in /var/www/yii/blog/index.php (13)
+2015/08/06 09:35:36 [warning] [application] Failed to set unsafe attribute "remove" of "Adverts".
+in /var/www/yii/blog/protected/controllers/AdvertsController.php (118)
+in /var/www/yii/blog/index.php (13)
+2015/08/06 10:12:35 [error] [exception.CException] exception 'CException' with message 'Property "Adverts.getImages" is not defined.' in /var/www/yii/framework/base/CComponent.php:130
+Stack trace:
+#0 /var/www/yii/framework/db/ar/CActiveRecord.php(145): CComponent->__get('getImages')
+#1 /var/www/yii/blog/protected/views/adverts/view.php(23): CActiveRecord->__get('getImages')
+#2 /var/www/yii/framework/web/CBaseController.php(126): require('/var/www/yii/bl...')
+#3 /var/www/yii/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/yii/bl...', Array, true)
+#4 /var/www/yii/framework/web/CController.php(869): CBaseController->renderFile('/var/www/yii/bl...', Array, true)
+#5 /var/www/yii/framework/web/CController.php(782): CController->renderPartial('view', Array, true)
+#6 /var/www/yii/blog/protected/controllers/AdvertsController.php(56): CController->render('view', Array)
+#7 [internal function]: AdvertsController->actionView('247')
+#8 /var/www/yii/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs(Object(AdvertsController), Array)
+#9 /var/www/yii/framework/web/actions/CInlineAction.php(47): CAction->runWithParamsInternal(Object(AdvertsController), Object(ReflectionMethod), Array)
+#10 /var/www/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#11 /var/www/yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#12 /var/www/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#13 /var/www/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#14 /var/www/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#15 /var/www/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#16 /var/www/yii/framework/web/CController.php(291): CFilterChain->run()
+#17 /var/www/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 /var/www/yii/framework/web/CWebApplication.php(282): CController->run('view')
+#19 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('adverts/view/id...')
+#20 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#21 /var/www/yii/blog/index.php(13): CApplication->run()
+#22 {main}
+REQUEST_URI=/yii/blog/index.php/adverts/view/id/247
+HTTP_REFERER=http://localhost/yii/blog/index.php/adverts/update/id/247
+---
+2015/08/06 10:25:55 [error] [php] Undefined variable: ad_id (/var/www/yii/blog/protected/controllers/AdvertsController.php:314)
+Stack trace:
+#0 /var/www/yii/framework/web/actions/CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#1 /var/www/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#2 /var/www/yii/framework/web/filters/CFilterChain.php(133): AdvertsController->runAction()
+#3 /var/www/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#4 /var/www/yii/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#5 /var/www/yii/framework/web/filters/CInlineFilter.php(58): AdvertsController->filterAccessControl()
+#6 /var/www/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#7 /var/www/yii/framework/web/CController.php(291): CFilterChain->run()
+#8 /var/www/yii/framework/web/CController.php(265): AdvertsController->runActionWithFilters()
+#9 /var/www/yii/framework/web/CWebApplication.php(282): AdvertsController->run()
+#10 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#11 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#12 /var/www/yii/blog/index.php(13): CWebApplication->run()
+REQUEST_URI=/yii/blog/index.php/adverts/activate/id/247
+in /var/www/yii/blog/protected/controllers/AdvertsController.php (314)
+in /var/www/yii/blog/index.php (13)
+2015/08/06 10:26:42 [error] [exception.CException] exception 'CException' with message 'Adverts and its behaviors do not have a method or closure named "getImagesById".' in /var/www/yii/framework/base/CComponent.php:266
+Stack trace:
+#0 /var/www/yii/framework/db/ar/CActiveRecord.php(227): CComponent->__call('getImagesById', Array)
+#1 /var/www/yii/blog/protected/controllers/AdvertsController.php(115): CActiveRecord->__call('getImagesById', Array)
+#2 /var/www/yii/blog/protected/controllers/AdvertsController.php(115): Adverts->getImagesById('247')
+#3 [internal function]: AdvertsController->actionUpdate('247')
+#4 /var/www/yii/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs(Object(AdvertsController), Array)
+#5 /var/www/yii/framework/web/actions/CInlineAction.php(47): CAction->runWithParamsInternal(Object(AdvertsController), Object(ReflectionMethod), Array)
+#6 /var/www/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#7 /var/www/yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#8 /var/www/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#9 /var/www/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#10 /var/www/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#11 /var/www/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#12 /var/www/yii/framework/web/CController.php(291): CFilterChain->run()
+#13 /var/www/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#14 /var/www/yii/framework/web/CWebApplication.php(282): CController->run('update')
+#15 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('adverts/update/...')
+#16 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#17 /var/www/yii/blog/index.php(13): CApplication->run()
+#18 {main}
+REQUEST_URI=/yii/blog/index.php/adverts/update/id/247
+HTTP_REFERER=http://localhost/yii/blog/index.php/adverts/view/id/247
+---
+2015/08/06 10:27:53 [error] [php] Undefined variable: images (/var/www/yii/blog/protected/controllers/AdvertsController.php:139)
+Stack trace:
+#0 /var/www/yii/framework/web/actions/CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#1 /var/www/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#2 /var/www/yii/framework/web/filters/CFilterChain.php(133): AdvertsController->runAction()
+#3 /var/www/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#4 /var/www/yii/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#5 /var/www/yii/framework/web/filters/CInlineFilter.php(58): AdvertsController->filterAccessControl()
+#6 /var/www/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#7 /var/www/yii/framework/web/CController.php(291): CFilterChain->run()
+#8 /var/www/yii/framework/web/CController.php(265): AdvertsController->runActionWithFilters()
+#9 /var/www/yii/framework/web/CWebApplication.php(282): AdvertsController->run()
+#10 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#11 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#12 /var/www/yii/blog/index.php(13): CWebApplication->run()
+REQUEST_URI=/yii/blog/index.php/adverts/update/id/247
+in /var/www/yii/blog/protected/controllers/AdvertsController.php (139)
+in /var/www/yii/blog/index.php (13)
+2015/08/06 10:28:16 [error] [exception.CException] exception 'CException' with message 'Property "Adverts.getImages" is not defined.' in /var/www/yii/framework/base/CComponent.php:130
+Stack trace:
+#0 /var/www/yii/framework/db/ar/CActiveRecord.php(145): CComponent->__get('getImages')
+#1 /var/www/yii/blog/protected/views/adverts/_updateform.php(58): CActiveRecord->__get('getImages')
+#2 /var/www/yii/framework/web/CBaseController.php(126): require('/var/www/yii/bl...')
+#3 /var/www/yii/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/yii/bl...', Array, true)
+#4 /var/www/yii/framework/web/CController.php(869): CBaseController->renderFile('/var/www/yii/bl...', Array, true)
+#5 /var/www/yii/blog/protected/views/adverts/update.php(19): CController->renderPartial('_updateform', Array)
+#6 /var/www/yii/framework/web/CBaseController.php(126): require('/var/www/yii/bl...')
+#7 /var/www/yii/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/yii/bl...', Array, true)
+#8 /var/www/yii/framework/web/CController.php(869): CBaseController->renderFile('/var/www/yii/bl...', Array, true)
+#9 /var/www/yii/framework/web/CController.php(782): CController->renderPartial('update', Array, true)
+#10 /var/www/yii/blog/protected/controllers/AdvertsController.php(138): CController->render('update', Array)
+#11 [internal function]: AdvertsController->actionUpdate('247')
+#12 /var/www/yii/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs(Object(AdvertsController), Array)
+#13 /var/www/yii/framework/web/actions/CInlineAction.php(47): CAction->runWithParamsInternal(Object(AdvertsController), Object(ReflectionMethod), Array)
+#14 /var/www/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#15 /var/www/yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#16 /var/www/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#17 /var/www/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#18 /var/www/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#19 /var/www/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#20 /var/www/yii/framework/web/CController.php(291): CFilterChain->run()
+#21 /var/www/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#22 /var/www/yii/framework/web/CWebApplication.php(282): CController->run('update')
+#23 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('adverts/update/...')
+#24 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#25 /var/www/yii/blog/index.php(13): CApplication->run()
+#26 {main}
+REQUEST_URI=/yii/blog/index.php/adverts/update/id/247
+HTTP_REFERER=http://localhost/yii/blog/index.php/adverts/view/id/247
+---
+2015/08/06 10:57:25 [warning] [application] Failed to set unsafe attribute "remove" of "Adverts".
+in /var/www/yii/blog/protected/controllers/AdvertsController.php (118)
+in /var/www/yii/blog/index.php (13)
+2015/08/06 10:59:53 [warning] [application] Failed to set unsafe attribute "remove" of "Adverts".
+in /var/www/yii/blog/protected/controllers/AdvertsController.php (118)
+in /var/www/yii/blog/index.php (13)
+2015/08/06 11:21:37 [error] [php] Object of class stdClass could not be converted to string (/var/www/yii/framework/db/schema/CDbCommandBuilder.php:481)
+Stack trace:
+#0 /var/www/yii/framework/db/ar/CActiveRecord.php(1456): Adverts->query()
+#1 /var/www/yii/blog/protected/controllers/AdvertsController.php(328): Adverts->find()
+#2 /var/www/yii/framework/web/actions/CInlineAction.php(49): AdvertsController->actionLastActivated()
+#3 /var/www/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#4 /var/www/yii/framework/web/filters/CFilterChain.php(133): AdvertsController->runAction()
+#5 /var/www/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#6 /var/www/yii/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#7 /var/www/yii/framework/web/filters/CInlineFilter.php(58): AdvertsController->filterAccessControl()
+#8 /var/www/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#9 /var/www/yii/framework/web/CController.php(291): CFilterChain->run()
+#10 /var/www/yii/framework/web/CController.php(265): AdvertsController->runActionWithFilters()
+#11 /var/www/yii/framework/web/CWebApplication.php(282): AdvertsController->run()
+#12 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#13 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#14 /var/www/yii/blog/index.php(13): CWebApplication->run()
+REQUEST_URI=/yii/blog/index.php/adverts/lastactivated
+in /var/www/yii/blog/protected/controllers/AdvertsController.php (328)
+in /var/www/yii/blog/index.php (13)
+2015/08/06 11:22:05 [error] [php] Object of class stdClass could not be converted to string (/var/www/yii/framework/db/schema/CDbCommandBuilder.php:481)
+Stack trace:
+#0 /var/www/yii/framework/db/ar/CActiveRecord.php(1456): Adverts->query()
+#1 /var/www/yii/blog/protected/controllers/AdvertsController.php(327): Adverts->find()
+#2 /var/www/yii/framework/web/actions/CInlineAction.php(49): AdvertsController->actionLastActivated()
+#3 /var/www/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#4 /var/www/yii/framework/web/filters/CFilterChain.php(133): AdvertsController->runAction()
+#5 /var/www/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#6 /var/www/yii/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#7 /var/www/yii/framework/web/filters/CInlineFilter.php(58): AdvertsController->filterAccessControl()
+#8 /var/www/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#9 /var/www/yii/framework/web/CController.php(291): CFilterChain->run()
+#10 /var/www/yii/framework/web/CController.php(265): AdvertsController->runActionWithFilters()
+#11 /var/www/yii/framework/web/CWebApplication.php(282): AdvertsController->run()
+#12 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#13 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#14 /var/www/yii/blog/index.php(13): CWebApplication->run()
+REQUEST_URI=/yii/blog/index.php/adverts/lastactivated
+in /var/www/yii/blog/protected/controllers/AdvertsController.php (327)
+in /var/www/yii/blog/index.php (13)
+2015/08/06 11:22:20 [error] [php] Object of class stdClass could not be converted to string (/var/www/yii/framework/db/schema/CDbCommandBuilder.php:481)
+Stack trace:
+#0 /var/www/yii/framework/db/ar/CActiveRecord.php(1470): Adverts->query()
+#1 /var/www/yii/blog/protected/controllers/AdvertsController.php(327): Adverts->findAll()
+#2 /var/www/yii/framework/web/actions/CInlineAction.php(49): AdvertsController->actionLastActivated()
+#3 /var/www/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#4 /var/www/yii/framework/web/filters/CFilterChain.php(133): AdvertsController->runAction()
+#5 /var/www/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#6 /var/www/yii/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#7 /var/www/yii/framework/web/filters/CInlineFilter.php(58): AdvertsController->filterAccessControl()
+#8 /var/www/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#9 /var/www/yii/framework/web/CController.php(291): CFilterChain->run()
+#10 /var/www/yii/framework/web/CController.php(265): AdvertsController->runActionWithFilters()
+#11 /var/www/yii/framework/web/CWebApplication.php(282): AdvertsController->run()
+#12 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#13 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#14 /var/www/yii/blog/index.php(13): CWebApplication->run()
+REQUEST_URI=/yii/blog/index.php/adverts/lastactivated
+in /var/www/yii/blog/protected/controllers/AdvertsController.php (327)
+in /var/www/yii/blog/index.php (13)
+2015/08/06 11:23:12 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '1 HOUR FROM `adverts` `t`' at line 1. The SQL statement executed was: SELECT NOW()+ INSTANCE 1 HOUR FROM `adverts` `t`.
+in /var/www/yii/blog/protected/controllers/AdvertsController.php (328)
+in /var/www/yii/blog/index.php (13)
+2015/08/06 11:23:12 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '1 HOUR FROM `adverts` `t`' at line 1. The SQL statement executed was: SELECT NOW()+ INSTANCE 1 HOUR FROM `adverts` `t`' in /var/www/yii/framework/db/CDbCommand.php:543
+Stack trace:
+#0 /var/www/yii/framework/db/CDbCommand.php(396): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 /var/www/yii/framework/db/ar/CActiveRecord.php(1351): CDbCommand->queryAll()
+#2 /var/www/yii/framework/db/ar/CActiveRecord.php(1470): CActiveRecord->query(Object(CDbCriteria), true)
+#3 /var/www/yii/blog/protected/controllers/AdvertsController.php(328): CActiveRecord->findAll(Object(CDbCriteria))
+#4 /var/www/yii/framework/web/actions/CInlineAction.php(49): AdvertsController->actionLastActivated()
+#5 /var/www/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#6 /var/www/yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#7 /var/www/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#8 /var/www/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#9 /var/www/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#10 /var/www/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#11 /var/www/yii/framework/web/CController.php(291): CFilterChain->run()
+#12 /var/www/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 /var/www/yii/framework/web/CWebApplication.php(282): CController->run('lastactivated')
+#14 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('adverts/lastact...')
+#15 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#16 /var/www/yii/blog/index.php(13): CApplication->run()
+#17 {main}
+REQUEST_URI=/yii/blog/index.php/adverts/lastactivated
+---
+2015/08/06 11:24:40 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '1 HOUR FROM `adverts` `t`' at line 1. The SQL statement executed was: SELECT NOW()+ INSTANCE 1 HOUR FROM `adverts` `t`.
+in /var/www/yii/blog/protected/controllers/AdvertsController.php (328)
+in /var/www/yii/blog/index.php (13)
+2015/08/06 11:24:40 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '1 HOUR FROM `adverts` `t`' at line 1. The SQL statement executed was: SELECT NOW()+ INSTANCE 1 HOUR FROM `adverts` `t`' in /var/www/yii/framework/db/CDbCommand.php:543
+Stack trace:
+#0 /var/www/yii/framework/db/CDbCommand.php(396): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 /var/www/yii/framework/db/ar/CActiveRecord.php(1351): CDbCommand->queryAll()
+#2 /var/www/yii/framework/db/ar/CActiveRecord.php(1470): CActiveRecord->query(Object(CDbCriteria), true)
+#3 /var/www/yii/blog/protected/controllers/AdvertsController.php(328): CActiveRecord->findAll(Object(CDbCriteria))
+#4 /var/www/yii/framework/web/actions/CInlineAction.php(49): AdvertsController->actionLastActivated()
+#5 /var/www/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#6 /var/www/yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#7 /var/www/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#8 /var/www/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#9 /var/www/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#10 /var/www/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#11 /var/www/yii/framework/web/CController.php(291): CFilterChain->run()
+#12 /var/www/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 /var/www/yii/framework/web/CWebApplication.php(282): CController->run('lastactivated')
+#14 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('adverts/lastact...')
+#15 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#16 /var/www/yii/blog/index.php(13): CApplication->run()
+#17 {main}
+REQUEST_URI=/yii/blog/index.php/adverts/lastactivated
+---
+2015/08/06 11:24:47 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '1 HOUR FROM `adverts` `t`' at line 1. The SQL statement executed was: SELECT NOW()+ INSTANCE 1 HOUR FROM `adverts` `t`.
+in /var/www/yii/blog/protected/controllers/AdvertsController.php (328)
+in /var/www/yii/blog/index.php (13)
+2015/08/06 11:24:47 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '1 HOUR FROM `adverts` `t`' at line 1. The SQL statement executed was: SELECT NOW()+ INSTANCE 1 HOUR FROM `adverts` `t`' in /var/www/yii/framework/db/CDbCommand.php:543
+Stack trace:
+#0 /var/www/yii/framework/db/CDbCommand.php(396): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 /var/www/yii/framework/db/ar/CActiveRecord.php(1351): CDbCommand->queryAll()
+#2 /var/www/yii/framework/db/ar/CActiveRecord.php(1470): CActiveRecord->query(Object(CDbCriteria), true)
+#3 /var/www/yii/blog/protected/controllers/AdvertsController.php(328): CActiveRecord->findAll(Object(CDbCriteria))
+#4 /var/www/yii/framework/web/actions/CInlineAction.php(49): AdvertsController->actionLastActivated()
+#5 /var/www/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#6 /var/www/yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#7 /var/www/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#8 /var/www/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#9 /var/www/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#10 /var/www/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#11 /var/www/yii/framework/web/CController.php(291): CFilterChain->run()
+#12 /var/www/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 /var/www/yii/framework/web/CWebApplication.php(282): CController->run('lastactivated')
+#14 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('adverts/lastact...')
+#15 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#16 /var/www/yii/blog/index.php(13): CApplication->run()
+#17 {main}
+REQUEST_URI=/yii/blog/index.php/adverts/lastactivated
+---
+2015/08/06 11:48:07 [warning] [application] Failed to set unsafe attribute "remove" of "Adverts".
+in /var/www/yii/blog/protected/controllers/AdvertsController.php (118)
+in /var/www/yii/blog/index.php (13)
+2015/08/06 12:29:43 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'WHERE activated_at BETWEEN NOW() - INTERVAL 1 MONTH AND NOW()- INTERVAL 1 MINUTE' at line 1. The SQL statement executed was: SELECT a.id,a.title, a.author_id, u.name, u.email FROM adverts as a LEFT JOIN users as u  WHERE activated_at BETWEEN NOW() - INTERVAL 1 MONTH AND NOW()- INTERVAL 1 MINUTE.
+in /var/www/yii/blog/protected/controllers/AdvertsController.php (328)
+in /var/www/yii/blog/index.php (13)
+2015/08/06 12:29:43 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'WHERE activated_at BETWEEN NOW() - INTERVAL 1 MONTH AND NOW()- INTERVAL 1 MINUTE' at line 1. The SQL statement executed was: SELECT a.id,a.title, a.author_id, u.name, u.email FROM adverts as a LEFT JOIN users as u  WHERE activated_at BETWEEN NOW() - INTERVAL 1 MONTH AND NOW()- INTERVAL 1 MINUTE' in /var/www/yii/framework/db/CDbCommand.php:543
+Stack trace:
+#0 /var/www/yii/framework/db/CDbCommand.php(396): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 /var/www/yii/blog/protected/controllers/AdvertsController.php(328): CDbCommand->queryAll()
+#2 /var/www/yii/framework/web/actions/CInlineAction.php(49): AdvertsController->actionLastActivated()
+#3 /var/www/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#4 /var/www/yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#5 /var/www/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#6 /var/www/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#7 /var/www/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#8 /var/www/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#9 /var/www/yii/framework/web/CController.php(291): CFilterChain->run()
+#10 /var/www/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 /var/www/yii/framework/web/CWebApplication.php(282): CController->run('lastactivated')
+#12 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('adverts/lastact...')
+#13 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#14 /var/www/yii/blog/index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/yii/blog/index.php/adverts/lastactivated
+---
+2015/08/06 12:29:58 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'WHERE activated_at BETWEEN NOW() - INTERVAL 1 MONTH AND NOW()- INTERVAL 1 MINUTE' at line 1. The SQL statement executed was: SELECT a.id,a.title, a.author_id, u.name, u.email FROM adverts as a LEFT JOIN users as u  WHERE activated_at BETWEEN NOW() - INTERVAL 1 MONTH AND NOW()- INTERVAL 1 MINUTE.
+in /var/www/yii/blog/protected/controllers/AdvertsController.php (328)
+in /var/www/yii/blog/index.php (13)
+2015/08/06 12:29:58 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'WHERE activated_at BETWEEN NOW() - INTERVAL 1 MONTH AND NOW()- INTERVAL 1 MINUTE' at line 1. The SQL statement executed was: SELECT a.id,a.title, a.author_id, u.name, u.email FROM adverts as a LEFT JOIN users as u  WHERE activated_at BETWEEN NOW() - INTERVAL 1 MONTH AND NOW()- INTERVAL 1 MINUTE' in /var/www/yii/framework/db/CDbCommand.php:543
+Stack trace:
+#0 /var/www/yii/framework/db/CDbCommand.php(396): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 /var/www/yii/blog/protected/controllers/AdvertsController.php(328): CDbCommand->queryAll()
+#2 /var/www/yii/framework/web/actions/CInlineAction.php(49): AdvertsController->actionLastActivated()
+#3 /var/www/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#4 /var/www/yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#5 /var/www/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#6 /var/www/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#7 /var/www/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#8 /var/www/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#9 /var/www/yii/framework/web/CController.php(291): CFilterChain->run()
+#10 /var/www/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 /var/www/yii/framework/web/CWebApplication.php(282): CController->run('lastactivated')
+#12 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('adverts/lastact...')
+#13 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#14 /var/www/yii/blog/index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/yii/blog/index.php/adverts/lastactivated
+---
+2015/08/06 12:30:17 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'WHERE activated_at BETWEEN NOW() - INTERVAL 1 MONTH AND NOW()- INTERVAL 1 MINUTE' at line 1. The SQL statement executed was: SELECT a.id,a.title, a.author_id, u.name, u.email FROM adverts as a LEFT JOIN users as u  WHERE activated_at BETWEEN NOW() - INTERVAL 1 MONTH AND NOW()- INTERVAL 1 MINUTE.
+in /var/www/yii/blog/protected/controllers/AdvertsController.php (328)
+in /var/www/yii/blog/index.php (13)
+2015/08/06 12:30:17 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'WHERE activated_at BETWEEN NOW() - INTERVAL 1 MONTH AND NOW()- INTERVAL 1 MINUTE' at line 1. The SQL statement executed was: SELECT a.id,a.title, a.author_id, u.name, u.email FROM adverts as a LEFT JOIN users as u  WHERE activated_at BETWEEN NOW() - INTERVAL 1 MONTH AND NOW()- INTERVAL 1 MINUTE' in /var/www/yii/framework/db/CDbCommand.php:543
+Stack trace:
+#0 /var/www/yii/framework/db/CDbCommand.php(396): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 /var/www/yii/blog/protected/controllers/AdvertsController.php(328): CDbCommand->queryAll()
+#2 /var/www/yii/framework/web/actions/CInlineAction.php(49): AdvertsController->actionLastActivated()
+#3 /var/www/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#4 /var/www/yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#5 /var/www/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#6 /var/www/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#7 /var/www/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#8 /var/www/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#9 /var/www/yii/framework/web/CController.php(291): CFilterChain->run()
+#10 /var/www/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 /var/www/yii/framework/web/CWebApplication.php(282): CController->run('lastactivated')
+#12 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('adverts/lastact...')
+#13 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#14 /var/www/yii/blog/index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/yii/blog/index.php/adverts/lastactivated
+---
+2015/08/06 12:30:18 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'WHERE activated_at BETWEEN NOW() - INTERVAL 1 MONTH AND NOW()- INTERVAL 1 MINUTE' at line 1. The SQL statement executed was: SELECT a.id,a.title, a.author_id, u.name, u.email FROM adverts as a LEFT JOIN users as u  WHERE activated_at BETWEEN NOW() - INTERVAL 1 MONTH AND NOW()- INTERVAL 1 MINUTE.
+in /var/www/yii/blog/protected/controllers/AdvertsController.php (328)
+in /var/www/yii/blog/index.php (13)
+2015/08/06 12:30:18 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'WHERE activated_at BETWEEN NOW() - INTERVAL 1 MONTH AND NOW()- INTERVAL 1 MINUTE' at line 1. The SQL statement executed was: SELECT a.id,a.title, a.author_id, u.name, u.email FROM adverts as a LEFT JOIN users as u  WHERE activated_at BETWEEN NOW() - INTERVAL 1 MONTH AND NOW()- INTERVAL 1 MINUTE' in /var/www/yii/framework/db/CDbCommand.php:543
+Stack trace:
+#0 /var/www/yii/framework/db/CDbCommand.php(396): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 /var/www/yii/blog/protected/controllers/AdvertsController.php(328): CDbCommand->queryAll()
+#2 /var/www/yii/framework/web/actions/CInlineAction.php(49): AdvertsController->actionLastActivated()
+#3 /var/www/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#4 /var/www/yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#5 /var/www/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#6 /var/www/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#7 /var/www/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#8 /var/www/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#9 /var/www/yii/framework/web/CController.php(291): CFilterChain->run()
+#10 /var/www/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 /var/www/yii/framework/web/CWebApplication.php(282): CController->run('lastactivated')
+#12 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('adverts/lastact...')
+#13 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#14 /var/www/yii/blog/index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/yii/blog/index.php/adverts/lastactivated
+---
+2015/08/06 12:30:58 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'WHERE activated_at BETWEEN NOW() - INTERVAL 1 MONTH AND NOW()- INTERVAL 1 MINUTE' at line 1. The SQL statement executed was: SELECT a.id,a.title, a.author_id, u.name, u.email FROM `adverts` as a LEFT JOIN `users` as u  WHERE activated_at BETWEEN NOW() - INTERVAL 1 MONTH AND NOW()- INTERVAL 1 MINUTE.
+in /var/www/yii/blog/protected/controllers/AdvertsController.php (328)
+in /var/www/yii/blog/index.php (13)
+2015/08/06 12:30:58 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'WHERE activated_at BETWEEN NOW() - INTERVAL 1 MONTH AND NOW()- INTERVAL 1 MINUTE' at line 1. The SQL statement executed was: SELECT a.id,a.title, a.author_id, u.name, u.email FROM `adverts` as a LEFT JOIN `users` as u  WHERE activated_at BETWEEN NOW() - INTERVAL 1 MONTH AND NOW()- INTERVAL 1 MINUTE' in /var/www/yii/framework/db/CDbCommand.php:543
+Stack trace:
+#0 /var/www/yii/framework/db/CDbCommand.php(396): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 /var/www/yii/blog/protected/controllers/AdvertsController.php(328): CDbCommand->queryAll()
+#2 /var/www/yii/framework/web/actions/CInlineAction.php(49): AdvertsController->actionLastActivated()
+#3 /var/www/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#4 /var/www/yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#5 /var/www/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#6 /var/www/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#7 /var/www/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#8 /var/www/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#9 /var/www/yii/framework/web/CController.php(291): CFilterChain->run()
+#10 /var/www/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 /var/www/yii/framework/web/CWebApplication.php(282): CController->run('lastactivated')
+#12 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('adverts/lastact...')
+#13 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#14 /var/www/yii/blog/index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/yii/blog/index.php/adverts/lastactivated
+---
+2015/08/06 12:31:51 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'WHERE activated_at BETWEEN NOW() - INTERVAL 1 MONTH AND NOW()- INTERVAL 1 MINUTE' at line 1. The SQL statement executed was: SELECT a.id, a.title, a.author_id, u.name, u.email FROM `adverts` AS a LEFT JOIN `users` AS u  WHERE activated_at BETWEEN NOW() - INTERVAL 1 MONTH AND NOW()- INTERVAL 1 MINUTE.
+in /var/www/yii/blog/protected/controllers/AdvertsController.php (328)
+in /var/www/yii/blog/index.php (13)
+2015/08/06 12:31:51 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'WHERE activated_at BETWEEN NOW() - INTERVAL 1 MONTH AND NOW()- INTERVAL 1 MINUTE' at line 1. The SQL statement executed was: SELECT a.id, a.title, a.author_id, u.name, u.email FROM `adverts` AS a LEFT JOIN `users` AS u  WHERE activated_at BETWEEN NOW() - INTERVAL 1 MONTH AND NOW()- INTERVAL 1 MINUTE' in /var/www/yii/framework/db/CDbCommand.php:543
+Stack trace:
+#0 /var/www/yii/framework/db/CDbCommand.php(396): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 /var/www/yii/blog/protected/controllers/AdvertsController.php(328): CDbCommand->queryAll()
+#2 /var/www/yii/framework/web/actions/CInlineAction.php(49): AdvertsController->actionLastActivated()
+#3 /var/www/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#4 /var/www/yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#5 /var/www/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#6 /var/www/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#7 /var/www/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#8 /var/www/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#9 /var/www/yii/framework/web/CController.php(291): CFilterChain->run()
+#10 /var/www/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 /var/www/yii/framework/web/CWebApplication.php(282): CController->run('lastactivated')
+#12 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('adverts/lastact...')
+#13 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#14 /var/www/yii/blog/index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/yii/blog/index.php/adverts/lastactivated
+---
+2015/08/06 13:29:09 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'WHERE activated_at BETWEEN NOW() - INTERVAL 1 MONTH AND NOW()- INTERVAL 1 MINUTE' at line 1. The SQL statement executed was: SELECT a.id, a.title, a.author_id, u.name, u.email FROM `adverts` AS a LEFT JOIN `users` AS u  WHERE activated_at BETWEEN NOW() - INTERVAL 1 MONTH AND NOW()- INTERVAL 1 MINUTE.
+in /var/www/yii/blog/protected/controllers/AdvertsController.php (328)
+in /var/www/yii/blog/index.php (13)
+2015/08/06 13:29:09 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'WHERE activated_at BETWEEN NOW() - INTERVAL 1 MONTH AND NOW()- INTERVAL 1 MINUTE' at line 1. The SQL statement executed was: SELECT a.id, a.title, a.author_id, u.name, u.email FROM `adverts` AS a LEFT JOIN `users` AS u  WHERE activated_at BETWEEN NOW() - INTERVAL 1 MONTH AND NOW()- INTERVAL 1 MINUTE' in /var/www/yii/framework/db/CDbCommand.php:543
+Stack trace:
+#0 /var/www/yii/framework/db/CDbCommand.php(396): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 /var/www/yii/blog/protected/controllers/AdvertsController.php(328): CDbCommand->queryAll()
+#2 /var/www/yii/framework/web/actions/CInlineAction.php(49): AdvertsController->actionLastActivated()
+#3 /var/www/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#4 /var/www/yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#5 /var/www/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#6 /var/www/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#7 /var/www/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#8 /var/www/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#9 /var/www/yii/framework/web/CController.php(291): CFilterChain->run()
+#10 /var/www/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 /var/www/yii/framework/web/CWebApplication.php(282): CController->run('lastactivated')
+#12 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('adverts/lastact...')
+#13 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#14 /var/www/yii/blog/index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/yii/blog/index.php/adverts/lastactivated
+---
+2015/08/06 13:29:41 [error] [php] opendir(/var/www/yii/blog/protected/../images/obs/ob-213): failed to open dir: No such file or directory (/var/www/yii/framework/utils/CFileHelper.php:182)
+Stack trace:
+#0 /var/www/yii/blog/protected/models/Adverts.php(66): findFiles()
+#1 /var/www/yii/blog/protected/views/adverts/_updateform.php(58): Adverts->getImages()
+#2 /var/www/yii/framework/web/CBaseController.php(126): require()
+#3 /var/www/yii/framework/web/CBaseController.php(95): AdvertsController->renderInternal()
+#4 /var/www/yii/framework/web/CController.php(869): AdvertsController->renderFile()
+#5 /var/www/yii/blog/protected/views/adverts/update.php(19): AdvertsController->renderPartial()
+#6 /var/www/yii/framework/web/CBaseController.php(126): require()
+#7 /var/www/yii/framework/web/CBaseController.php(95): AdvertsController->renderInternal()
+#8 /var/www/yii/framework/web/CController.php(869): AdvertsController->renderFile()
+#9 /var/www/yii/framework/web/CController.php(782): AdvertsController->renderPartial()
+#10 /var/www/yii/blog/protected/controllers/AdvertsController.php(139): AdvertsController->render()
+#11 unknown(0): AdvertsController->actionUpdate()
+#12 /var/www/yii/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs()
+#13 /var/www/yii/framework/web/actions/CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#14 /var/www/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#15 /var/www/yii/framework/web/filters/CFilterChain.php(133): AdvertsController->runAction()
+#16 /var/www/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#17 /var/www/yii/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#18 /var/www/yii/framework/web/filters/CInlineFilter.php(58): AdvertsController->filterAccessControl()
+#19 /var/www/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#20 /var/www/yii/framework/web/CController.php(291): CFilterChain->run()
+#21 /var/www/yii/framework/web/CController.php(265): AdvertsController->runActionWithFilters()
+#22 /var/www/yii/framework/web/CWebApplication.php(282): AdvertsController->run()
+#23 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#24 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#25 /var/www/yii/blog/index.php(13): CWebApplication->run()
+REQUEST_URI=/yii/blog/index.php/adverts/update/id/213
+in /var/www/yii/blog/protected/models/Adverts.php (66)
+in /var/www/yii/blog/protected/views/adverts/_updateform.php (58)
+in /var/www/yii/blog/protected/views/adverts/update.php (19)
+2015/08/06 13:58:27 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'u.name' in 'field list'. The SQL statement executed was: SELECT a.id, a.title, a.author_id, u.name, u.email FROM `adverts` AS a LEFT JOIN `users` AS u  ON a.author_id=u.id WHERE activated_at BETWEEN NOW() - INTERVAL 1 MONTH AND NOW()- INTERVAL 1 MINUTE.
+in /var/www/yii/blog/protected/controllers/AdvertsController.php (328)
+in /var/www/yii/blog/index.php (13)
+2015/08/06 13:58:27 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'u.name' in 'field list'. The SQL statement executed was: SELECT a.id, a.title, a.author_id, u.name, u.email FROM `adverts` AS a LEFT JOIN `users` AS u  ON a.author_id=u.id WHERE activated_at BETWEEN NOW() - INTERVAL 1 MONTH AND NOW()- INTERVAL 1 MINUTE' in /var/www/yii/framework/db/CDbCommand.php:543
+Stack trace:
+#0 /var/www/yii/framework/db/CDbCommand.php(396): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 /var/www/yii/blog/protected/controllers/AdvertsController.php(328): CDbCommand->queryAll()
+#2 /var/www/yii/framework/web/actions/CInlineAction.php(49): AdvertsController->actionLastActivated()
+#3 /var/www/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#4 /var/www/yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#5 /var/www/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#6 /var/www/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#7 /var/www/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#8 /var/www/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#9 /var/www/yii/framework/web/CController.php(291): CFilterChain->run()
+#10 /var/www/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 /var/www/yii/framework/web/CWebApplication.php(282): CController->run('lastactivated')
+#12 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('adverts/lastact...')
+#13 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#14 /var/www/yii/blog/index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/yii/blog/index.php/adverts/lastactivated
+---
+2015/08/06 13:59:17 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'u.name' in 'field list'. The SQL statement executed was: SELECT a.id, a.title, a.author_id, u.name, u.email FROM `adverts` a LEFT JOIN `users` u  ON a.author_id=u.id WHERE activated_at BETWEEN NOW() - INTERVAL 1 MONTH AND NOW()- INTERVAL 1 MINUTE.
+in /var/www/yii/blog/protected/controllers/AdvertsController.php (328)
+in /var/www/yii/blog/index.php (13)
+2015/08/06 13:59:17 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'u.name' in 'field list'. The SQL statement executed was: SELECT a.id, a.title, a.author_id, u.name, u.email FROM `adverts` a LEFT JOIN `users` u  ON a.author_id=u.id WHERE activated_at BETWEEN NOW() - INTERVAL 1 MONTH AND NOW()- INTERVAL 1 MINUTE' in /var/www/yii/framework/db/CDbCommand.php:543
+Stack trace:
+#0 /var/www/yii/framework/db/CDbCommand.php(396): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 /var/www/yii/blog/protected/controllers/AdvertsController.php(328): CDbCommand->queryAll()
+#2 /var/www/yii/framework/web/actions/CInlineAction.php(49): AdvertsController->actionLastActivated()
+#3 /var/www/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#4 /var/www/yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#5 /var/www/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#6 /var/www/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#7 /var/www/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#8 /var/www/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#9 /var/www/yii/framework/web/CController.php(291): CFilterChain->run()
+#10 /var/www/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 /var/www/yii/framework/web/CWebApplication.php(282): CController->run('lastactivated')
+#12 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('adverts/lastact...')
+#13 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#14 /var/www/yii/blog/index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/yii/blog/index.php/adverts/lastactivated
+---
+2015/08/06 14:00:38 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'name' in 'field list'. The SQL statement executed was: SELECT adverts.id, title,author_id, name, email FROM `adverts` LEFT JOIN `users` ON adverts.author_id=users.id WHERE activated_at BETWEEN NOW() - INTERVAL 1 MONTH AND NOW()- INTERVAL 1 MINUTE.
+in /var/www/yii/blog/protected/controllers/AdvertsController.php (328)
+in /var/www/yii/blog/index.php (13)
+2015/08/06 14:00:38 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'name' in 'field list'. The SQL statement executed was: SELECT adverts.id, title,author_id, name, email FROM `adverts` LEFT JOIN `users` ON adverts.author_id=users.id WHERE activated_at BETWEEN NOW() - INTERVAL 1 MONTH AND NOW()- INTERVAL 1 MINUTE' in /var/www/yii/framework/db/CDbCommand.php:543
+Stack trace:
+#0 /var/www/yii/framework/db/CDbCommand.php(396): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 /var/www/yii/blog/protected/controllers/AdvertsController.php(328): CDbCommand->queryAll()
+#2 /var/www/yii/framework/web/actions/CInlineAction.php(49): AdvertsController->actionLastActivated()
+#3 /var/www/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#4 /var/www/yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#5 /var/www/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#6 /var/www/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#7 /var/www/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#8 /var/www/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#9 /var/www/yii/framework/web/CController.php(291): CFilterChain->run()
+#10 /var/www/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 /var/www/yii/framework/web/CWebApplication.php(282): CController->run('lastactivated')
+#12 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('adverts/lastact...')
+#13 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#14 /var/www/yii/blog/index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/yii/blog/index.php/adverts/lastactivated
+---
+2015/08/06 14:01:54 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'u.name' in 'field list'. The SQL statement executed was: SELECT a.id, a.title, a.author_id, u.name, u.email FROM `adverts` AS a LEFT JOIN `users` AS u ON a.author_id=u.id WHERE activated_at BETWEEN NOW() - INTERVAL 1 MONTH AND NOW()- INTERVAL 1 MINUTE.
+in /var/www/yii/blog/protected/controllers/AdvertsController.php (328)
+in /var/www/yii/blog/index.php (13)
+2015/08/06 14:01:54 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'u.name' in 'field list'. The SQL statement executed was: SELECT a.id, a.title, a.author_id, u.name, u.email FROM `adverts` AS a LEFT JOIN `users` AS u ON a.author_id=u.id WHERE activated_at BETWEEN NOW() - INTERVAL 1 MONTH AND NOW()- INTERVAL 1 MINUTE' in /var/www/yii/framework/db/CDbCommand.php:543
+Stack trace:
+#0 /var/www/yii/framework/db/CDbCommand.php(396): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 /var/www/yii/blog/protected/controllers/AdvertsController.php(328): CDbCommand->queryAll()
+#2 /var/www/yii/framework/web/actions/CInlineAction.php(49): AdvertsController->actionLastActivated()
+#3 /var/www/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#4 /var/www/yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#5 /var/www/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#6 /var/www/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#7 /var/www/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#8 /var/www/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#9 /var/www/yii/framework/web/CController.php(291): CFilterChain->run()
+#10 /var/www/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 /var/www/yii/framework/web/CWebApplication.php(282): CController->run('lastactivated')
+#12 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('adverts/lastact...')
+#13 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#14 /var/www/yii/blog/index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/yii/blog/index.php/adverts/lastactivated
+---
+2015/08/06 14:01:59 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'u.name' in 'field list'. The SQL statement executed was: SELECT a.id, a.title, a.author_id, u.name, u.email FROM `adverts` AS a LEFT JOIN `users` AS u ON a.author_id=u.id WHERE activated_at BETWEEN NOW() - INTERVAL 1 MONTH AND NOW()- INTERVAL 1 MINUTE.
+in /var/www/yii/blog/protected/controllers/AdvertsController.php (328)
+in /var/www/yii/blog/index.php (13)
+2015/08/06 14:01:59 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'u.name' in 'field list'. The SQL statement executed was: SELECT a.id, a.title, a.author_id, u.name, u.email FROM `adverts` AS a LEFT JOIN `users` AS u ON a.author_id=u.id WHERE activated_at BETWEEN NOW() - INTERVAL 1 MONTH AND NOW()- INTERVAL 1 MINUTE' in /var/www/yii/framework/db/CDbCommand.php:543
+Stack trace:
+#0 /var/www/yii/framework/db/CDbCommand.php(396): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 /var/www/yii/blog/protected/controllers/AdvertsController.php(328): CDbCommand->queryAll()
+#2 /var/www/yii/framework/web/actions/CInlineAction.php(49): AdvertsController->actionLastActivated()
+#3 /var/www/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#4 /var/www/yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#5 /var/www/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#6 /var/www/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#7 /var/www/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#8 /var/www/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#9 /var/www/yii/framework/web/CController.php(291): CFilterChain->run()
+#10 /var/www/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 /var/www/yii/framework/web/CWebApplication.php(282): CController->run('lastactivated')
+#12 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('adverts/lastact...')
+#13 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#14 /var/www/yii/blog/index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/yii/blog/index.php/adverts/lastactivated
+---
+2015/08/06 14:02:24 [error] [php] Undefined variable: author (/var/www/yii/blog/protected/controllers/AdvertsController.php:332)
+Stack trace:
+#0 /var/www/yii/framework/web/filters/CFilterChain.php(133): AdvertsController->runAction()
+#1 /var/www/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#2 /var/www/yii/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#3 /var/www/yii/framework/web/filters/CInlineFilter.php(58): AdvertsController->filterAccessControl()
+#4 /var/www/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#5 /var/www/yii/framework/web/CController.php(291): CFilterChain->run()
+#6 /var/www/yii/framework/web/CController.php(265): AdvertsController->runActionWithFilters()
+#7 /var/www/yii/framework/web/CWebApplication.php(282): AdvertsController->run()
+#8 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#9 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#10 /var/www/yii/blog/index.php(13): CWebApplication->run()
+REQUEST_URI=/yii/blog/index.php/adverts/lastactivated
+in /var/www/yii/blog/protected/controllers/AdvertsController.php (332)
+in /var/www/yii/blog/index.php (13)
+2015/08/06 14:22:38 [error] [php] Undefined variable: Correo (/var/www/yii/blog/protected/controllers/AdvertsController.php:350)
+Stack trace:
+#0 /var/www/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#1 /var/www/yii/framework/web/filters/CFilterChain.php(133): AdvertsController->runAction()
+#2 /var/www/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#3 /var/www/yii/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#4 /var/www/yii/framework/web/filters/CInlineFilter.php(58): AdvertsController->filterAccessControl()
+#5 /var/www/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#6 /var/www/yii/framework/web/CController.php(291): CFilterChain->run()
+#7 /var/www/yii/framework/web/CController.php(265): AdvertsController->runActionWithFilters()
+#8 /var/www/yii/framework/web/CWebApplication.php(282): AdvertsController->run()
+#9 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#10 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#11 /var/www/yii/blog/index.php(13): CWebApplication->run()
+REQUEST_URI=/yii/blog/index.php/adverts/lastactivated
+in /var/www/yii/blog/protected/controllers/AdvertsController.php (350)
+in /var/www/yii/blog/protected/controllers/AdvertsController.php (330)
+in /var/www/yii/blog/index.php (13)
+2015/08/06 16:59:44 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "buy/category".' in /var/www/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('buy/category')
+#1 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/yii/blog/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/blog/index.php/buy/category/
+---
+2015/08/06 17:11:51 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in /var/www/yii/framework/web/auth/CAccessControlFilter.php:182
+Stack trace:
+#0 /var/www/yii/framework/web/auth/CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 /var/www/yii/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /var/www/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 /var/www/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 /var/www/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 /var/www/yii/framework/web/CController.php(291): CFilterChain->run()
+#6 /var/www/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /var/www/yii/framework/web/CWebApplication.php(282): CController->run('verify')
+#8 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('adverts/verify/...')
+#9 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#10 /var/www/yii/blog/index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/yii/blog/index.php/adverts/verify/bfd2308e9e75263970f8079115edebbd
+HTTP_REFERER=http://www.google.com/url?q=http%3A%2F%2Flocalhost%2Fyii%2Fblog%2Findex.php%2Fadverts%2Fverify%2Fbfd2308e9e75263970f8079115edebbd&sa=D&sntz=1&usg=AFQjCNEiVJguCbSmXJnogu2et6hHVSPXMQ
+---
+2015/08/06 17:12:28 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Error Processing Request' in /var/www/yii/blog/protected/controllers/AdvertsController.php:273
+Stack trace:
+#0 [internal function]: AdvertsController->actionVerify(NULL)
+#1 /var/www/yii/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs(Object(AdvertsController), Array)
+#2 /var/www/yii/framework/web/actions/CInlineAction.php(47): CAction->runWithParamsInternal(Object(AdvertsController), Object(ReflectionMethod), Array)
+#3 /var/www/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#4 /var/www/yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#5 /var/www/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#6 /var/www/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#7 /var/www/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#8 /var/www/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#9 /var/www/yii/framework/web/CController.php(291): CFilterChain->run()
+#10 /var/www/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 /var/www/yii/framework/web/CWebApplication.php(282): CController->run('verify')
+#12 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('adverts/verify/...')
+#13 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#14 /var/www/yii/blog/index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/yii/blog/index.php/adverts/verify/bfd2308e9e75263970f8079115edebbd
+HTTP_REFERER=http://www.google.com/url?q=http%3A%2F%2Flocalhost%2Fyii%2Fblog%2Findex.php%2Fadverts%2Fverify%2Fbfd2308e9e75263970f8079115edebbd&sa=D&sntz=1&usg=AFQjCNEiVJguCbSmXJnogu2et6hHVSPXMQ
+---
+2015/08/06 17:12:33 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Error Processing Request' in /var/www/yii/blog/protected/controllers/AdvertsController.php:273
+Stack trace:
+#0 [internal function]: AdvertsController->actionVerify(NULL)
+#1 /var/www/yii/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs(Object(AdvertsController), Array)
+#2 /var/www/yii/framework/web/actions/CInlineAction.php(47): CAction->runWithParamsInternal(Object(AdvertsController), Object(ReflectionMethod), Array)
+#3 /var/www/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#4 /var/www/yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#5 /var/www/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#6 /var/www/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#7 /var/www/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#8 /var/www/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#9 /var/www/yii/framework/web/CController.php(291): CFilterChain->run()
+#10 /var/www/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 /var/www/yii/framework/web/CWebApplication.php(282): CController->run('verify')
+#12 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('adverts/verify/...')
+#13 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#14 /var/www/yii/blog/index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/yii/blog/index.php/adverts/verify/bfd2308e9e75263970f8079115edebbd
+HTTP_REFERER=http://www.google.com/url?q=http%3A%2F%2Flocalhost%2Fyii%2Fblog%2Findex.php%2Fadverts%2Fverify%2Fbfd2308e9e75263970f8079115edebbd&sa=D&sntz=1&usg=AFQjCNEiVJguCbSmXJnogu2et6hHVSPXMQ
+---
+2015/08/06 17:12:47 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Error Processing Request' in /var/www/yii/blog/protected/controllers/AdvertsController.php:273
+Stack trace:
+#0 [internal function]: AdvertsController->actionVerify(NULL)
+#1 /var/www/yii/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs(Object(AdvertsController), Array)
+#2 /var/www/yii/framework/web/actions/CInlineAction.php(47): CAction->runWithParamsInternal(Object(AdvertsController), Object(ReflectionMethod), Array)
+#3 /var/www/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#4 /var/www/yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#5 /var/www/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#6 /var/www/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#7 /var/www/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#8 /var/www/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#9 /var/www/yii/framework/web/CController.php(291): CFilterChain->run()
+#10 /var/www/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 /var/www/yii/framework/web/CWebApplication.php(282): CController->run('verify')
+#12 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('adverts/verify/...')
+#13 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#14 /var/www/yii/blog/index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/yii/blog/index.php/adverts/verify/bfd2308e9e75263970f8079115edebbd
+HTTP_REFERER=http://www.google.com/url?q=http%3A%2F%2Flocalhost%2Fyii%2Fblog%2Findex.php%2Fadverts%2Fverify%2Fbfd2308e9e75263970f8079115edebbd&sa=D&sntz=1&usg=AFQjCNEiVJguCbSmXJnogu2et6hHVSPXMQ
+---
+2015/08/06 17:18:40 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Error Processing Request' in /var/www/yii/blog/protected/controllers/AdvertsController.php:273
+Stack trace:
+#0 [internal function]: AdvertsController->actionVerify(NULL)
+#1 /var/www/yii/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs(Object(AdvertsController), Array)
+#2 /var/www/yii/framework/web/actions/CInlineAction.php(47): CAction->runWithParamsInternal(Object(AdvertsController), Object(ReflectionMethod), Array)
+#3 /var/www/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#4 /var/www/yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#5 /var/www/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#6 /var/www/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#7 /var/www/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#8 /var/www/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#9 /var/www/yii/framework/web/CController.php(291): CFilterChain->run()
+#10 /var/www/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 /var/www/yii/framework/web/CWebApplication.php(282): CController->run('verify')
+#12 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('adverts/verify/...')
+#13 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#14 /var/www/yii/blog/index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/yii/blog/index.php/adverts/verify/bfd2308e9e75263970f8079115edebbd
+HTTP_REFERER=http://www.google.com/url?q=http%3A%2F%2Flocalhost%2Fyii%2Fblog%2Findex.php%2Fadverts%2Fverify%2Fbfd2308e9e75263970f8079115edebbd&sa=D&sntz=1&usg=AFQjCNEiVJguCbSmXJnogu2et6hHVSPXMQ
+---
+2015/08/06 17:19:32 [error] [php] Object of class Adverts could not be converted to int (/var/www/yii/blog/protected/controllers/AdvertsController.php:275)
+Stack trace:
+#0 /var/www/yii/framework/web/actions/CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#1 /var/www/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#2 /var/www/yii/framework/web/filters/CFilterChain.php(133): AdvertsController->runAction()
+#3 /var/www/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#4 /var/www/yii/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#5 /var/www/yii/framework/web/filters/CInlineFilter.php(58): AdvertsController->filterAccessControl()
+#6 /var/www/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#7 /var/www/yii/framework/web/CController.php(291): CFilterChain->run()
+#8 /var/www/yii/framework/web/CController.php(265): AdvertsController->runActionWithFilters()
+#9 /var/www/yii/framework/web/CWebApplication.php(282): AdvertsController->run()
+#10 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#11 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#12 /var/www/yii/blog/index.php(13): CWebApplication->run()
+REQUEST_URI=/yii/blog/index.php/adverts/verify/ver_code/bd470ca955d9497bbcb808e59952fffc
+in /var/www/yii/blog/protected/controllers/AdvertsController.php (275)
+in /var/www/yii/blog/index.php (13)
+2015/08/06 17:20:24 [error] [php] Object of class Adverts could not be converted to string (/var/www/yii/blog/protected/controllers/AdvertsController.php:275)
+Stack trace:
+#0 /var/www/yii/framework/web/actions/CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#1 /var/www/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#2 /var/www/yii/framework/web/filters/CFilterChain.php(133): AdvertsController->runAction()
+#3 /var/www/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#4 /var/www/yii/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#5 /var/www/yii/framework/web/filters/CInlineFilter.php(58): AdvertsController->filterAccessControl()
+#6 /var/www/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#7 /var/www/yii/framework/web/CController.php(291): CFilterChain->run()
+#8 /var/www/yii/framework/web/CController.php(265): AdvertsController->runActionWithFilters()
+#9 /var/www/yii/framework/web/CWebApplication.php(282): AdvertsController->run()
+#10 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#11 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#12 /var/www/yii/blog/index.php(13): CWebApplication->run()
+REQUEST_URI=/yii/blog/index.php/adverts/verify/ver_code/bd470ca955d9497bbcb808e59952fffc
+in /var/www/yii/blog/protected/controllers/AdvertsController.php (275)
+in /var/www/yii/blog/index.php (13)
+2015/08/06 17:21:58 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Error Processing Request' in /var/www/yii/blog/protected/controllers/AdvertsController.php:287
+Stack trace:
+#0 [internal function]: AdvertsController->actionVerify('bd470ca955d9497...')
+#1 /var/www/yii/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs(Object(AdvertsController), Array)
+#2 /var/www/yii/framework/web/actions/CInlineAction.php(47): CAction->runWithParamsInternal(Object(AdvertsController), Object(ReflectionMethod), Array)
+#3 /var/www/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#4 /var/www/yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#5 /var/www/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#6 /var/www/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#7 /var/www/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#8 /var/www/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#9 /var/www/yii/framework/web/CController.php(291): CFilterChain->run()
+#10 /var/www/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 /var/www/yii/framework/web/CWebApplication.php(282): CController->run('verify')
+#12 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('adverts/verify/...')
+#13 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#14 /var/www/yii/blog/index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/yii/blog/index.php/adverts/verify/ver_code/bd470ca955d9497bbcb808e59952fffc
+HTTP_REFERER=http://www.google.com/url?q=http%3A%2F%2Flocalhost%2Fyii%2Fblog%2Findex.php%2Fadverts%2Fverify%2Fver_code%2Fbd470ca955d9497bbcb808e59952fffc&sa=D&sntz=1&usg=AFQjCNE3QRQEoRNzwKfU3MsXZjfec_K7lg
+---
+2015/08/06 17:22:21 [error] [exception.CException] exception 'CException' with message 'AdvertsController cannot find the requested view "activated.php".' in /var/www/yii/framework/web/CController.php:878
+Stack trace:
+#0 /var/www/yii/framework/web/CController.php(782): CController->renderPartial('activated.php', Array, true)
+#1 /var/www/yii/blog/protected/controllers/AdvertsController.php(286): CController->render('activated.php', Array)
+#2 [internal function]: AdvertsController->actionVerify('bd470ca955d9497...')
+#3 /var/www/yii/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs(Object(AdvertsController), Array)
+#4 /var/www/yii/framework/web/actions/CInlineAction.php(47): CAction->runWithParamsInternal(Object(AdvertsController), Object(ReflectionMethod), Array)
+#5 /var/www/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#6 /var/www/yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#7 /var/www/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#8 /var/www/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#9 /var/www/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#10 /var/www/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#11 /var/www/yii/framework/web/CController.php(291): CFilterChain->run()
+#12 /var/www/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 /var/www/yii/framework/web/CWebApplication.php(282): CController->run('verify')
+#14 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('adverts/verify/...')
+#15 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#16 /var/www/yii/blog/index.php(13): CApplication->run()
+#17 {main}
+REQUEST_URI=/yii/blog/index.php/adverts/verify/ver_code/bd470ca955d9497bbcb808e59952fffc
+HTTP_REFERER=http://www.google.com/url?q=http%3A%2F%2Flocalhost%2Fyii%2Fblog%2Findex.php%2Fadverts%2Fverify%2Fver_code%2Fbd470ca955d9497bbcb808e59952fffc&sa=D&sntz=1&usg=AFQjCNE3QRQEoRNzwKfU3MsXZjfec_K7lg
+---
+2015/08/06 17:23:29 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Error Processing Request' in /var/www/yii/blog/protected/controllers/AdvertsController.php:284
+Stack trace:
+#0 [internal function]: AdvertsController->actionVerify('bd470ca955d9497...')
+#1 /var/www/yii/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs(Object(AdvertsController), Array)
+#2 /var/www/yii/framework/web/actions/CInlineAction.php(47): CAction->runWithParamsInternal(Object(AdvertsController), Object(ReflectionMethod), Array)
+#3 /var/www/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#4 /var/www/yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#5 /var/www/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#6 /var/www/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#7 /var/www/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#8 /var/www/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#9 /var/www/yii/framework/web/CController.php(291): CFilterChain->run()
+#10 /var/www/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 /var/www/yii/framework/web/CWebApplication.php(282): CController->run('verify')
+#12 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('adverts/verify/...')
+#13 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#14 /var/www/yii/blog/index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/yii/blog/index.php/adverts/verify/ver_code/bd470ca955d9497bbcb808e59952fffc
+HTTP_REFERER=http://www.google.com/url?q=http%3A%2F%2Flocalhost%2Fyii%2Fblog%2Findex.php%2Fadverts%2Fverify%2Fver_code%2Fbd470ca955d9497bbcb808e59952fffc&sa=D&sntz=1&usg=AFQjCNE3QRQEoRNzwKfU3MsXZjfec_K7lg
+---
+2015/08/06 17:24:06 [error] [exception.CException] exception 'CException' with message 'AdvertsController cannot find the requested view "activated.php".' in /var/www/yii/framework/web/CController.php:878
+Stack trace:
+#0 /var/www/yii/framework/web/CController.php(782): CController->renderPartial('activated.php', Array, true)
+#1 /var/www/yii/blog/protected/controllers/AdvertsController.php(286): CController->render('activated.php', Array)
+#2 [internal function]: AdvertsController->actionVerify('a775361d1fd47a9...')
+#3 /var/www/yii/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs(Object(AdvertsController), Array)
+#4 /var/www/yii/framework/web/actions/CInlineAction.php(47): CAction->runWithParamsInternal(Object(AdvertsController), Object(ReflectionMethod), Array)
+#5 /var/www/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#6 /var/www/yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#7 /var/www/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#8 /var/www/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#9 /var/www/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#10 /var/www/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#11 /var/www/yii/framework/web/CController.php(291): CFilterChain->run()
+#12 /var/www/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 /var/www/yii/framework/web/CWebApplication.php(282): CController->run('verify')
+#14 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('adverts/verify/...')
+#15 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#16 /var/www/yii/blog/index.php(13): CApplication->run()
+#17 {main}
+REQUEST_URI=/yii/blog/index.php/adverts/verify/ver_code/a775361d1fd47a9823a91aabf2a28a35
+HTTP_REFERER=http://www.google.com/url?q=http%3A%2F%2Flocalhost%2Fyii%2Fblog%2Findex.php%2Fadverts%2Fverify%2Fver_code%2Fa775361d1fd47a9823a91aabf2a28a35&sa=D&sntz=1&usg=AFQjCNFP3wkM3DmiviBjhYxvV5hfFm0lGg
+---
+2015/08/06 17:24:56 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Error Processing Request' in /var/www/yii/blog/protected/controllers/AdvertsController.php:284
+Stack trace:
+#0 [internal function]: AdvertsController->actionVerify('a775361d1fd47a9...')
+#1 /var/www/yii/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs(Object(AdvertsController), Array)
+#2 /var/www/yii/framework/web/actions/CInlineAction.php(47): CAction->runWithParamsInternal(Object(AdvertsController), Object(ReflectionMethod), Array)
+#3 /var/www/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#4 /var/www/yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#5 /var/www/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#6 /var/www/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#7 /var/www/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#8 /var/www/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#9 /var/www/yii/framework/web/CController.php(291): CFilterChain->run()
+#10 /var/www/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 /var/www/yii/framework/web/CWebApplication.php(282): CController->run('verify')
+#12 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('adverts/verify/...')
+#13 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#14 /var/www/yii/blog/index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/yii/blog/index.php/adverts/verify/ver_code/a775361d1fd47a9823a91aabf2a28a35
+HTTP_REFERER=http://www.google.com/url?q=http%3A%2F%2Flocalhost%2Fyii%2Fblog%2Findex.php%2Fadverts%2Fverify%2Fver_code%2Fa775361d1fd47a9823a91aabf2a28a35&sa=D&sntz=1&usg=AFQjCNFP3wkM3DmiviBjhYxvV5hfFm0lGg
+---
+2015/08/06 17:25:35 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Error Processing Request' in /var/www/yii/blog/protected/controllers/AdvertsController.php:284
+Stack trace:
+#0 [internal function]: AdvertsController->actionVerify('e140dbab44e01e6...')
+#1 /var/www/yii/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs(Object(AdvertsController), Array)
+#2 /var/www/yii/framework/web/actions/CInlineAction.php(47): CAction->runWithParamsInternal(Object(AdvertsController), Object(ReflectionMethod), Array)
+#3 /var/www/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#4 /var/www/yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#5 /var/www/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#6 /var/www/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#7 /var/www/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#8 /var/www/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#9 /var/www/yii/framework/web/CController.php(291): CFilterChain->run()
+#10 /var/www/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 /var/www/yii/framework/web/CWebApplication.php(282): CController->run('verify')
+#12 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('adverts/verify/...')
+#13 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#14 /var/www/yii/blog/index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/yii/blog/index.php/adverts/verify/ver_code/e140dbab44e01e699491a59c9978b924
+HTTP_REFERER=http://www.google.com/url?q=http%3A%2F%2Flocalhost%2Fyii%2Fblog%2Findex.php%2Fadverts%2Fverify%2Fver_code%2Fe140dbab44e01e699491a59c9978b924&sa=D&sntz=1&usg=AFQjCNGXuLqT-AfYww5uEjpRtZvXa8UbdQ
+---
+2015/08/06 18:01:42 [warning] [application] Failed to set unsafe attribute "remove" of "Adverts".
+in /var/www/yii/blog/protected/controllers/AdvertsController.php (103)
+in /var/www/yii/blog/index.php (13)
+2015/08/07 09:24:33 [warning] [application] Failed to set unsafe attribute "remove" of "Adverts".
+in /var/www/yii/blog/protected/controllers/AdvertsController.php (103)
+in /var/www/yii/blog/index.php (13)
+2015/08/07 09:27:49 [warning] [application] Failed to set unsafe attribute "remove" of "Adverts".
+in /var/www/yii/blog/protected/controllers/AdvertsController.php (103)
+in /var/www/yii/blog/index.php (13)
+2015/08/07 10:34:06 [warning] [application] Failed to set unsafe attribute "remove" of "Adverts".
+in /var/www/yii/blog/protected/controllers/AdvertsController.php (103)
+in /var/www/yii/blog/index.php (13)
+2015/08/07 10:48:37 [warning] [application] Failed to set unsafe attribute "remove" of "Adverts".
+in /var/www/yii/blog/protected/controllers/AdvertsController.php (103)
+in /var/www/yii/blog/index.php (13)
+2015/08/07 10:48:45 [warning] [application] Failed to set unsafe attribute "remove" of "Adverts".
+in /var/www/yii/blog/protected/controllers/AdvertsController.php (103)
+in /var/www/yii/blog/index.php (13)
+2015/08/07 10:49:30 [warning] [application] Failed to set unsafe attribute "remove" of "Adverts".
+in /var/www/yii/blog/protected/controllers/AdvertsController.php (103)
+in /var/www/yii/blog/index.php (13)
+2015/08/07 10:49:35 [warning] [application] Failed to set unsafe attribute "remove" of "Adverts".
+in /var/www/yii/blog/protected/controllers/AdvertsController.php (103)
+in /var/www/yii/blog/index.php (13)
+2015/08/07 10:50:52 [warning] [application] Failed to set unsafe attribute "remove" of "Adverts".
+in /var/www/yii/blog/protected/controllers/AdvertsController.php (103)
+in /var/www/yii/blog/index.php (13)
+2015/08/07 10:50:58 [warning] [application] Failed to set unsafe attribute "remove" of "Adverts".
+in /var/www/yii/blog/protected/controllers/AdvertsController.php (103)
+in /var/www/yii/blog/index.php (13)
+2015/08/07 10:51:21 [error] [php] mkdir(): File exists (/var/www/yii/blog/protected/controllers/AdvertsController.php:75)
+Stack trace:
+#0 /var/www/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#1 /var/www/yii/framework/web/filters/CFilterChain.php(133): AdvertsController->runAction()
+#2 /var/www/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#3 /var/www/yii/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#4 /var/www/yii/framework/web/filters/CInlineFilter.php(58): AdvertsController->filterAccessControl()
+#5 /var/www/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#6 /var/www/yii/framework/web/CController.php(291): CFilterChain->run()
+#7 /var/www/yii/framework/web/CController.php(265): AdvertsController->runActionWithFilters()
+#8 /var/www/yii/framework/web/CWebApplication.php(282): AdvertsController->run()
+#9 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#10 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#11 /var/www/yii/blog/index.php(13): CWebApplication->run()
+REQUEST_URI=/yii/blog/index.php/adverts/create
+in /var/www/yii/blog/protected/controllers/AdvertsController.php (75)
+in /var/www/yii/blog/index.php (13)
+2015/08/07 10:51:38 [error] [php] mkdir(): File exists (/var/www/yii/blog/protected/controllers/AdvertsController.php:75)
+Stack trace:
+#0 /var/www/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#1 /var/www/yii/framework/web/filters/CFilterChain.php(133): AdvertsController->runAction()
+#2 /var/www/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#3 /var/www/yii/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#4 /var/www/yii/framework/web/filters/CInlineFilter.php(58): AdvertsController->filterAccessControl()
+#5 /var/www/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#6 /var/www/yii/framework/web/CController.php(291): CFilterChain->run()
+#7 /var/www/yii/framework/web/CController.php(265): AdvertsController->runActionWithFilters()
+#8 /var/www/yii/framework/web/CWebApplication.php(282): AdvertsController->run()
+#9 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#10 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#11 /var/www/yii/blog/index.php(13): CWebApplication->run()
+REQUEST_URI=/yii/blog/index.php/adverts/create
+in /var/www/yii/blog/protected/controllers/AdvertsController.php (75)
+in /var/www/yii/blog/index.php (13)
+2015/08/07 10:52:14 [error] [php] mkdir(): File exists (/var/www/yii/blog/protected/controllers/AdvertsController.php:76)
+Stack trace:
+#0 /var/www/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#1 /var/www/yii/framework/web/filters/CFilterChain.php(133): AdvertsController->runAction()
+#2 /var/www/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#3 /var/www/yii/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#4 /var/www/yii/framework/web/filters/CInlineFilter.php(58): AdvertsController->filterAccessControl()
+#5 /var/www/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#6 /var/www/yii/framework/web/CController.php(291): CFilterChain->run()
+#7 /var/www/yii/framework/web/CController.php(265): AdvertsController->runActionWithFilters()
+#8 /var/www/yii/framework/web/CWebApplication.php(282): AdvertsController->run()
+#9 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#10 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#11 /var/www/yii/blog/index.php(13): CWebApplication->run()
+REQUEST_URI=/yii/blog/index.php/adverts/create
+in /var/www/yii/blog/protected/controllers/AdvertsController.php (76)
+in /var/www/yii/blog/index.php (13)
+2015/08/07 10:52:35 [error] [php] mkdir(): File exists (/var/www/yii/blog/protected/controllers/AdvertsController.php:76)
+Stack trace:
+#0 /var/www/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#1 /var/www/yii/framework/web/filters/CFilterChain.php(133): AdvertsController->runAction()
+#2 /var/www/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#3 /var/www/yii/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#4 /var/www/yii/framework/web/filters/CInlineFilter.php(58): AdvertsController->filterAccessControl()
+#5 /var/www/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#6 /var/www/yii/framework/web/CController.php(291): CFilterChain->run()
+#7 /var/www/yii/framework/web/CController.php(265): AdvertsController->runActionWithFilters()
+#8 /var/www/yii/framework/web/CWebApplication.php(282): AdvertsController->run()
+#9 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#10 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#11 /var/www/yii/blog/index.php(13): CWebApplication->run()
+REQUEST_URI=/yii/blog/index.php/adverts/create
+in /var/www/yii/blog/protected/controllers/AdvertsController.php (76)
+in /var/www/yii/blog/index.php (13)
+2015/08/07 10:54:39 [error] [php] mkdir(): File exists (/var/www/yii/blog/protected/controllers/AdvertsController.php:76)
+Stack trace:
+#0 /var/www/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#1 /var/www/yii/framework/web/filters/CFilterChain.php(133): AdvertsController->runAction()
+#2 /var/www/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#3 /var/www/yii/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#4 /var/www/yii/framework/web/filters/CInlineFilter.php(58): AdvertsController->filterAccessControl()
+#5 /var/www/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#6 /var/www/yii/framework/web/CController.php(291): CFilterChain->run()
+#7 /var/www/yii/framework/web/CController.php(265): AdvertsController->runActionWithFilters()
+#8 /var/www/yii/framework/web/CWebApplication.php(282): AdvertsController->run()
+#9 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#10 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#11 /var/www/yii/blog/index.php(13): CWebApplication->run()
+REQUEST_URI=/yii/blog/index.php/adverts/create
+in /var/www/yii/blog/protected/controllers/AdvertsController.php (76)
+in /var/www/yii/blog/index.php (13)
+2015/08/07 10:57:53 [warning] [application] Failed to set unsafe attribute "remove" of "Adverts".
+in /var/www/yii/blog/protected/controllers/AdvertsController.php (106)
+in /var/www/yii/blog/index.php (13)
+2015/08/07 11:01:41 [error] [php] opendir(/var/www/yii/blog/protected/../images/obs/ob-256): failed to open dir: No such file or directory (/var/www/yii/framework/utils/CFileHelper.php:182)
+Stack trace:
+#0 /var/www/yii/blog/protected/models/Adverts.php(76): findFiles()
+#1 /var/www/yii/blog/protected/views/adverts/_updateform.php(58): Adverts->getImages()
+#2 /var/www/yii/framework/web/CBaseController.php(126): require()
+#3 /var/www/yii/framework/web/CBaseController.php(95): AdvertsController->renderInternal()
+#4 /var/www/yii/framework/web/CController.php(869): AdvertsController->renderFile()
+#5 /var/www/yii/blog/protected/views/adverts/update.php(19): AdvertsController->renderPartial()
+#6 /var/www/yii/framework/web/CBaseController.php(126): require()
+#7 /var/www/yii/framework/web/CBaseController.php(95): AdvertsController->renderInternal()
+#8 /var/www/yii/framework/web/CController.php(869): AdvertsController->renderFile()
+#9 /var/www/yii/framework/web/CController.php(782): AdvertsController->renderPartial()
+#10 /var/www/yii/blog/protected/controllers/AdvertsController.php(127): AdvertsController->render()
+#11 unknown(0): AdvertsController->actionUpdate()
+#12 /var/www/yii/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs()
+#13 /var/www/yii/framework/web/actions/CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#14 /var/www/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#15 /var/www/yii/framework/web/filters/CFilterChain.php(133): AdvertsController->runAction()
+#16 /var/www/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#17 /var/www/yii/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#18 /var/www/yii/framework/web/filters/CInlineFilter.php(58): AdvertsController->filterAccessControl()
+#19 /var/www/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#20 /var/www/yii/framework/web/CController.php(291): CFilterChain->run()
+#21 /var/www/yii/framework/web/CController.php(265): AdvertsController->runActionWithFilters()
+#22 /var/www/yii/framework/web/CWebApplication.php(282): AdvertsController->run()
+#23 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#24 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#25 /var/www/yii/blog/index.php(13): CWebApplication->run()
+REQUEST_URI=/yii/blog/index.php/adverts/update/id/256
+in /var/www/yii/blog/protected/models/Adverts.php (76)
+in /var/www/yii/blog/protected/views/adverts/_updateform.php (58)
+in /var/www/yii/blog/protected/views/adverts/update.php (19)
+2015/08/07 11:02:39 [warning] [application] Failed to set unsafe attribute "remove" of "Adverts".
+in /var/www/yii/blog/protected/controllers/AdvertsController.php (106)
+in /var/www/yii/blog/index.php (13)
+2015/08/07 11:18:26 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in /var/www/yii/framework/web/CController.php:1118
+Stack trace:
+#0 /var/www/yii/framework/web/filters/CInlineFilter.php(58): CController->filterPostOnly(Object(CFilterChain))
+#1 /var/www/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#2 /var/www/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#3 /var/www/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 /var/www/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 /var/www/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 /var/www/yii/framework/web/CController.php(291): CFilterChain->run()
+#7 /var/www/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 /var/www/yii/framework/web/CWebApplication.php(282): CController->run('delete')
+#9 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('adverts/delete/...')
+#10 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#11 /var/www/yii/blog/index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/yii/blog/index.php/adverts/delete/id/212
+---
+2015/08/07 11:39:33 [error] [php] Undefined variable: filePath (/var/www/yii/blog/protected/controllers/AdvertsController.php:77)
+Stack trace:
+#0 /var/www/yii/framework/web/filters/CFilterChain.php(133): AdvertsController->runAction()
+#1 /var/www/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#2 /var/www/yii/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#3 /var/www/yii/framework/web/filters/CInlineFilter.php(58): AdvertsController->filterAccessControl()
+#4 /var/www/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#5 /var/www/yii/framework/web/CController.php(291): CFilterChain->run()
+#6 /var/www/yii/framework/web/CController.php(265): AdvertsController->runActionWithFilters()
+#7 /var/www/yii/framework/web/CWebApplication.php(282): AdvertsController->run()
+#8 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#9 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#10 /var/www/yii/blog/index.php(13): CWebApplication->run()
+REQUEST_URI=/yii/blog/index.php/adverts/create
+in /var/www/yii/blog/protected/controllers/AdvertsController.php (77)
+in /var/www/yii/blog/index.php (13)
+2015/08/07 11:51:36 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'This advert already actvated' in /var/www/yii/blog/protected/controllers/AdvertsController.php:292
+Stack trace:
+#0 [internal function]: AdvertsController->actionVerify('b62d343d76d2ab4...')
+#1 /var/www/yii/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs(Object(AdvertsController), Array)
+#2 /var/www/yii/framework/web/actions/CInlineAction.php(47): CAction->runWithParamsInternal(Object(AdvertsController), Object(ReflectionMethod), Array)
+#3 /var/www/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#4 /var/www/yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#5 /var/www/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#6 /var/www/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#7 /var/www/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#8 /var/www/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#9 /var/www/yii/framework/web/CController.php(291): CFilterChain->run()
+#10 /var/www/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 /var/www/yii/framework/web/CWebApplication.php(282): CController->run('verify')
+#12 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('adverts/verify/...')
+#13 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#14 /var/www/yii/blog/index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/yii/blog/index.php/adverts/verify/ver_code/b62d343d76d2ab4e2d65e547b0f4c75c
+HTTP_REFERER=http://www.google.com/url?q=http%3A%2F%2Flocalhost%2Fyii%2Fblog%2Findex.php%2Fadverts%2Fverify%2Fver_code%2Fb62d343d76d2ab4e2d65e547b0f4c75c&sa=D&sntz=1&usg=AFQjCNH6F2L8NrB2RkntDswhi3oZiYcVow
+---
+2015/08/07 11:51:52 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'This advert already actvated' in /var/www/yii/blog/protected/controllers/AdvertsController.php:292
+Stack trace:
+#0 [internal function]: AdvertsController->actionVerify('b62d343d76d2ab4...')
+#1 /var/www/yii/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs(Object(AdvertsController), Array)
+#2 /var/www/yii/framework/web/actions/CInlineAction.php(47): CAction->runWithParamsInternal(Object(AdvertsController), Object(ReflectionMethod), Array)
+#3 /var/www/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#4 /var/www/yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#5 /var/www/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#6 /var/www/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#7 /var/www/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#8 /var/www/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#9 /var/www/yii/framework/web/CController.php(291): CFilterChain->run()
+#10 /var/www/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 /var/www/yii/framework/web/CWebApplication.php(282): CController->run('verify')
+#12 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('adverts/verify/...')
+#13 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#14 /var/www/yii/blog/index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/yii/blog/index.php/adverts/verify/ver_code/b62d343d76d2ab4e2d65e547b0f4c75c
+HTTP_REFERER=http://www.google.com/url?q=http%3A%2F%2Flocalhost%2Fyii%2Fblog%2Findex.php%2Fadverts%2Fverify%2Fver_code%2Fb62d343d76d2ab4e2d65e547b0f4c75c&sa=D&sntz=1&usg=AFQjCNH6F2L8NrB2RkntDswhi3oZiYcVow
+---
+2015/08/07 12:07:03 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in /var/www/yii/framework/web/auth/CAccessControlFilter.php:182
+Stack trace:
+#0 /var/www/yii/framework/web/auth/CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 /var/www/yii/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /var/www/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 /var/www/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 /var/www/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 /var/www/yii/framework/web/CController.php(291): CFilterChain->run()
+#6 /var/www/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /var/www/yii/framework/web/CWebApplication.php(282): CController->run('delete')
+#8 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('adverts/delete/...')
+#9 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#10 /var/www/yii/blog/index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/yii/blog/index.php/adverts/delete/id/263
+HTTP_REFERER=http://localhost/yii/blog/index.php/adverts/view/id/263
+---
+2015/08/07 12:07:39 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in /var/www/yii/framework/web/CController.php:1118
+Stack trace:
+#0 /var/www/yii/framework/web/filters/CInlineFilter.php(58): CController->filterPostOnly(Object(CFilterChain))
+#1 /var/www/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#2 /var/www/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#3 /var/www/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 /var/www/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 /var/www/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 /var/www/yii/framework/web/CController.php(291): CFilterChain->run()
+#7 /var/www/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 /var/www/yii/framework/web/CWebApplication.php(282): CController->run('delete')
+#9 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('adverts/delete/...')
+#10 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#11 /var/www/yii/blog/index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/yii/blog/index.php/adverts/delete/id/263
+HTTP_REFERER=http://localhost/yii/blog/index.php/adverts/view/id/263
+---
+2015/08/07 12:09:50 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in /var/www/yii/framework/web/auth/CAccessControlFilter.php:182
+Stack trace:
+#0 /var/www/yii/framework/web/auth/CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 /var/www/yii/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /var/www/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 /var/www/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 /var/www/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 /var/www/yii/framework/web/CController.php(291): CFilterChain->run()
+#6 /var/www/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /var/www/yii/framework/web/CWebApplication.php(282): CController->run('admin')
+#8 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('adverts/admin')
+#9 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#10 /var/www/yii/blog/index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/yii/blog/index.php/adverts/admin
+---
+2015/08/07 12:09:51 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in /var/www/yii/framework/web/auth/CAccessControlFilter.php:182
+Stack trace:
+#0 /var/www/yii/framework/web/auth/CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 /var/www/yii/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /var/www/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 /var/www/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 /var/www/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 /var/www/yii/framework/web/CController.php(291): CFilterChain->run()
+#6 /var/www/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /var/www/yii/framework/web/CWebApplication.php(282): CController->run('admin')
+#8 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('adverts/admin')
+#9 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#10 /var/www/yii/blog/index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/yii/blog/index.php/adverts/admin
+---
+2015/08/07 12:10:41 [error] [php] Undefined variable: model (/var/www/yii/blog/protected/controllers/AdvertsController.php:137)
+Stack trace:
+#0 /var/www/yii/framework/web/actions/CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#1 /var/www/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#2 /var/www/yii/framework/web/filters/CFilterChain.php(133): AdvertsController->runAction()
+#3 /var/www/yii/framework/web/CController.php(1116): CFilterChain->run()
+#4 /var/www/yii/framework/web/filters/CInlineFilter.php(58): AdvertsController->filterPostOnly()
+#5 /var/www/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#6 /var/www/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#7 /var/www/yii/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#8 /var/www/yii/framework/web/filters/CInlineFilter.php(58): AdvertsController->filterAccessControl()
+#9 /var/www/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#10 /var/www/yii/framework/web/CController.php(291): CFilterChain->run()
+#11 /var/www/yii/framework/web/CController.php(265): AdvertsController->runActionWithFilters()
+#12 /var/www/yii/framework/web/CWebApplication.php(282): AdvertsController->run()
+#13 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#14 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#15 /var/www/yii/blog/index.php(13): CWebApplication->run()
+REQUEST_URI=/yii/blog/index.php/adverts/delete/id/257?ajax=adverts-grid
+in /var/www/yii/blog/protected/controllers/AdvertsController.php (137)
+in /var/www/yii/blog/index.php (13)
+2015/08/07 12:11:46 [error] [php] Undefined variable: model (/var/www/yii/blog/protected/controllers/AdvertsController.php:137)
+Stack trace:
+#0 /var/www/yii/framework/web/actions/CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#1 /var/www/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#2 /var/www/yii/framework/web/filters/CFilterChain.php(133): AdvertsController->runAction()
+#3 /var/www/yii/framework/web/CController.php(1116): CFilterChain->run()
+#4 /var/www/yii/framework/web/filters/CInlineFilter.php(58): AdvertsController->filterPostOnly()
+#5 /var/www/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#6 /var/www/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#7 /var/www/yii/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#8 /var/www/yii/framework/web/filters/CInlineFilter.php(58): AdvertsController->filterAccessControl()
+#9 /var/www/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#10 /var/www/yii/framework/web/CController.php(291): CFilterChain->run()
+#11 /var/www/yii/framework/web/CController.php(265): AdvertsController->runActionWithFilters()
+#12 /var/www/yii/framework/web/CWebApplication.php(282): AdvertsController->run()
+#13 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#14 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#15 /var/www/yii/blog/index.php(13): CWebApplication->run()
+REQUEST_URI=/yii/blog/index.php/adverts/delete/id/263?ajax=adverts-grid
+in /var/www/yii/blog/protected/controllers/AdvertsController.php (137)
+in /var/www/yii/blog/index.php (13)
+2015/08/07 12:13:13 [error] [php] Trying to get property of non-object (/var/www/yii/blog/protected/controllers/AdvertsController.php:401)
+Stack trace:
+#0 /var/www/yii/framework/web/auth/CAccessControlFilter.php(392): CAccessRule->evaluateExpression()
+#1 /var/www/yii/framework/web/auth/CAccessControlFilter.php(288): CAccessRule->isExpressionMatched()
+#2 /var/www/yii/framework/web/auth/CAccessControlFilter.php(138): CAccessRule->isUserAllowed()
+#3 /var/www/yii/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter()
+#4 /var/www/yii/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#5 /var/www/yii/framework/web/filters/CInlineFilter.php(58): AdvertsController->filterAccessControl()
+#6 /var/www/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#7 /var/www/yii/framework/web/CController.php(291): CFilterChain->run()
+#8 /var/www/yii/framework/web/CController.php(265): AdvertsController->runActionWithFilters()
+#9 /var/www/yii/framework/web/CWebApplication.php(282): AdvertsController->run()
+#10 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#11 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#12 /var/www/yii/blog/index.php(13): CWebApplication->run()
+REQUEST_URI=/yii/blog/index.php/adverts/delete/id/263?ajax=adverts-grid
+in /var/www/yii/blog/protected/controllers/AdvertsController.php (401)
+in /var/www/yii/blog/index.php (13)
+2015/08/07 12:13:57 [error] [php] Trying to get property of non-object (/var/www/yii/blog/protected/controllers/AdvertsController.php:401)
+Stack trace:
+#0 /var/www/yii/framework/web/auth/CAccessControlFilter.php(392): CAccessRule->evaluateExpression()
+#1 /var/www/yii/framework/web/auth/CAccessControlFilter.php(288): CAccessRule->isExpressionMatched()
+#2 /var/www/yii/framework/web/auth/CAccessControlFilter.php(138): CAccessRule->isUserAllowed()
+#3 /var/www/yii/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter()
+#4 /var/www/yii/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#5 /var/www/yii/framework/web/filters/CInlineFilter.php(58): AdvertsController->filterAccessControl()
+#6 /var/www/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#7 /var/www/yii/framework/web/CController.php(291): CFilterChain->run()
+#8 /var/www/yii/framework/web/CController.php(265): AdvertsController->runActionWithFilters()
+#9 /var/www/yii/framework/web/CWebApplication.php(282): AdvertsController->run()
+#10 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#11 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#12 /var/www/yii/blog/index.php(13): CWebApplication->run()
+REQUEST_URI=/yii/blog/index.php/adverts/delete/id/263?ajax=adverts-grid
+in /var/www/yii/blog/protected/controllers/AdvertsController.php (401)
+in /var/www/yii/blog/index.php (13)
+2015/08/07 12:14:53 [error] [php] Trying to get property of non-object (/var/www/yii/blog/protected/controllers/AdvertsController.php:401)
+Stack trace:
+#0 /var/www/yii/framework/web/auth/CAccessControlFilter.php(392): CAccessRule->evaluateExpression()
+#1 /var/www/yii/framework/web/auth/CAccessControlFilter.php(288): CAccessRule->isExpressionMatched()
+#2 /var/www/yii/framework/web/auth/CAccessControlFilter.php(138): CAccessRule->isUserAllowed()
+#3 /var/www/yii/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter()
+#4 /var/www/yii/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#5 /var/www/yii/framework/web/filters/CInlineFilter.php(58): AdvertsController->filterAccessControl()
+#6 /var/www/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#7 /var/www/yii/framework/web/CController.php(291): CFilterChain->run()
+#8 /var/www/yii/framework/web/CController.php(265): AdvertsController->runActionWithFilters()
+#9 /var/www/yii/framework/web/CWebApplication.php(282): AdvertsController->run()
+#10 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#11 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#12 /var/www/yii/blog/index.php(13): CWebApplication->run()
+REQUEST_URI=/yii/blog/index.php/adverts/delete/id/263?ajax=adverts-grid
+in /var/www/yii/blog/protected/controllers/AdvertsController.php (401)
+in /var/www/yii/blog/index.php (13)
+2015/08/07 13:41:20 [error] [php] Trying to get property of non-object (/var/www/yii/blog/protected/controllers/AdvertsController.php:45)
+Stack trace:
+#0 /var/www/yii/framework/web/actions/CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#1 /var/www/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#2 /var/www/yii/framework/web/filters/CFilterChain.php(133): AdvertsController->runAction()
+#3 /var/www/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#4 /var/www/yii/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#5 /var/www/yii/framework/web/filters/CInlineFilter.php(58): AdvertsController->filterAccessControl()
+#6 /var/www/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#7 /var/www/yii/framework/web/CController.php(291): CFilterChain->run()
+#8 /var/www/yii/framework/web/CController.php(265): AdvertsController->runActionWithFilters()
+#9 /var/www/yii/framework/web/CWebApplication.php(282): AdvertsController->run()
+#10 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#11 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#12 /var/www/yii/blog/index.php(13): CWebApplication->run()
+REQUEST_URI=/yii/blog/index.php/adverts/view/id/215
+in /var/www/yii/blog/protected/controllers/AdvertsController.php (45)
+in /var/www/yii/blog/index.php (13)
+2015/08/07 13:41:34 [error] [php] Undefined index: id (/var/www/yii/blog/protected/controllers/AdvertsController.php:45)
+Stack trace:
+#0 /var/www/yii/framework/web/actions/CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#1 /var/www/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#2 /var/www/yii/framework/web/filters/CFilterChain.php(133): AdvertsController->runAction()
+#3 /var/www/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#4 /var/www/yii/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#5 /var/www/yii/framework/web/filters/CInlineFilter.php(58): AdvertsController->filterAccessControl()
+#6 /var/www/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#7 /var/www/yii/framework/web/CController.php(291): CFilterChain->run()
+#8 /var/www/yii/framework/web/CController.php(265): AdvertsController->runActionWithFilters()
+#9 /var/www/yii/framework/web/CWebApplication.php(282): AdvertsController->run()
+#10 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#11 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#12 /var/www/yii/blog/index.php(13): CWebApplication->run()
+REQUEST_URI=/yii/blog/index.php/adverts/view/id/215
+in /var/www/yii/blog/protected/controllers/AdvertsController.php (45)
+in /var/www/yii/blog/index.php (13)
+2015/08/07 13:41:43 [error] [php] Undefined index: ob_id (/var/www/yii/blog/protected/controllers/AdvertsController.php:45)
+Stack trace:
+#0 /var/www/yii/framework/web/actions/CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#1 /var/www/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#2 /var/www/yii/framework/web/filters/CFilterChain.php(133): AdvertsController->runAction()
+#3 /var/www/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#4 /var/www/yii/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#5 /var/www/yii/framework/web/filters/CInlineFilter.php(58): AdvertsController->filterAccessControl()
+#6 /var/www/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#7 /var/www/yii/framework/web/CController.php(291): CFilterChain->run()
+#8 /var/www/yii/framework/web/CController.php(265): AdvertsController->runActionWithFilters()
+#9 /var/www/yii/framework/web/CWebApplication.php(282): AdvertsController->run()
+#10 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#11 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#12 /var/www/yii/blog/index.php(13): CWebApplication->run()
+REQUEST_URI=/yii/blog/index.php/adverts/view/id/215
+in /var/www/yii/blog/protected/controllers/AdvertsController.php (45)
+in /var/www/yii/blog/index.php (13)
+2015/08/07 13:48:37 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in /var/www/yii/framework/web/CController.php:1118
+Stack trace:
+#0 /var/www/yii/framework/web/filters/CInlineFilter.php(58): CController->filterPostOnly(Object(CFilterChain))
+#1 /var/www/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#2 /var/www/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#3 /var/www/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 /var/www/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 /var/www/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 /var/www/yii/framework/web/CController.php(291): CFilterChain->run()
+#7 /var/www/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 /var/www/yii/framework/web/CWebApplication.php(282): CController->run('delete')
+#9 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('adverts/delete/...')
+#10 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#11 /var/www/yii/blog/index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/yii/blog/index.php/adverts/delete/id/212
+HTTP_REFERER=http://localhost/yii/blog/index.php/adverts/view/id/212
+---
+2015/08/07 13:51:10 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in /var/www/yii/framework/web/CController.php:1118
+Stack trace:
+#0 /var/www/yii/framework/web/filters/CInlineFilter.php(58): CController->filterPostOnly(Object(CFilterChain))
+#1 /var/www/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#2 /var/www/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#3 /var/www/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 /var/www/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 /var/www/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 /var/www/yii/framework/web/CController.php(291): CFilterChain->run()
+#7 /var/www/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 /var/www/yii/framework/web/CWebApplication.php(282): CController->run('delete')
+#9 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('adverts/delete/...')
+#10 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#11 /var/www/yii/blog/index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/yii/blog/index.php/adverts/delete/id/214
+HTTP_REFERER=http://localhost/yii/blog/index.php/adverts/view/id/214
+---
+2015/08/07 13:54:35 [warning] [application] Failed to set unsafe attribute "remove" of "Adverts".
+in /var/www/yii/blog/protected/controllers/AdvertsController.php (113)
+in /var/www/yii/blog/index.php (13)
+2015/08/07 14:18:04 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in /var/www/yii/framework/web/CController.php:1118
+Stack trace:
+#0 /var/www/yii/framework/web/filters/CInlineFilter.php(58): CController->filterPostOnly(Object(CFilterChain))
+#1 /var/www/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#2 /var/www/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#3 /var/www/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 /var/www/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 /var/www/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 /var/www/yii/framework/web/CController.php(291): CFilterChain->run()
+#7 /var/www/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 /var/www/yii/framework/web/CWebApplication.php(282): CController->run('delete')
+#9 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('adverts/delete/...')
+#10 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#11 /var/www/yii/blog/index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/yii/blog/index.php/adverts/delete/id/214
+HTTP_REFERER=http://localhost/yii/blog/index.php/adverts/view/id/214
+---
+2015/08/07 14:41:12 [error] [exception.CException] exception 'CException' with message 'Property "AdvertsCategories.categories" is not defined.' in /var/www/yii/framework/base/CComponent.php:130
+Stack trace:
+#0 /var/www/yii/framework/db/ar/CActiveRecord.php(145): CComponent->__get('categories')
+#1 /var/www/yii/blog/protected/controllers/AdvertsController.php(164): CActiveRecord->__get('categories')
+#2 /var/www/yii/framework/web/actions/CInlineAction.php(49): AdvertsController->actionCategory()
+#3 /var/www/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#4 /var/www/yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#5 /var/www/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#6 /var/www/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#7 /var/www/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#8 /var/www/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#9 /var/www/yii/framework/web/CController.php(291): CFilterChain->run()
+#10 /var/www/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 /var/www/yii/framework/web/CWebApplication.php(282): CController->run('category')
+#12 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('adverts/categor...')
+#13 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#14 /var/www/yii/blog/index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/yii/blog/index.php/buy/category/main-category-1
+HTTP_REFERER=http://localhost/yii/blog/index.php/adverts/index
+---
+2015/08/07 14:51:56 [error] [exception.CException] exception 'CException' with message 'Property "AdvertsCategories.childsadverts" is not defined.' in /var/www/yii/framework/base/CComponent.php:130
+Stack trace:
+#0 /var/www/yii/framework/db/ar/CActiveRecord.php(145): CComponent->__get('childsadverts')
+#1 /var/www/yii/blog/protected/controllers/AdvertsController.php(164): CActiveRecord->__get('childsadverts')
+#2 /var/www/yii/framework/web/actions/CInlineAction.php(49): AdvertsController->actionCategory()
+#3 /var/www/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#4 /var/www/yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#5 /var/www/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#6 /var/www/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#7 /var/www/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#8 /var/www/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#9 /var/www/yii/framework/web/CController.php(291): CFilterChain->run()
+#10 /var/www/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 /var/www/yii/framework/web/CWebApplication.php(282): CController->run('category')
+#12 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('adverts/categor...')
+#13 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#14 /var/www/yii/blog/index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/yii/blog/index.php/buy/category/main-category-1
+HTTP_REFERER=http://localhost/yii/blog/index.php/adverts/index
+---
+2015/08/07 14:52:07 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'childsadverts_childsadverts.category_id' in 'on clause'. The SQL statement executed was: SELECT `childsadverts`.`id` AS `t1_c0`, `childsadverts`.`type` AS `t1_c1`, `childsadverts`.`title` AS `t1_c2`, `childsadverts`.`description` AS `t1_c3`, `childsadverts`.`price` AS `t1_c4`, `childsadverts`.`contact` AS `t1_c5`, `childsadverts`.`watches` AS `t1_c6`, `childsadverts`.`category_id` AS `t1_c7`, `childsadverts`.`created_at` AS `t1_c8`, `childsadverts`.`updated_at` AS `t1_c9`, `childsadverts`.`activated_at` AS `t1_c10`, `childsadverts`.`author_id` AS `t1_c11`, `childsadverts`.`verify_code` AS `t1_c12`, `childsadverts`.`status` AS `t1_c13`, `childsadverts`.`activate` AS `t1_c14` FROM `adverts` `childsadverts`  INNER JOIN `categories` `childsadverts_childsadverts` ON (`childsadverts_childsadverts`.`parent_id`=:ypl0) AND (`childsadverts`.`id`=`childsadverts_childsadverts`.`category_id`).
+in /var/www/yii/blog/protected/controllers/AdvertsController.php (164)
+in /var/www/yii/blog/index.php (13)
+2015/08/07 14:52:07 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'childsadverts_childsadverts.category_id' in 'on clause'. The SQL statement executed was: SELECT `childsadverts`.`id` AS `t1_c0`, `childsadverts`.`type` AS `t1_c1`, `childsadverts`.`title` AS `t1_c2`, `childsadverts`.`description` AS `t1_c3`, `childsadverts`.`price` AS `t1_c4`, `childsadverts`.`contact` AS `t1_c5`, `childsadverts`.`watches` AS `t1_c6`, `childsadverts`.`category_id` AS `t1_c7`, `childsadverts`.`created_at` AS `t1_c8`, `childsadverts`.`updated_at` AS `t1_c9`, `childsadverts`.`activated_at` AS `t1_c10`, `childsadverts`.`author_id` AS `t1_c11`, `childsadverts`.`verify_code` AS `t1_c12`, `childsadverts`.`status` AS `t1_c13`, `childsadverts`.`activate` AS `t1_c14` FROM `adverts` `childsadverts`  INNER JOIN `categories` `childsadverts_childsadverts` ON (`childsadverts_childsadverts`.`parent_id`=:ypl0) AND (`childsadverts`.`id`=`childsadverts_childsadverts`.`category_id`)' in /var/www/yii/framework/db/CDbCommand.php:543
+Stack trace:
+#0 /var/www/yii/framework/db/CDbCommand.php(396): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 /var/www/yii/framework/db/ar/CActiveFinder.php(803): CDbCommand->queryAll()
+#2 /var/www/yii/framework/db/ar/CActiveFinder.php(507): CJoinElement->runQuery(Object(CJoinQuery))
+#3 /var/www/yii/framework/db/ar/CActiveFinder.php(163): CJoinElement->lazyFind(Object(AdvertsCategories))
+#4 /var/www/yii/framework/db/ar/CActiveRecord.php(281): CActiveFinder->lazyFind(Object(AdvertsCategories))
+#5 /var/www/yii/framework/db/ar/CActiveRecord.php(143): CActiveRecord->getRelated('childsadverts')
+#6 /var/www/yii/blog/protected/controllers/AdvertsController.php(164): CActiveRecord->__get('childsadverts')
+#7 /var/www/yii/framework/web/actions/CInlineAction.php(49): AdvertsController->actionCategory()
+#8 /var/www/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#9 /var/www/yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#10 /var/www/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#11 /var/www/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#12 /var/www/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#13 /var/www/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#14 /var/www/yii/framework/web/CController.php(291): CFilterChain->run()
+#15 /var/www/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#16 /var/www/yii/framework/web/CWebApplication.php(282): CController->run('category')
+#17 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('adverts/categor...')
+#18 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#19 /var/www/yii/blog/index.php(13): CApplication->run()
+#20 {main}
+REQUEST_URI=/yii/blog/index.php/buy/category/main-category-1
+HTTP_REFERER=http://localhost/yii/blog/index.php/adverts/index
+---
+2015/08/07 15:26:14 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in /var/www/yii/framework/web/auth/CAccessControlFilter.php:182
+Stack trace:
+#0 /var/www/yii/framework/web/auth/CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 /var/www/yii/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /var/www/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 /var/www/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 /var/www/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 /var/www/yii/framework/web/CController.php(291): CFilterChain->run()
+#6 /var/www/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /var/www/yii/framework/web/CWebApplication.php(282): CController->run('admin')
+#8 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('adverts/admin')
+#9 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#10 /var/www/yii/blog/index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/yii/blog/index.php/adverts/admin
+HTTP_REFERER=http://localhost/yii/blog/index.php/adverts/view/id/266
+---

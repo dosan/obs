@@ -11,7 +11,7 @@ $this->menu=array(
 	array('label'=>'Manage Categories', 'url'=>array('admin')),
 );
 ?>
-<h1>Your adverts </h1>
+<h1>Adverts in favorites </h1>
 
 
 <?php foreach ($adverts as $key => $value): ?>

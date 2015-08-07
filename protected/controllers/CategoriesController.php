@@ -33,7 +33,7 @@ class CategoriesController extends Controller
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
 				'actions'=>array('admin', 'update', 'create','delete'),
-				'users'=>array('admin'),
+				'users'=>array('donald'),
 			),
 			array('deny',  // deny all users
 				'users'=>array('*'),

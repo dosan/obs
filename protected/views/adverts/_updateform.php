@@ -55,19 +55,29 @@
 		<?php echo $form->error($model,'contact'); ?>
 	</div>
 	<div class="row">
-		<?php $i = 1; foreach ($images as $image): ?>
-		<?php echo CHtml::activeLabel($model, 'remove', array('for'=>'rm_'.$image))?>
-		<?php echo CHtml::activeCheckBox($model,'remove',array('name'=>'Adverts[remove]['.$image.']', 'id'=>'rm_'.$image)) ?>
-		<?php echo CHtml::link(CHtml::image(Yii::app()->baseUrl.'/images/obs/ob-'.$model['id'].'/'.$image,'name', array('style'=>'width:200px;')),
-		Yii::app()->baseUrl.'/images/obs/ob-'.$model['id'].'/'. $image); ?>	
-		<?php $i++; endforeach ?>
+		<?php $i = 0; foreach ($model->getImages() as $image): ?>
+			<?php echo CHtml::activeLabel($model, 'remove', array('for'=>'rm_'.$image))?>
+			<?php echo CHtml::activeCheckBox($model,'remove',array('name'=>'Adverts[remove]['.$image.']', 'id'=>'rm_'.$image)) ?>
+			<?php echo CHtml::link(CHtml::image(Yii::app()->baseUrl.'/images/obs/ob-'.$model['id'].'/'.$image,'name', array('style'=>'width:200px;')),
+			Yii::app()->baseUrl.'/images/obs/ob-'.$model['id'].'/'. $image); ?>	
+		<?php $i++; endforeach; ?>
+		<?php
+		$maxImg = $model->maxImage;
+		if ($maxImg <=$i) {
+			$mx = 0;
+		}else{
+			$mx=$maxImg-$i;
+		}
+		?>
 	</div>
 	<div class="row">
 		<?php $this->widget('CMultiFileUpload', array(
 			'name' => 'images',
 			'accept' => 'jpeg|jpg|gif|png',
 			'duplicate' => 'Duplicate file!',
-			'denied' => 'Invalid file type'
+			'denied' => 'Invalid file type',
+			'max'=>$mx,
+			'htmlOptions' => array('disabled' => (0 === $mx ? true : false))
 		)); ?>
 	</div>
 	<div class="row buttons">

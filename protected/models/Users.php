@@ -20,7 +20,8 @@ class Users extends CActiveRecord
 	public function relations()
 	{
 		return array(
-			'adverts' => array(self::MANY_MANY, 'Adverts', 'favorites(user_id, ob_id)'),
+			'favorites' => array(self::MANY_MANY, 'Adverts', 'favorites(ob_id, user_id)'),
+			'adverts'=>array(self::HAS_MANY, 'Adverts', 'author_id'),
 		);
 	}
 

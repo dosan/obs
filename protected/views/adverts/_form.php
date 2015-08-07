@@ -64,7 +64,8 @@
 			'name' => 'images',
 			'accept' => 'jpeg|jpg|gif|png',
 			'duplicate' => 'Duplicate file!',
-			'denied' => 'Invalid file type'
+			'denied' => 'Invalid file type',
+			'max'=>$model->maxImage,
 		)); ?>
 	</div>
 	<div class="row buttons">
