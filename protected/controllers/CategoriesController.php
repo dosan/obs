@@ -47,13 +47,13 @@ class CategoriesController extends Controller
 	 */
 	public function actionView($id)
 	{
-		$category = Yii::app()->db->createCommand("SELECT id, title, parent_id FROM categories WHERE id = {$id}")->queryRow();
+		$category = Yii::app()->db->createCommand("SELECT id, title, parent_id FROM adverts_categories WHERE id = {$id}")->queryRow();
 		if ($category['parent_id'] == 0) {
 			$adverts= Yii::app()->db->createCommand()
 			->select('ad.id, ad.title, ad.description')
 			->from('adverts ad')
-			->leftJoin('categories cat', 'ad.category_id = cat.id')
-			->leftJoin('categories pcat', 'cat.parent_id = pcat.id')
+			->leftJoin('adverts_categories cat', 'ad.category_id = cat.id')
+			->leftJoin('adverts_categories pcat', 'cat.parent_id = pcat.id')
 			->where('pcat.id = '.$id)
 			->group('ad.id')
 			->queryAll();
@@ -77,7 +77,7 @@ class CategoriesController extends Controller
 	 */
 	public function actionCreate()
 	{
-		$model=new Categories;
+		$model=new AdvertsCategories;
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
@@ -153,7 +153,7 @@ class CategoriesController extends Controller
 	 */
 	public function actionAdmin()
 	{
-		$model=new Categories('search');
+		$model=new AdvertsCategories('search');
 		$model->unsetAttributes();  // clear any default values
 		if(isset($_GET['Categories']))
 			$model->attributes=$_GET['Categories'];
@@ -172,7 +172,7 @@ class CategoriesController extends Controller
 	 */
 	public function loadModel($id)
 	{
-		$model=Categories::model()->findByPk($id);
+		$model=AdvertsCategories::model()->findByPk($id);
 		if($model===null)
 			throw new CHttpException(404,'The requested page does not exist.');
 		return $model;

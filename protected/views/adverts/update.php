@@ -14,6 +14,6 @@ $this->menu=array(
 );
 ?>
 
-<h1>Update Advert <?php echo $model->id; ?></h1>
+<h1>Update Advert #<?php echo $model->title; ?></h1>
 
 <?php $this->renderPartial('_updateform', array('model'=>$model)); ?>

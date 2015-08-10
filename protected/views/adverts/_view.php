@@ -24,7 +24,7 @@
 	</div>
 	<?php echo $form->labelEx($model, 'Category'); ?>
 		<select name="Advert[category_id]" id="Advert_category_id">
-			<?php foreach (Categories::model()->getCategories() as $mainCategories): ?>
+			<?php foreach (AdvertsCategories::model()->getCategories() as $mainCategories): ?>
 			<optgroup label="<?php echo $mainCategories['title'] ?>">
 				<?php foreach ($mainCategories['childs'] as $child): ?>
 					<option value="<?= $child['id'] ?>" <?php echo $child['id'] == $model->category_id ? ' selected="selected"' : '' ?>><?= $child['title'] ?></option>

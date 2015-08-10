@@ -7,7 +7,7 @@
  */
 class Images extends CFormModel
 {
-	public $names;
+	public $name;
 	public $remove;
 
 	/**

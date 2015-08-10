@@ -9,7 +9,7 @@ class CategoryTree extends CPortlet
 
 	public static function getMenuTree() {
 		if (empty(self::$menuTree)) {
-			$rows = Categories::model()->findAll('parent_id = 0');
+			$rows = AdvertsCategories::model()->findAll('parent_id = 0');
 			foreach ($rows as $item) {
 				self::$menuTree[] = self::getMenuItems($item);
 			}

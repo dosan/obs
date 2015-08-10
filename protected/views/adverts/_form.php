@@ -31,7 +31,7 @@
 	<?php echo $form->labelEx($model, 'Category'); ?>
 		<select name="Adverts[category_id]" id="Adverts_category_id">
 			<option value='0'>Please select one</option>
-			<?php foreach (Categories::model()->getCategories() as $mainCategories): ?>
+			<?php foreach (AdvertsCategories::model()->getCategories() as $mainCategories): ?>
 			<optgroup label="<?php echo $mainCategories['title'] ?>">
 				<?php foreach ($mainCategories['childs'] as $childs): ?>
 				<option value="<?= $childs['id'] ?>"><?= $childs['title'] ?></option>

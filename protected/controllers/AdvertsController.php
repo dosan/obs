@@ -25,13 +25,13 @@ class AdvertsController extends Controller
 				'users'=>array('@'),
 			),
 			array('allow',
-				'actions'=>array('update', 'delete'),
+				'actions'=>array('update'),
 				'users'=>array(Yii::app()->user->name),
 				'expression'=>array('AdvertsController', 'allowOnlyOwner'),
 				),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
 				'actions'=>array('admin','delete', 'setIsActive', 'update', 'lastactivated'),
-				'users'=>array('donald', 'dosan'),
+				'users'=>array('donald', 'dosan', 'admin'),
 			),
 			array('deny',  // deny all users
 				'users'=>array('*'),
@@ -44,7 +44,7 @@ class AdvertsController extends Controller
 		$model = $this->loadModel($id);
 		//find in favorites 
 		foreach ($model->author->favorites as $favs)
-			$favs['id'] == $id AND  $inFavs = true;
+			$favs['id'] == $id AND $model->author->id = Yii::app()->user->id AND $inFavs = true;
 		
 		$dir = realpath(Yii::app()->basePath.'/../images/obs').'/ob-'.$model->id;
 		if (!file_exists($dir) && !is_dir($dir)) {
@@ -62,7 +62,7 @@ class AdvertsController extends Controller
 
 	public function actionCreate()
 	{
-		$user = Users::model()->findByPk(Yii::app()->user->id);
+		$user = User::model()->findByPk(Yii::app()->user->id);
 		$model=new Adverts;
 		if(isset($_POST['Adverts']))
 		{
@@ -136,16 +136,24 @@ class AdvertsController extends Controller
 
 	public function actionDelete($id)
 	{
-		$this->loadModel($id)->delete();
-		$dir = realpath(Yii::app()->basePath.'/../images/obs').'/ob-'.$id;
-		if (!file_exists($dir) && !is_dir($dir)) {
-			rmdir($dir);
-		}
-		CFileHelper::removeDirectory(Yii::app()->basePath."/../images/obs/ob-".$id);
-		// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
-		if(!isset($_GET['ajax'])){
-			$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
-		}
+        if(Yii::app()->request->isPostRequest)
+        {
+                // we only allow deletion via POST request
+                $this->loadModel($id)->delete();
+				$dir = realpath(Yii::app()->basePath.'/../images/obs').'/ob-'.$id;
+				if (!file_exists($dir) && !is_dir($dir)) {
+					//rmdir($dir);
+					CFileHelper::removeDirectory($dir);
+				}
+                if(isset($_POST['type']))
+                        $this->redirect(array('/site/index'));
+        
+                // if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
+                if(!isset($_GET['ajax']))
+             	   $this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
+        }
+        else
+			throw new CHttpException(400,'Invalid request. Please do not repeat this request again.');
 	}
 
 	public function actionCategory(){
@@ -165,14 +173,15 @@ class AdvertsController extends Controller
 					$adverts= Yii::app()->db->createCommand()
 					->select('ad.id, ad.title, ad.description')
 					->from('adverts ad')
-					->leftJoin('categories cat', 'ad.category_id = cat.id')
-					->leftJoin('categories pcat', 'cat.parent_id = pcat.id')
-					->where('pcat.id = :cat_id AND ad.type = :type AND pcat.parent_id = :parent_id', array(':cat_id'=>$category->id, ':type'=>$type, ':parent_id'=>0))
+					->leftJoin('adverts_categories cat', 'ad.category_id = cat.id')
+					->leftJoin('adverts_categories pcat', 'cat.parent_id = pcat.id')
+					->where('pcat.id = :cat_id AND ad.type = :type AND pcat.parent_id = :parent_id AND status = :status AND activate = :activate',
+					 array(':cat_id'=>$category->id, ':type'=>$type, ':parent_id'=>0, ':status'=>1, ':activate'=>1))
 					->group('ad.id')
 					->queryAll();
 				}else{
 					//die(print_r($category->adverts));
-					$adverts = Adverts::model()->findAll('category_id = :cat_id AND type = :type', array(':cat_id'=>$category->id,':type'=>$type));
+					$adverts = Adverts::model()->findAll('category_id = :cat_id AND type = :type AND status = :status AND activate = :activate', array(':cat_id'=>$category->id,':type'=>$type, ':status'=>1, ':activate'=>1));
 				}
 				$this->render('category',array(
 					'category'=>$category,
@@ -191,7 +200,7 @@ class AdvertsController extends Controller
 	}
 	public function actionIndex()
 	{
-		$categories = Categories::model()->getCategories();
+		$categories = AdvertsCategories::model()->getCategories();
 		$buyAdverts = Adverts::model()->getAdvertsByType(1, 10);
 		$cellAdverts = Adverts::model()->getAdvertsByType(0, 10);
 		$this->render('index',array(

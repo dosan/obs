@@ -49,7 +49,7 @@ class Adverts extends CActiveRecord
 		// class name for the relations automatically generated below.
 		return array(
 			'categories'   => array(self::BELONGS_TO,   'AdvertsCategories',    'id'),
-			'author'   => array(self::BELONGS_TO,   'Users',    'author_id'),
+			'author'   => array(self::BELONGS_TO,   'User', 'author_id'),
 		);
 	}
 
@@ -124,7 +124,7 @@ class Adverts extends CActiveRecord
 
 	public static function getMenuTree() {
 		if (empty(self::$menuTree)) {
-			$rows = Categories::model()->findAll('parent_id = 0');
+			$rows = AdvertsCategories::model()->findAll('parent_id = 0');
 			foreach ($rows as $item) {
 				self::$menuTree[] = self::getMenuItems($item);
 			}

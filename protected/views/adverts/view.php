@@ -14,6 +14,7 @@ $this->menu=array(
 );
 ?>
 
+
 <h1>View Advert #<b><?php echo $advert->title; ?></b></h1>
 <p><?= $advert['description'] ?></p><br>
 contact: <span><?= $advert->contact ?></span><br>
@@ -26,12 +27,20 @@ Author: <span><?php echo $advert->author['username'] ?></span><br>
 	<?php echo CHtml::image(Yii::app()->baseUrl.'/images/obs/ob-'.$advert->id.'/'. $image,'alternative',array('style'=>'width:300px')) ?>
 <?php  endforeach ?>
 </div>
+
 <?php if (Yii::app()->user->id == $advert['author_id']): ?>
 	<?php echo CHtml::link('update',array('adverts/update', 'id'=>$advert->id)); ?> / 
 	<!-- <?php echo CHtml::link('delete',array('adverts/delete', 'id'=>$advert->id)); ?> /  -->
 	<?php if ($advert->verify_code == null): ?>
 		<?php echo CHtml::link($advert->status ? 'deactivate' : 'activate',array('adverts/activate', 'id'=>$advert->id)); ?> / 
+	<?php else: ?>
+		Please check your email adress. Activate your advert /
 	<?php endif ?>
+<?php endif ?>
+<?php if (Yii::app()->user->isAdmin()): ?>
+<?php echo CHtml::link(CHtml::encode('Delete advert'), array('adverts/delete', 'id'=>$advert->id), array(
+    'submit'=>array('adverts/delete', 'id'=>$advert->id),
+    'class' => 'delete','confirm'=>'This will remove the advert. Are you sure?'));?> / 
 <?php endif ?>
 <?php if ($inFavs): ?>
 	<?php echo CHtml::link('remove from favorites',array('adverts/removefromfavorites', 'ad_id'=>$advert->id)); ?>
