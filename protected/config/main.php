@@ -18,42 +18,42 @@ return array(
 		'application.components.*',
 		'application.extensions.phaActiveColumn.*',
 		'application.modules.user.models.*',
-        'application.modules.user.components.*',
+		'application.modules.user.components.*',
 	),
 	'modules'=>array(
 		// uncomment the following to enable the Gii tool
 		'questions',
 		'user'=>array(
-            # encrypting method (php hash function)
-            'hash' => 'md5',
+			# encrypting method (php hash function)
+			'hash' => 'md5',
  
-            # send activation email
-            'sendActivationMail' => true,
+			# send activation email
+			'sendActivationMail' => true,
  
-            # allow access for non-activated users
-            'loginNotActiv' => false,
+			# allow access for non-activated users
+			'loginNotActiv' => false,
  
-            # activate user on registration (only sendActivationMail = false)
-            'activeAfterRegister' => false,
+			# activate user on registration (only sendActivationMail = false)
+			'activeAfterRegister' => false,
  
-            # automatically login from registration
-            'autoLogin' => true,
+			# automatically login from registration
+			'autoLogin' => true,
  
-            # registration path
-            'registrationUrl' => array('/user/registration'),
+			# registration path
+			'registrationUrl' => array('/user/registration'),
  
-            # recovery password path
-            'recoveryUrl' => array('/user/recovery'),
+			# recovery password path
+			'recoveryUrl' => array('/user/recovery'),
  
-            # login form path
-            'loginUrl' => array('/user/login'),
+			# login form path
+			'loginUrl' => array('/user/login'),
  
-            # page after login
-            'returnUrl' => array('/user/profile'),
+			# page after login
+			'returnUrl' => array('/user/profile'),
  
-            # page after logout
-            'returnLogoutUrl' => array('/user/login'),
-        ),
+			# page after logout
+			'returnLogoutUrl' => array('/user/login'),
+		),
 		'gii'=>array(
 			'class'=>'system.gii.GiiModule',
 			'password'=>'12345',
@@ -66,35 +66,37 @@ return array(
 	// application components
 	'components'=>array(
 
-  		'request' => array(
-            'baseUrl' => 'http://localhost/yii/blog/',
-        ),
-        'user'=>array(
-            // enable cookie-based authentication
-            'class' => 'WebUser',
-            'allowAutoLogin'=>true,
-            'loginUrl' => array('/user/login'),
-        ),
+		'request' => array(
+			'baseUrl' => 'http://localhost/yii/blog/',
+		),
+		'user'=>array(
+			// enable cookie-based authentication
+			'class' => 'WebUser',
+			'allowAutoLogin'=>true,
+			'loginUrl' => array('/user/login'),
+		),
 		'mailer' => array(
 		  'class' => 'application.extensions.mailer.EMailer',
 		  'pathViews' => 'application.views.email',
 		  'pathLayouts' => 'application.views.email.layouts'
 		),
 		// uncomment the following to enable URLs in path-format
-		
+
 		'urlManager'=>array(
 			'urlFormat'=>'path',
 			'rules'=>array(
 				//'adverts/<title>' => 'adverts/category/<title>',
 				// site.com/adverts/printers/home/laser/15
-                'cell/category/<cat_url:.+>/<id:\d+>'=>'adverts/category/',
-                'buy/category/<cat_url:.+>/<id:\d+>'=>'adverts/category/',
-                'cell/category/<cat_url:.+>'=>'adverts/category/',
-                'buy/category/<cat_url:.+>'=>'adverts/category/',
-                
+				'cell/category/<cat_url:.+>/<id:\d+>'=>'adverts/category/',
+				'buy/category/<cat_url:.+>/<id:\d+>'=>'adverts/category/',
+				'cell/category/<cat_url:.+>'=>'adverts/category/',
+				'buy/category/<cat_url:.+>'=>'adverts/category/',
+				'questions/view/<id:\d+>' => 'questions/default/view/',
+				'questions/category/<id:\d+>'=>'questions/default/category/<id:\d+>',
+				'questions/<_a>'=>'questions/default/<_a>',
 				//'cell/<_a>'=>'adverts/<_a>',
 				//'buy/<_a>'=>'adverts/<_a>',
-                // site.com/adverts/printers/home/laser
+				// site.com/adverts/printers/home/laser
 
 				//'cell/<cat_name:\w+>'=>'adverts/category/?type=1',
 				//'<controller:\w+>/<action:\w+>/<id:\d+>'=>'<controller>/<action>',

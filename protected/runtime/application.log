@@ -10598,3 +10598,1317 @@ Stack trace:
 REQUEST_URI=/yii/blog/index.php/adverts/view/id/277
 HTTP_REFERER=http://localhost/yii/blog/index.php/adverts/create
 ---
+2015/08/11 09:51:12 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "buy/questions".' in /var/www/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('buy/questions')
+#1 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/yii/blog/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/blog/index.php/buy/questions
+---
+2015/08/11 09:51:13 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "buy/questions".' in /var/www/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('buy/questions')
+#1 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/yii/blog/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/blog/index.php/buy/questions
+HTTP_REFERER=http://localhost/yii/blog/index.php/buy/questions
+---
+2015/08/11 09:56:09 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "questions/index".' in /var/www/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('questions/index')
+#1 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/yii/blog/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/blog/index.php/questions/index
+HTTP_REFERER=http://localhost/yii/blog/index.php/questions
+---
+2015/08/11 09:56:10 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "questions/index".' in /var/www/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('questions/index')
+#1 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/yii/blog/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/blog/index.php/questions/index
+HTTP_REFERER=http://localhost/yii/blog/index.php/questions/index
+---
+2015/08/11 09:56:23 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "questions/index".' in /var/www/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('questions/index')
+#1 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/yii/blog/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/blog/index.php/questions/index
+HTTP_REFERER=http://localhost/yii/blog/index.php/questions
+---
+2015/08/11 09:56:24 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "questions/index".' in /var/www/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('questions/index')
+#1 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/yii/blog/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/blog/index.php/questions/index
+HTTP_REFERER=http://localhost/yii/blog/index.php/questions/index
+---
+2015/08/11 11:30:29 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "questions/create".' in /var/www/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('questions/creat...')
+#1 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/yii/blog/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/blog/index.php/questions/create
+---
+2015/08/11 11:31:08 [error] [exception.CException] exception 'CException' with message 'Property "Questions.type" is not defined.' in /var/www/yii/framework/base/CComponent.php:130
+Stack trace:
+#0 /var/www/yii/framework/db/ar/CActiveRecord.php(145): CComponent->__get('type')
+#1 /var/www/yii/framework/web/helpers/CHtml.php(2529): CActiveRecord->__get('type')
+#2 /var/www/yii/framework/web/helpers/CHtml.php(1953): CHtml::resolveValue(Object(Questions), 'type')
+#3 /var/www/yii/framework/web/widgets/CActiveForm.php(895): CHtml::activeRadioButtonList(Object(Questions), 'type', Array, Array)
+#4 /var/www/yii/blog/protected/modules/questions/views/default/_form.php(21): CActiveForm->radioButtonList(Object(Questions), 'type', Array, Array)
+#5 /var/www/yii/framework/web/CBaseController.php(126): require('/var/www/yii/bl...')
+#6 /var/www/yii/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/yii/bl...', Array, true)
+#7 /var/www/yii/framework/web/CController.php(869): CBaseController->renderFile('/var/www/yii/bl...', Array, true)
+#8 /var/www/yii/blog/protected/modules/questions/views/default/create.php(16): CController->renderPartial('_form', Array)
+#9 /var/www/yii/framework/web/CBaseController.php(126): require('/var/www/yii/bl...')
+#10 /var/www/yii/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/yii/bl...', Array, true)
+#11 /var/www/yii/framework/web/CController.php(869): CBaseController->renderFile('/var/www/yii/bl...', Array, true)
+#12 /var/www/yii/framework/web/CController.php(782): CController->renderPartial('create', Array, true)
+#13 /var/www/yii/blog/protected/modules/questions/controllers/DefaultController.php(56): CController->render('create', Array)
+#14 /var/www/yii/framework/web/actions/CInlineAction.php(49): DefaultController->actionCreate()
+#15 /var/www/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#16 /var/www/yii/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#17 /var/www/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 /var/www/yii/framework/web/CWebApplication.php(282): CController->run('create')
+#19 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('questions/defau...')
+#20 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#21 /var/www/yii/blog/index.php(13): CApplication->run()
+#22 {main}
+REQUEST_URI=/yii/blog/index.php/questions/default/create
+---
+2015/08/11 11:37:31 [error] [exception.CException] exception 'CException' with message 'Property "Questions.price" is not defined.' in /var/www/yii/framework/base/CComponent.php:130
+Stack trace:
+#0 /var/www/yii/framework/db/ar/CActiveRecord.php(145): CComponent->__get('price')
+#1 /var/www/yii/framework/web/helpers/CHtml.php(2529): CActiveRecord->__get('price')
+#2 /var/www/yii/framework/web/helpers/CHtml.php(2252): CHtml::resolveValue(Object(Questions), 'price')
+#3 /var/www/yii/framework/web/helpers/CHtml.php(1434): CHtml::activeInputField('text', Object(Questions), 'price', Array)
+#4 /var/www/yii/framework/web/widgets/CActiveForm.php(725): CHtml::activeTextField(Object(Questions), 'price', Array)
+#5 /var/www/yii/blog/protected/modules/questions/views/default/_form.php(36): CActiveForm->textField(Object(Questions), 'price', Array)
+#6 /var/www/yii/framework/web/CBaseController.php(126): require('/var/www/yii/bl...')
+#7 /var/www/yii/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/yii/bl...', Array, true)
+#8 /var/www/yii/framework/web/CController.php(869): CBaseController->renderFile('/var/www/yii/bl...', Array, true)
+#9 /var/www/yii/blog/protected/modules/questions/views/default/create.php(16): CController->renderPartial('_form', Array)
+#10 /var/www/yii/framework/web/CBaseController.php(126): require('/var/www/yii/bl...')
+#11 /var/www/yii/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/yii/bl...', Array, true)
+#12 /var/www/yii/framework/web/CController.php(869): CBaseController->renderFile('/var/www/yii/bl...', Array, true)
+#13 /var/www/yii/framework/web/CController.php(782): CController->renderPartial('create', Array, true)
+#14 /var/www/yii/blog/protected/modules/questions/controllers/DefaultController.php(56): CController->render('create', Array)
+#15 /var/www/yii/framework/web/actions/CInlineAction.php(49): DefaultController->actionCreate()
+#16 /var/www/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#17 /var/www/yii/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#18 /var/www/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#19 /var/www/yii/framework/web/CWebApplication.php(282): CController->run('create')
+#20 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('questions/defau...')
+#21 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#22 /var/www/yii/blog/index.php(13): CApplication->run()
+#23 {main}
+REQUEST_URI=/yii/blog/index.php/questions/default/create
+---
+2015/08/11 11:38:47 [error] [exception.CException] exception 'CException' with message 'CActiveForm and its behaviors do not have a method or closure named "number".' in /var/www/yii/framework/base/CComponent.php:266
+Stack trace:
+#0 /var/www/yii/blog/protected/modules/questions/views/default/_form.php(36): CComponent->__call('number', Array)
+#1 /var/www/yii/blog/protected/modules/questions/views/default/_form.php(36): CActiveForm->number(Object(Questions), 'up', Array)
+#2 /var/www/yii/framework/web/CBaseController.php(126): require('/var/www/yii/bl...')
+#3 /var/www/yii/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/yii/bl...', Array, true)
+#4 /var/www/yii/framework/web/CController.php(869): CBaseController->renderFile('/var/www/yii/bl...', Array, true)
+#5 /var/www/yii/blog/protected/modules/questions/views/default/create.php(16): CController->renderPartial('_form', Array)
+#6 /var/www/yii/framework/web/CBaseController.php(126): require('/var/www/yii/bl...')
+#7 /var/www/yii/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/yii/bl...', Array, true)
+#8 /var/www/yii/framework/web/CController.php(869): CBaseController->renderFile('/var/www/yii/bl...', Array, true)
+#9 /var/www/yii/framework/web/CController.php(782): CController->renderPartial('create', Array, true)
+#10 /var/www/yii/blog/protected/modules/questions/controllers/DefaultController.php(56): CController->render('create', Array)
+#11 /var/www/yii/framework/web/actions/CInlineAction.php(49): DefaultController->actionCreate()
+#12 /var/www/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#13 /var/www/yii/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#14 /var/www/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#15 /var/www/yii/framework/web/CWebApplication.php(282): CController->run('create')
+#16 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('questions/defau...')
+#17 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#18 /var/www/yii/blog/index.php(13): CApplication->run()
+#19 {main}
+REQUEST_URI=/yii/blog/index.php/questions/default/create
+---
+2015/08/11 11:57:42 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`marketplace`.`questions`, CONSTRAINT `questions_ibfk_2` FOREIGN KEY (`author_id`) REFERENCES `users` (`id`)). The SQL statement executed was: INSERT INTO `questions` (`upadated_at`, `up`, `down`, `category_id`, `title`, `description`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5).
+in /var/www/yii/blog/protected/modules/questions/controllers/DefaultController.php (72)
+in /var/www/yii/blog/index.php (13)
+2015/08/11 11:57:42 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`marketplace`.`questions`, CONSTRAINT `questions_ibfk_2` FOREIGN KEY (`author_id`) REFERENCES `users` (`id`)). The SQL statement executed was: INSERT INTO `questions` (`upadated_at`, `up`, `down`, `category_id`, `title`, `description`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5)' in /var/www/yii/framework/db/CDbCommand.php:358
+Stack trace:
+#0 /var/www/yii/framework/db/ar/CActiveRecord.php(1077): CDbCommand->execute()
+#1 /var/www/yii/framework/db/ar/CActiveRecord.php(806): CActiveRecord->insert(NULL)
+#2 /var/www/yii/blog/protected/modules/questions/controllers/DefaultController.php(72): CActiveRecord->save()
+#3 /var/www/yii/framework/web/actions/CInlineAction.php(49): DefaultController->actionCreate()
+#4 /var/www/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#5 /var/www/yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 /var/www/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#7 /var/www/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 /var/www/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 /var/www/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 /var/www/yii/framework/web/CController.php(291): CFilterChain->run()
+#11 /var/www/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 /var/www/yii/framework/web/CWebApplication.php(282): CController->run('create')
+#13 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('questions/defau...')
+#14 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#15 /var/www/yii/blog/index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/yii/blog/index.php/questions/default/create
+HTTP_REFERER=http://localhost/yii/blog/index.php/questions/default/create
+---
+2015/08/11 11:57:54 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`marketplace`.`questions`, CONSTRAINT `questions_ibfk_2` FOREIGN KEY (`author_id`) REFERENCES `users` (`id`)). The SQL statement executed was: INSERT INTO `questions` (`upadated_at`, `up`, `down`, `category_id`, `title`, `description`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5).
+in /var/www/yii/blog/protected/modules/questions/controllers/DefaultController.php (72)
+in /var/www/yii/blog/index.php (13)
+2015/08/11 11:57:54 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`marketplace`.`questions`, CONSTRAINT `questions_ibfk_2` FOREIGN KEY (`author_id`) REFERENCES `users` (`id`)). The SQL statement executed was: INSERT INTO `questions` (`upadated_at`, `up`, `down`, `category_id`, `title`, `description`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5)' in /var/www/yii/framework/db/CDbCommand.php:358
+Stack trace:
+#0 /var/www/yii/framework/db/ar/CActiveRecord.php(1077): CDbCommand->execute()
+#1 /var/www/yii/framework/db/ar/CActiveRecord.php(806): CActiveRecord->insert(NULL)
+#2 /var/www/yii/blog/protected/modules/questions/controllers/DefaultController.php(72): CActiveRecord->save()
+#3 /var/www/yii/framework/web/actions/CInlineAction.php(49): DefaultController->actionCreate()
+#4 /var/www/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#5 /var/www/yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 /var/www/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#7 /var/www/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 /var/www/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 /var/www/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 /var/www/yii/framework/web/CController.php(291): CFilterChain->run()
+#11 /var/www/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 /var/www/yii/framework/web/CWebApplication.php(282): CController->run('create')
+#13 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('questions/defau...')
+#14 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#15 /var/www/yii/blog/index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/yii/blog/index.php/questions/default/create
+HTTP_REFERER=http://localhost/yii/blog/index.php/questions/default/create
+---
+2015/08/11 12:00:36 [error] [exception.CException] exception 'CException' with message 'DefaultController cannot find the requested view "view".' in /var/www/yii/framework/web/CController.php:878
+Stack trace:
+#0 /var/www/yii/framework/web/CController.php(782): CController->renderPartial('view', NULL, true)
+#1 /var/www/yii/blog/protected/modules/questions/controllers/DefaultController.php(55): CController->render('view')
+#2 [internal function]: DefaultController->actionView('3')
+#3 /var/www/yii/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs(Object(DefaultController), Array)
+#4 /var/www/yii/framework/web/actions/CInlineAction.php(47): CAction->runWithParamsInternal(Object(DefaultController), Object(ReflectionMethod), Array)
+#5 /var/www/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#6 /var/www/yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#7 /var/www/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#8 /var/www/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#9 /var/www/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#10 /var/www/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#11 /var/www/yii/framework/web/CController.php(291): CFilterChain->run()
+#12 /var/www/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 /var/www/yii/framework/web/CWebApplication.php(282): CController->run('view')
+#14 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('questions/defau...')
+#15 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#16 /var/www/yii/blog/index.php(13): CApplication->run()
+#17 {main}
+REQUEST_URI=/yii/blog/index.php/questions/default/view/id/3
+HTTP_REFERER=http://localhost/yii/blog/index.php/questions/default/create
+---
+2015/08/11 12:06:47 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`marketplace`.`questions`, CONSTRAINT `questions_ibfk_1` FOREIGN KEY (`author_id`) REFERENCES `users` (`id`)). The SQL statement executed was: INSERT INTO `questions` (`upadated_at`, `up`, `down`, `category_id`, `title`, `description`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5).
+in /var/www/yii/blog/protected/modules/questions/controllers/DefaultController.php (72)
+in /var/www/yii/blog/index.php (13)
+2015/08/11 12:06:47 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`marketplace`.`questions`, CONSTRAINT `questions_ibfk_1` FOREIGN KEY (`author_id`) REFERENCES `users` (`id`)). The SQL statement executed was: INSERT INTO `questions` (`upadated_at`, `up`, `down`, `category_id`, `title`, `description`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5)' in /var/www/yii/framework/db/CDbCommand.php:358
+Stack trace:
+#0 /var/www/yii/framework/db/ar/CActiveRecord.php(1077): CDbCommand->execute()
+#1 /var/www/yii/framework/db/ar/CActiveRecord.php(806): CActiveRecord->insert(NULL)
+#2 /var/www/yii/blog/protected/modules/questions/controllers/DefaultController.php(72): CActiveRecord->save()
+#3 /var/www/yii/framework/web/actions/CInlineAction.php(49): DefaultController->actionCreate()
+#4 /var/www/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#5 /var/www/yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 /var/www/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#7 /var/www/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 /var/www/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 /var/www/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 /var/www/yii/framework/web/CController.php(291): CFilterChain->run()
+#11 /var/www/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 /var/www/yii/framework/web/CWebApplication.php(282): CController->run('create')
+#13 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('questions/defau...')
+#14 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#15 /var/www/yii/blog/index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/yii/blog/index.php/questions/default/create
+HTTP_REFERER=http://localhost/yii/blog/index.php/questions/default/create
+---
+2015/08/11 12:09:02 [error] [exception.CException] exception 'CException' with message 'DefaultController cannot find the requested view "view".' in /var/www/yii/framework/web/CController.php:878
+Stack trace:
+#0 /var/www/yii/framework/web/CController.php(782): CController->renderPartial('view', NULL, true)
+#1 /var/www/yii/blog/protected/modules/questions/controllers/DefaultController.php(55): CController->render('view')
+#2 [internal function]: DefaultController->actionView('5')
+#3 /var/www/yii/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs(Object(DefaultController), Array)
+#4 /var/www/yii/framework/web/actions/CInlineAction.php(47): CAction->runWithParamsInternal(Object(DefaultController), Object(ReflectionMethod), Array)
+#5 /var/www/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#6 /var/www/yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#7 /var/www/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#8 /var/www/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#9 /var/www/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#10 /var/www/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#11 /var/www/yii/framework/web/CController.php(291): CFilterChain->run()
+#12 /var/www/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 /var/www/yii/framework/web/CWebApplication.php(282): CController->run('view')
+#14 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('questions/defau...')
+#15 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#16 /var/www/yii/blog/index.php(13): CApplication->run()
+#17 {main}
+REQUEST_URI=/yii/blog/index.php/questions/default/view/id/5
+HTTP_REFERER=http://localhost/yii/blog/index.php/questions/default/create
+---
+2015/08/11 12:13:01 [error] [exception.CException] exception 'CException' with message 'Property "Questions.contact" is not defined.' in /var/www/yii/framework/base/CComponent.php:130
+Stack trace:
+#0 /var/www/yii/framework/db/ar/CActiveRecord.php(145): CComponent->__get('contact')
+#1 /var/www/yii/blog/protected/modules/questions/views/default/view.php(20): CActiveRecord->__get('contact')
+#2 /var/www/yii/framework/web/CBaseController.php(126): require('/var/www/yii/bl...')
+#3 /var/www/yii/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/yii/bl...', Array, true)
+#4 /var/www/yii/framework/web/CController.php(869): CBaseController->renderFile('/var/www/yii/bl...', Array, true)
+#5 /var/www/yii/framework/web/CController.php(782): CController->renderPartial('view', Array, true)
+#6 /var/www/yii/blog/protected/modules/questions/controllers/DefaultController.php(38): CController->render('view', Array)
+#7 [internal function]: DefaultController->actionView('5')
+#8 /var/www/yii/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs(Object(DefaultController), Array)
+#9 /var/www/yii/framework/web/actions/CInlineAction.php(47): CAction->runWithParamsInternal(Object(DefaultController), Object(ReflectionMethod), Array)
+#10 /var/www/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#11 /var/www/yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#12 /var/www/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#13 /var/www/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#14 /var/www/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#15 /var/www/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#16 /var/www/yii/framework/web/CController.php(291): CFilterChain->run()
+#17 /var/www/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 /var/www/yii/framework/web/CWebApplication.php(282): CController->run('view')
+#19 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('questions/defau...')
+#20 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#21 /var/www/yii/blog/index.php(13): CApplication->run()
+#22 {main}
+REQUEST_URI=/yii/blog/index.php/questions/default/view/id/5
+HTTP_REFERER=http://localhost/yii/blog/index.php/questions/default/create
+---
+2015/08/11 12:14:47 [error] [php] include(Users.php): failed to open stream: No such file or directory (/var/www/yii/framework/YiiBase.php:427)
+Stack trace:
+#0 /var/www/yii/framework/db/ar/CActiveRecord.php(395): spl_autoload_call()
+#1 /var/www/yii/framework/db/ar/CActiveFinder.php(182): model()
+#2 /var/www/yii/framework/db/ar/CActiveFinder.php(230): CActiveFinder->getModel()
+#3 /var/www/yii/framework/db/ar/CActiveFinder.php(48): CActiveFinder->buildJoinTree()
+#4 /var/www/yii/framework/db/ar/CActiveRecord.php(909): CActiveFinder->__construct()
+#5 /var/www/yii/framework/db/ar/CActiveRecord.php(280): Questions->getActiveFinder()
+#6 /var/www/yii/framework/db/ar/CActiveRecord.php(143): Questions->getRelated()
+#7 /var/www/yii/blog/protected/modules/questions/views/default/view.php(21): Questions->__get()
+#8 /var/www/yii/framework/web/CBaseController.php(126): require()
+#9 /var/www/yii/framework/web/CBaseController.php(95): DefaultController->renderInternal()
+#10 /var/www/yii/framework/web/CController.php(869): DefaultController->renderFile()
+#11 /var/www/yii/framework/web/CController.php(782): DefaultController->renderPartial()
+#12 /var/www/yii/blog/protected/modules/questions/controllers/DefaultController.php(38): DefaultController->render()
+#13 unknown(0): DefaultController->actionView()
+#14 /var/www/yii/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs()
+#15 /var/www/yii/framework/web/actions/CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#16 /var/www/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#17 /var/www/yii/framework/web/filters/CFilterChain.php(133): DefaultController->runAction()
+#18 /var/www/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#19 /var/www/yii/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#20 /var/www/yii/framework/web/filters/CInlineFilter.php(58): DefaultController->filterAccessControl()
+#21 /var/www/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#22 /var/www/yii/framework/web/CController.php(291): CFilterChain->run()
+#23 /var/www/yii/framework/web/CController.php(265): DefaultController->runActionWithFilters()
+#24 /var/www/yii/framework/web/CWebApplication.php(282): DefaultController->run()
+#25 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#26 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#27 /var/www/yii/blog/index.php(13): CWebApplication->run()
+REQUEST_URI=/yii/blog/index.php/questions/default/view/id/5
+in /var/www/yii/blog/protected/modules/questions/views/default/view.php (21)
+in /var/www/yii/blog/protected/modules/questions/controllers/DefaultController.php (38)
+in /var/www/yii/blog/index.php (13)
+2015/08/11 14:22:35 [error] [php] Undefined variable: categories (/var/www/yii/blog/protected/modules/questions/views/default/index.php:11)
+Stack trace:
+#0 /var/www/yii/framework/web/CController.php(869): DefaultController->renderFile()
+#1 /var/www/yii/framework/web/CController.php(782): DefaultController->renderPartial()
+#2 /var/www/yii/blog/protected/modules/questions/controllers/DefaultController.php(7): DefaultController->render()
+#3 /var/www/yii/framework/web/actions/CInlineAction.php(49): DefaultController->actionIndex()
+#4 /var/www/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#5 /var/www/yii/framework/web/filters/CFilterChain.php(133): DefaultController->runAction()
+#6 /var/www/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#7 /var/www/yii/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#8 /var/www/yii/framework/web/filters/CInlineFilter.php(58): DefaultController->filterAccessControl()
+#9 /var/www/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#10 /var/www/yii/framework/web/CController.php(291): CFilterChain->run()
+#11 /var/www/yii/framework/web/CController.php(265): DefaultController->runActionWithFilters()
+#12 /var/www/yii/framework/web/CWebApplication.php(282): DefaultController->run()
+#13 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#14 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#15 /var/www/yii/blog/index.php(13): CWebApplication->run()
+REQUEST_URI=/yii/blog/index.php/questions
+in /var/www/yii/blog/protected/modules/questions/views/default/index.php (11)
+in /var/www/yii/blog/protected/modules/questions/controllers/DefaultController.php (7)
+in /var/www/yii/blog/index.php (13)
+2015/08/11 14:22:56 [error] [php] Undefined variable: categories (/var/www/yii/blog/protected/modules/questions/views/default/index.php:11)
+Stack trace:
+#0 /var/www/yii/framework/web/CController.php(869): DefaultController->renderFile()
+#1 /var/www/yii/framework/web/CController.php(782): DefaultController->renderPartial()
+#2 /var/www/yii/blog/protected/modules/questions/controllers/DefaultController.php(7): DefaultController->render()
+#3 /var/www/yii/framework/web/actions/CInlineAction.php(49): DefaultController->actionIndex()
+#4 /var/www/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#5 /var/www/yii/framework/web/filters/CFilterChain.php(133): DefaultController->runAction()
+#6 /var/www/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#7 /var/www/yii/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#8 /var/www/yii/framework/web/filters/CInlineFilter.php(58): DefaultController->filterAccessControl()
+#9 /var/www/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#10 /var/www/yii/framework/web/CController.php(291): CFilterChain->run()
+#11 /var/www/yii/framework/web/CController.php(265): DefaultController->runActionWithFilters()
+#12 /var/www/yii/framework/web/CWebApplication.php(282): DefaultController->run()
+#13 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#14 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#15 /var/www/yii/blog/index.php(13): CWebApplication->run()
+REQUEST_URI=/yii/blog/index.php/questions
+in /var/www/yii/blog/protected/modules/questions/views/default/index.php (11)
+in /var/www/yii/blog/protected/modules/questions/controllers/DefaultController.php (7)
+in /var/www/yii/blog/index.php (13)
+2015/08/11 14:23:29 [error] [php] Undefined variable: categories (/var/www/yii/blog/protected/modules/questions/views/default/index.php:11)
+Stack trace:
+#0 /var/www/yii/framework/web/CController.php(869): DefaultController->renderFile()
+#1 /var/www/yii/framework/web/CController.php(782): DefaultController->renderPartial()
+#2 /var/www/yii/blog/protected/modules/questions/controllers/DefaultController.php(7): DefaultController->render()
+#3 /var/www/yii/framework/web/actions/CInlineAction.php(49): DefaultController->actionIndex()
+#4 /var/www/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#5 /var/www/yii/framework/web/filters/CFilterChain.php(133): DefaultController->runAction()
+#6 /var/www/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#7 /var/www/yii/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#8 /var/www/yii/framework/web/filters/CInlineFilter.php(58): DefaultController->filterAccessControl()
+#9 /var/www/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#10 /var/www/yii/framework/web/CController.php(291): CFilterChain->run()
+#11 /var/www/yii/framework/web/CController.php(265): DefaultController->runActionWithFilters()
+#12 /var/www/yii/framework/web/CWebApplication.php(282): DefaultController->run()
+#13 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#14 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#15 /var/www/yii/blog/index.php(13): CWebApplication->run()
+REQUEST_URI=/yii/blog/index.php/questions
+in /var/www/yii/blog/protected/modules/questions/views/default/index.php (11)
+in /var/www/yii/blog/protected/modules/questions/controllers/DefaultController.php (7)
+in /var/www/yii/blog/index.php (13)
+2015/08/11 14:23:59 [error] [php] Undefined variable: categories (/var/www/yii/blog/protected/modules/questions/views/default/index.php:11)
+Stack trace:
+#0 /var/www/yii/framework/web/CController.php(869): DefaultController->renderFile()
+#1 /var/www/yii/framework/web/CController.php(782): DefaultController->renderPartial()
+#2 /var/www/yii/blog/protected/modules/questions/controllers/DefaultController.php(7): DefaultController->render()
+#3 /var/www/yii/framework/web/actions/CInlineAction.php(49): DefaultController->actionIndex()
+#4 /var/www/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#5 /var/www/yii/framework/web/filters/CFilterChain.php(133): DefaultController->runAction()
+#6 /var/www/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#7 /var/www/yii/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#8 /var/www/yii/framework/web/filters/CInlineFilter.php(58): DefaultController->filterAccessControl()
+#9 /var/www/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#10 /var/www/yii/framework/web/CController.php(291): CFilterChain->run()
+#11 /var/www/yii/framework/web/CController.php(265): DefaultController->runActionWithFilters()
+#12 /var/www/yii/framework/web/CWebApplication.php(282): DefaultController->run()
+#13 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#14 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#15 /var/www/yii/blog/index.php(13): CWebApplication->run()
+REQUEST_URI=/yii/blog/index.php/questions
+in /var/www/yii/blog/protected/modules/questions/views/default/index.php (11)
+in /var/www/yii/blog/protected/modules/questions/controllers/DefaultController.php (7)
+in /var/www/yii/blog/index.php (13)
+2015/08/11 14:24:30 [error] [php] Undefined variable: categories (/var/www/yii/blog/protected/modules/questions/views/default/index.php:11)
+Stack trace:
+#0 /var/www/yii/framework/web/CController.php(869): DefaultController->renderFile()
+#1 /var/www/yii/framework/web/CController.php(782): DefaultController->renderPartial()
+#2 /var/www/yii/blog/protected/modules/questions/controllers/DefaultController.php(7): DefaultController->render()
+#3 /var/www/yii/framework/web/actions/CInlineAction.php(49): DefaultController->actionIndex()
+#4 /var/www/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#5 /var/www/yii/framework/web/filters/CFilterChain.php(133): DefaultController->runAction()
+#6 /var/www/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#7 /var/www/yii/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#8 /var/www/yii/framework/web/filters/CInlineFilter.php(58): DefaultController->filterAccessControl()
+#9 /var/www/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#10 /var/www/yii/framework/web/CController.php(291): CFilterChain->run()
+#11 /var/www/yii/framework/web/CController.php(265): DefaultController->runActionWithFilters()
+#12 /var/www/yii/framework/web/CWebApplication.php(282): DefaultController->run()
+#13 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#14 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#15 /var/www/yii/blog/index.php(13): CWebApplication->run()
+REQUEST_URI=/yii/blog/index.php/questions
+in /var/www/yii/blog/protected/modules/questions/views/default/index.php (11)
+in /var/www/yii/blog/protected/modules/questions/controllers/DefaultController.php (7)
+in /var/www/yii/blog/index.php (13)
+2015/08/11 14:28:40 [error] [php] Undefined variable: categories (/var/www/yii/blog/protected/modules/questions/views/default/index.php:11)
+Stack trace:
+#0 /var/www/yii/framework/web/CController.php(869): DefaultController->renderFile()
+#1 /var/www/yii/framework/web/CController.php(782): DefaultController->renderPartial()
+#2 /var/www/yii/blog/protected/modules/questions/controllers/DefaultController.php(33): DefaultController->render()
+#3 /var/www/yii/framework/web/actions/CInlineAction.php(49): DefaultController->actionIndex()
+#4 /var/www/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#5 /var/www/yii/framework/web/filters/CFilterChain.php(133): DefaultController->runAction()
+#6 /var/www/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#7 /var/www/yii/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#8 /var/www/yii/framework/web/filters/CInlineFilter.php(58): DefaultController->filterAccessControl()
+#9 /var/www/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#10 /var/www/yii/framework/web/CController.php(291): CFilterChain->run()
+#11 /var/www/yii/framework/web/CController.php(265): DefaultController->runActionWithFilters()
+#12 /var/www/yii/framework/web/CWebApplication.php(282): DefaultController->run()
+#13 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#14 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#15 /var/www/yii/blog/index.php(13): CWebApplication->run()
+REQUEST_URI=/yii/blog/index.php/questions
+in /var/www/yii/blog/protected/modules/questions/views/default/index.php (11)
+in /var/www/yii/blog/protected/modules/questions/controllers/DefaultController.php (33)
+in /var/www/yii/blog/index.php (13)
+2015/08/11 14:30:08 [error] [php] Undefined variable: categories (/var/www/yii/blog/protected/modules/questions/views/default/index.php:11)
+Stack trace:
+#0 /var/www/yii/framework/web/CController.php(869): DefaultController->renderFile()
+#1 /var/www/yii/framework/web/CController.php(782): DefaultController->renderPartial()
+#2 /var/www/yii/blog/protected/modules/questions/controllers/DefaultController.php(33): DefaultController->render()
+#3 /var/www/yii/framework/web/actions/CInlineAction.php(49): DefaultController->actionIndex()
+#4 /var/www/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#5 /var/www/yii/framework/web/filters/CFilterChain.php(133): DefaultController->runAction()
+#6 /var/www/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#7 /var/www/yii/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#8 /var/www/yii/framework/web/filters/CInlineFilter.php(58): DefaultController->filterAccessControl()
+#9 /var/www/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#10 /var/www/yii/framework/web/CController.php(291): CFilterChain->run()
+#11 /var/www/yii/framework/web/CController.php(265): DefaultController->runActionWithFilters()
+#12 /var/www/yii/framework/web/CWebApplication.php(282): DefaultController->run()
+#13 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#14 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#15 /var/www/yii/blog/index.php(13): CWebApplication->run()
+REQUEST_URI=/yii/blog/index.php/questions
+in /var/www/yii/blog/protected/modules/questions/views/default/index.php (11)
+in /var/www/yii/blog/protected/modules/questions/controllers/DefaultController.php (33)
+in /var/www/yii/blog/index.php (13)
+2015/08/11 14:30:38 [error] [php] Undefined variable: categories (/var/www/yii/blog/protected/modules/questions/views/default/index.php:11)
+Stack trace:
+#0 /var/www/yii/framework/web/CController.php(869): DefaultController->renderFile()
+#1 /var/www/yii/framework/web/CController.php(782): DefaultController->renderPartial()
+#2 /var/www/yii/blog/protected/modules/questions/controllers/DefaultController.php(33): DefaultController->render()
+#3 /var/www/yii/framework/web/actions/CInlineAction.php(49): DefaultController->actionIndex()
+#4 /var/www/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#5 /var/www/yii/framework/web/filters/CFilterChain.php(133): DefaultController->runAction()
+#6 /var/www/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#7 /var/www/yii/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#8 /var/www/yii/framework/web/filters/CInlineFilter.php(58): DefaultController->filterAccessControl()
+#9 /var/www/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#10 /var/www/yii/framework/web/CController.php(291): CFilterChain->run()
+#11 /var/www/yii/framework/web/CController.php(265): DefaultController->runActionWithFilters()
+#12 /var/www/yii/framework/web/CWebApplication.php(282): DefaultController->run()
+#13 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#14 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#15 /var/www/yii/blog/index.php(13): CWebApplication->run()
+REQUEST_URI=/yii/blog/index.php/questions
+in /var/www/yii/blog/protected/modules/questions/views/default/index.php (11)
+in /var/www/yii/blog/protected/modules/questions/controllers/DefaultController.php (33)
+in /var/www/yii/blog/index.php (13)
+2015/08/11 14:30:59 [error] [php] Undefined variable: categories (/var/www/yii/blog/protected/modules/questions/views/default/index.php:11)
+Stack trace:
+#0 /var/www/yii/framework/web/CController.php(869): DefaultController->renderFile()
+#1 /var/www/yii/framework/web/CController.php(782): DefaultController->renderPartial()
+#2 /var/www/yii/blog/protected/modules/questions/controllers/DefaultController.php(33): DefaultController->render()
+#3 /var/www/yii/framework/web/actions/CInlineAction.php(49): DefaultController->actionIndex()
+#4 /var/www/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#5 /var/www/yii/framework/web/filters/CFilterChain.php(133): DefaultController->runAction()
+#6 /var/www/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#7 /var/www/yii/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#8 /var/www/yii/framework/web/filters/CInlineFilter.php(58): DefaultController->filterAccessControl()
+#9 /var/www/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#10 /var/www/yii/framework/web/CController.php(291): CFilterChain->run()
+#11 /var/www/yii/framework/web/CController.php(265): DefaultController->runActionWithFilters()
+#12 /var/www/yii/framework/web/CWebApplication.php(282): DefaultController->run()
+#13 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#14 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#15 /var/www/yii/blog/index.php(13): CWebApplication->run()
+REQUEST_URI=/yii/blog/index.php/questions
+in /var/www/yii/blog/protected/modules/questions/views/default/index.php (11)
+in /var/www/yii/blog/protected/modules/questions/controllers/DefaultController.php (33)
+in /var/www/yii/blog/index.php (13)
+2015/08/11 14:32:36 [error] [php] Undefined variable: categories (/var/www/yii/blog/protected/modules/questions/views/default/index.php:11)
+Stack trace:
+#0 /var/www/yii/framework/web/CController.php(869): DefaultController->renderFile()
+#1 /var/www/yii/framework/web/CController.php(782): DefaultController->renderPartial()
+#2 /var/www/yii/blog/protected/modules/questions/controllers/DefaultController.php(33): DefaultController->render()
+#3 /var/www/yii/framework/web/actions/CInlineAction.php(49): DefaultController->actionIndex()
+#4 /var/www/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#5 /var/www/yii/framework/web/filters/CFilterChain.php(133): DefaultController->runAction()
+#6 /var/www/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#7 /var/www/yii/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#8 /var/www/yii/framework/web/filters/CInlineFilter.php(58): DefaultController->filterAccessControl()
+#9 /var/www/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#10 /var/www/yii/framework/web/CController.php(291): CFilterChain->run()
+#11 /var/www/yii/framework/web/CController.php(265): DefaultController->runActionWithFilters()
+#12 /var/www/yii/framework/web/CWebApplication.php(282): DefaultController->run()
+#13 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#14 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#15 /var/www/yii/blog/index.php(13): CWebApplication->run()
+REQUEST_URI=/yii/blog/index.php/questions
+in /var/www/yii/blog/protected/modules/questions/views/default/index.php (11)
+in /var/www/yii/blog/protected/modules/questions/controllers/DefaultController.php (33)
+in /var/www/yii/blog/index.php (13)
+2015/08/11 14:34:23 [error] [php] Undefined variable: categories (/var/www/yii/blog/protected/modules/questions/views/default/index.php:11)
+Stack trace:
+#0 /var/www/yii/framework/web/CController.php(869): DefaultController->renderFile()
+#1 /var/www/yii/framework/web/CController.php(782): DefaultController->renderPartial()
+#2 /var/www/yii/blog/protected/modules/questions/controllers/DefaultController.php(33): DefaultController->render()
+#3 /var/www/yii/framework/web/actions/CInlineAction.php(49): DefaultController->actionIndex()
+#4 /var/www/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#5 /var/www/yii/framework/web/filters/CFilterChain.php(133): DefaultController->runAction()
+#6 /var/www/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#7 /var/www/yii/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#8 /var/www/yii/framework/web/filters/CInlineFilter.php(58): DefaultController->filterAccessControl()
+#9 /var/www/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#10 /var/www/yii/framework/web/CController.php(291): CFilterChain->run()
+#11 /var/www/yii/framework/web/CController.php(265): DefaultController->runActionWithFilters()
+#12 /var/www/yii/framework/web/CWebApplication.php(282): DefaultController->run()
+#13 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#14 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#15 /var/www/yii/blog/index.php(13): CWebApplication->run()
+REQUEST_URI=/yii/blog/index.php/questions
+in /var/www/yii/blog/protected/modules/questions/views/default/index.php (11)
+in /var/www/yii/blog/protected/modules/questions/controllers/DefaultController.php (33)
+in /var/www/yii/blog/index.php (13)
+2015/08/11 14:40:34 [error] [exception.CException] exception 'CException' with message 'Property "QuestionsCategories.cat_url" is not defined.' in /var/www/yii/framework/base/CComponent.php:130
+Stack trace:
+#0 /var/www/yii/framework/db/ar/CActiveRecord.php(145): CComponent->__get('cat_url')
+#1 /var/www/yii/framework/base/CModel.php(596): CActiveRecord->__get('cat_url')
+#2 /var/www/yii/blog/protected/modules/questions/views/default/index.php(12): CModel->offsetGet('cat_url')
+#3 /var/www/yii/framework/web/CBaseController.php(126): require('/var/www/yii/bl...')
+#4 /var/www/yii/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/yii/bl...', Array, true)
+#5 /var/www/yii/framework/web/CController.php(869): CBaseController->renderFile('/var/www/yii/bl...', Array, true)
+#6 /var/www/yii/framework/web/CController.php(782): CController->renderPartial('index', Array, true)
+#7 /var/www/yii/blog/protected/modules/questions/controllers/DefaultController.php(35): CController->render('index', Array)
+#8 /var/www/yii/framework/web/actions/CInlineAction.php(49): DefaultController->actionIndex()
+#9 /var/www/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#10 /var/www/yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#11 /var/www/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#12 /var/www/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#13 /var/www/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#14 /var/www/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#15 /var/www/yii/framework/web/CController.php(291): CFilterChain->run()
+#16 /var/www/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#17 /var/www/yii/framework/web/CWebApplication.php(282): CController->run('')
+#18 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('questions')
+#19 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#20 /var/www/yii/blog/index.php(13): CApplication->run()
+#21 {main}
+REQUEST_URI=/yii/blog/index.php/questions
+HTTP_REFERER=http://localhost/yii/blog/index.php/questions/default/view/id/5
+---
+2015/08/11 14:41:11 [error] [exception.CException] exception 'CException' with message 'Property "QuestionsCategories.cat_url" is not defined.' in /var/www/yii/framework/base/CComponent.php:130
+Stack trace:
+#0 /var/www/yii/framework/db/ar/CActiveRecord.php(145): CComponent->__get('cat_url')
+#1 /var/www/yii/framework/base/CModel.php(596): CActiveRecord->__get('cat_url')
+#2 /var/www/yii/blog/protected/modules/questions/views/default/index.php(12): CModel->offsetGet('cat_url')
+#3 /var/www/yii/framework/web/CBaseController.php(126): require('/var/www/yii/bl...')
+#4 /var/www/yii/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/yii/bl...', Array, true)
+#5 /var/www/yii/framework/web/CController.php(869): CBaseController->renderFile('/var/www/yii/bl...', Array, true)
+#6 /var/www/yii/framework/web/CController.php(782): CController->renderPartial('index', Array, true)
+#7 /var/www/yii/blog/protected/modules/questions/controllers/DefaultController.php(35): CController->render('index', Array)
+#8 /var/www/yii/framework/web/actions/CInlineAction.php(49): DefaultController->actionIndex()
+#9 /var/www/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#10 /var/www/yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#11 /var/www/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#12 /var/www/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#13 /var/www/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#14 /var/www/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#15 /var/www/yii/framework/web/CController.php(291): CFilterChain->run()
+#16 /var/www/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#17 /var/www/yii/framework/web/CWebApplication.php(282): CController->run('')
+#18 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('questions')
+#19 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#20 /var/www/yii/blog/index.php(13): CApplication->run()
+#21 {main}
+REQUEST_URI=/yii/blog/index.php/questions
+HTTP_REFERER=http://localhost/yii/blog/index.php/questions/default/view/id/5
+---
+2015/08/11 14:42:02 [error] [exception.CException] exception 'CException' with message 'Property "QuestionsCategories.cat_url" is not defined.' in /var/www/yii/framework/base/CComponent.php:130
+Stack trace:
+#0 /var/www/yii/framework/db/ar/CActiveRecord.php(145): CComponent->__get('cat_url')
+#1 /var/www/yii/framework/base/CModel.php(596): CActiveRecord->__get('cat_url')
+#2 /var/www/yii/blog/protected/modules/questions/views/default/index.php(12): CModel->offsetGet('cat_url')
+#3 /var/www/yii/framework/web/CBaseController.php(126): require('/var/www/yii/bl...')
+#4 /var/www/yii/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/yii/bl...', Array, true)
+#5 /var/www/yii/framework/web/CController.php(869): CBaseController->renderFile('/var/www/yii/bl...', Array, true)
+#6 /var/www/yii/framework/web/CController.php(782): CController->renderPartial('index', Array, true)
+#7 /var/www/yii/blog/protected/modules/questions/controllers/DefaultController.php(35): CController->render('index', Array)
+#8 /var/www/yii/framework/web/actions/CInlineAction.php(49): DefaultController->actionIndex()
+#9 /var/www/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#10 /var/www/yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#11 /var/www/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#12 /var/www/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#13 /var/www/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#14 /var/www/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#15 /var/www/yii/framework/web/CController.php(291): CFilterChain->run()
+#16 /var/www/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#17 /var/www/yii/framework/web/CWebApplication.php(282): CController->run('')
+#18 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('questions')
+#19 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#20 /var/www/yii/blog/index.php(13): CApplication->run()
+#21 {main}
+REQUEST_URI=/yii/blog/index.php/questions
+HTTP_REFERER=http://localhost/yii/blog/index.php/questions/default/view/id/5
+---
+2015/08/11 14:42:35 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "questions/questions/category/3".' in /var/www/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('questions/quest...')
+#1 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/yii/blog/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/blog/index.php/questions/questions/category/3
+HTTP_REFERER=http://localhost/yii/blog/index.php/questions
+---
+2015/08/11 14:45:10 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "questions/questions/category/3".' in /var/www/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('questions/quest...')
+#1 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/yii/blog/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/blog/index.php/questions/questions/category/3
+HTTP_REFERER=http://localhost/yii/blog/index.php/questions
+---
+2015/08/11 14:45:52 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "questions/category/3".' in /var/www/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('questions/categ...')
+#1 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/yii/blog/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/blog/index.php/questions/category/3
+HTTP_REFERER=http://localhost/yii/blog/index.php/questions
+---
+2015/08/11 14:46:46 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "questions/category/3".' in /var/www/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('questions/categ...')
+#1 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/yii/blog/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/blog/index.php/questions/category/3
+HTTP_REFERER=http://localhost/yii/blog/index.php/questions
+---
+2015/08/11 14:47:40 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "questions/category/3".' in /var/www/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('questions/categ...')
+#1 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/yii/blog/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/blog/index.php/questions/category/3
+HTTP_REFERER=http://localhost/yii/blog/index.php/questions
+---
+2015/08/11 14:48:22 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "questions/category/3".' in /var/www/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('questions/categ...')
+#1 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/yii/blog/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/blog/index.php/questions/category/3
+HTTP_REFERER=http://localhost/yii/blog/index.php/questions
+---
+2015/08/11 14:54:36 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "questions/category/3".' in /var/www/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('questions/categ...')
+#1 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/yii/blog/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/blog/index.php/questions/category/3
+HTTP_REFERER=http://localhost/yii/blog/index.php/questions
+---
+2015/08/11 14:55:15 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in /var/www/yii/framework/web/auth/CAccessControlFilter.php:182
+Stack trace:
+#0 /var/www/yii/framework/web/auth/CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(WebUser), 'You are not aut...')
+#1 /var/www/yii/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /var/www/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 /var/www/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 /var/www/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 /var/www/yii/framework/web/CController.php(291): CFilterChain->run()
+#6 /var/www/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /var/www/yii/framework/web/CWebApplication.php(282): CController->run('category')
+#8 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('questions/defau...')
+#9 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#10 /var/www/yii/blog/index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/yii/blog/index.php/questions/category/3
+HTTP_REFERER=http://localhost/yii/blog/index.php/questions
+---
+2015/08/11 14:55:20 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in /var/www/yii/framework/web/auth/CAccessControlFilter.php:182
+Stack trace:
+#0 /var/www/yii/framework/web/auth/CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(WebUser), 'You are not aut...')
+#1 /var/www/yii/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /var/www/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 /var/www/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 /var/www/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 /var/www/yii/framework/web/CController.php(291): CFilterChain->run()
+#6 /var/www/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /var/www/yii/framework/web/CWebApplication.php(282): CController->run('category')
+#8 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('questions/defau...')
+#9 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#10 /var/www/yii/blog/index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/yii/blog/index.php/questions/category/4
+HTTP_REFERER=http://localhost/yii/blog/index.php/questions
+---
+2015/08/11 14:56:48 [error] [php] Undefined variable: adverts (/var/www/yii/blog/protected/modules/questions/controllers/DefaultController.php:66)
+Stack trace:
+#0 /var/www/yii/framework/web/actions/CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#1 /var/www/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#2 /var/www/yii/framework/web/filters/CFilterChain.php(133): DefaultController->runAction()
+#3 /var/www/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#4 /var/www/yii/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#5 /var/www/yii/framework/web/filters/CInlineFilter.php(58): DefaultController->filterAccessControl()
+#6 /var/www/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#7 /var/www/yii/framework/web/CController.php(291): CFilterChain->run()
+#8 /var/www/yii/framework/web/CController.php(265): DefaultController->runActionWithFilters()
+#9 /var/www/yii/framework/web/CWebApplication.php(282): DefaultController->run()
+#10 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#11 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#12 /var/www/yii/blog/index.php(13): CWebApplication->run()
+REQUEST_URI=/yii/blog/index.php/questions/category/4
+in /var/www/yii/blog/protected/modules/questions/controllers/DefaultController.php (66)
+in /var/www/yii/blog/index.php (13)
+2015/08/11 14:57:03 [error] [exception.CException] exception 'CException' with message 'DefaultController cannot find the requested view "category".' in /var/www/yii/framework/web/CController.php:878
+Stack trace:
+#0 /var/www/yii/framework/web/CController.php(782): CController->renderPartial('category', Array, true)
+#1 /var/www/yii/blog/protected/modules/questions/controllers/DefaultController.php(65): CController->render('category', Array)
+#2 [internal function]: DefaultController->actionCategory('4')
+#3 /var/www/yii/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs(Object(DefaultController), Array)
+#4 /var/www/yii/framework/web/actions/CInlineAction.php(47): CAction->runWithParamsInternal(Object(DefaultController), Object(ReflectionMethod), Array)
+#5 /var/www/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#6 /var/www/yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#7 /var/www/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#8 /var/www/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#9 /var/www/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#10 /var/www/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#11 /var/www/yii/framework/web/CController.php(291): CFilterChain->run()
+#12 /var/www/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 /var/www/yii/framework/web/CWebApplication.php(282): CController->run('category')
+#14 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('questions/defau...')
+#15 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#16 /var/www/yii/blog/index.php(13): CApplication->run()
+#17 {main}
+REQUEST_URI=/yii/blog/index.php/questions/category/4
+HTTP_REFERER=http://localhost/yii/blog/index.php/questions
+---
+2015/08/11 15:03:56 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "questions/adverts/view/id/5".' in /var/www/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('questions/adver...')
+#1 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/yii/blog/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/blog/index.php/questions/adverts/view/id/5
+HTTP_REFERER=http://localhost/yii/blog/index.php/questions/category/3
+---
+2015/08/11 15:06:36 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "questions/questions/create".' in /var/www/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('questions/quest...')
+#1 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/yii/blog/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/blog/index.php/questions/questions/create
+HTTP_REFERER=http://localhost/yii/blog/index.php/questions
+---
+2015/08/11 15:07:49 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "questions/questions/create".' in /var/www/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('questions/quest...')
+#1 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/yii/blog/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/blog/index.php/questions/questions/create
+HTTP_REFERER=http://localhost/yii/blog/index.php/questions
+---
+2015/08/11 15:08:27 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "questions/adverts/index".' in /var/www/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('questions/adver...')
+#1 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/yii/blog/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/blog/index.php/questions/adverts/index
+HTTP_REFERER=http://localhost/yii/blog/index.php/questions/category/4
+---
+2015/08/11 15:08:32 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "questions/adverts/index".' in /var/www/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('questions/adver...')
+#1 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/yii/blog/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/blog/index.php/questions/adverts/index
+HTTP_REFERER=http://localhost/yii/blog/index.php/questions/category/4
+---
+2015/08/11 15:08:49 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "questions/adverts/index".' in /var/www/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('questions/adver...')
+#1 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/yii/blog/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/blog/index.php/questions/adverts/index
+HTTP_REFERER=http://localhost/yii/blog/index.php/questions/category/4
+---
+2015/08/11 15:10:13 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "questions/adverts/view/id/5".' in /var/www/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('questions/adver...')
+#1 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/yii/blog/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/blog/index.php/questions/adverts/view/id/5
+HTTP_REFERER=http://localhost/yii/blog/index.php/questions/category/3
+---
+2015/08/11 15:10:39 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "questions/questions/view/id/7".' in /var/www/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('questions/quest...')
+#1 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/yii/blog/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/blog/index.php/questions/questions/view/id/7
+HTTP_REFERER=http://localhost/yii/blog/index.php/questions/category/4
+---
+2015/08/11 15:10:47 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "questions/questions/view/id/7".' in /var/www/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('questions/quest...')
+#1 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/yii/blog/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/blog/index.php/questions/questions/view/id/7
+HTTP_REFERER=http://localhost/yii/blog/index.php/questions/category/4
+---
+2015/08/11 15:10:52 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "questions/view/id/7".' in /var/www/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('questions/view/...')
+#1 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/yii/blog/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/blog/index.php/questions/view/id/7
+HTTP_REFERER=http://localhost/yii/blog/index.php/questions/category/4
+---
+2015/08/11 15:11:35 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "questions/view/id/7".' in /var/www/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('questions/view/...')
+#1 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/yii/blog/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/blog/index.php/questions/view/id/7
+HTTP_REFERER=http://localhost/yii/blog/index.php/questions/category/4
+---
+2015/08/11 15:11:58 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "questions/view/0/7".' in /var/www/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('questions/view/...')
+#1 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/yii/blog/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/blog/index.php/questions/view/0/7
+HTTP_REFERER=http://localhost/yii/blog/index.php/questions/category/4
+---
+2015/08/11 15:13:55 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "questions/view/0/7".' in /var/www/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('questions/view/...')
+#1 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/yii/blog/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/blog/index.php/questions/view/0/7
+HTTP_REFERER=http://localhost/yii/blog/index.php/questions/category/4
+---
+2015/08/11 15:14:08 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "questions/view/0/7".' in /var/www/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('questions/view/...')
+#1 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/yii/blog/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/blog/index.php/questions/view/0/7
+HTTP_REFERER=http://localhost/yii/blog/index.php/questions/category/4
+---
+2015/08/11 15:14:15 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "questions/view/id/7".' in /var/www/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('questions/view/...')
+#1 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/yii/blog/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/blog/index.php/questions/view/id/7
+HTTP_REFERER=http://localhost/yii/blog/index.php/questions/category/4
+---
+2015/08/11 15:14:57 [error] [exception.CException] exception 'CException' with message 'The URL pattern "questions/<_a>/<_a>/<id:\d+>" for route "questions/default/<_a>/<_a>/<id:\d+>" is not a valid regular expression.' in /var/www/yii/framework/web/CUrlManager.php:701
+Stack trace:
+#0 /var/www/yii/framework/web/CUrlManager.php(270): CUrlRule->__construct('questions/defau...', 'questions/<_a>/...')
+#1 /var/www/yii/framework/web/CUrlManager.php(226): CUrlManager->createUrlRule('questions/defau...', 'questions/<_a>/...')
+#2 /var/www/yii/framework/web/CUrlManager.php(206): CUrlManager->processRules()
+#3 /var/www/yii/framework/base/CModule.php(387): CUrlManager->init()
+#4 /var/www/yii/framework/base/CApplication.php(522): CModule->getComponent('urlManager')
+#5 /var/www/yii/framework/web/CWebApplication.php(140): CApplication->getUrlManager()
+#6 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#7 /var/www/yii/blog/index.php(13): CApplication->run()
+#8 {main}
+REQUEST_URI=/yii/blog/index.php/questions/view/id/7
+HTTP_REFERER=http://localhost/yii/blog/index.php/questions/category/4
+---
+2015/08/11 15:15:14 [error] [exception.CException] exception 'CException' with message 'The URL pattern "questions/<_a>/<_a>/" for route "questions/default/<_a>/<_a>/" is not a valid regular expression.' in /var/www/yii/framework/web/CUrlManager.php:701
+Stack trace:
+#0 /var/www/yii/framework/web/CUrlManager.php(270): CUrlRule->__construct('questions/defau...', 'questions/<_a>/...')
+#1 /var/www/yii/framework/web/CUrlManager.php(226): CUrlManager->createUrlRule('questions/defau...', 'questions/<_a>/...')
+#2 /var/www/yii/framework/web/CUrlManager.php(206): CUrlManager->processRules()
+#3 /var/www/yii/framework/base/CModule.php(387): CUrlManager->init()
+#4 /var/www/yii/framework/base/CApplication.php(522): CModule->getComponent('urlManager')
+#5 /var/www/yii/framework/web/CWebApplication.php(140): CApplication->getUrlManager()
+#6 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#7 /var/www/yii/blog/index.php(13): CApplication->run()
+#8 {main}
+REQUEST_URI=/yii/blog/index.php/questions/view/id/7
+HTTP_REFERER=http://localhost/yii/blog/index.php/questions/category/4
+---
+2015/08/11 15:15:24 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "questions/view/id/7".' in /var/www/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('questions/view/...')
+#1 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/yii/blog/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/blog/index.php/questions/view/id/7
+HTTP_REFERER=http://localhost/yii/blog/index.php/questions/category/4
+---
+2015/08/11 15:15:58 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "questions/view/id/7".' in /var/www/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('questions/view/...')
+#1 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/yii/blog/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/blog/index.php/questions/view/id/7
+HTTP_REFERER=http://localhost/yii/blog/index.php/questions/category/4
+---
+2015/08/11 15:16:14 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "questions/view/id/7".' in /var/www/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('questions/view/...')
+#1 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/yii/blog/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/blog/index.php/questions/view/id/7
+HTTP_REFERER=http://localhost/yii/blog/index.php/questions/category/4
+---
+2015/08/11 15:16:56 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "questions/view/id/7".' in /var/www/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('questions/view/...')
+#1 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/yii/blog/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/blog/index.php/questions/view/id/7
+HTTP_REFERER=http://localhost/yii/blog/index.php/questions/category/4
+---
+2015/08/11 15:21:15 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "questions/view/id/7".' in /var/www/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('questions/view/...')
+#1 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/yii/blog/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/blog/index.php/questions/view/id/7
+HTTP_REFERER=http://localhost/yii/blog/index.php/questions/category/4
+---
+2015/08/11 15:21:29 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "questions/view/id/7".' in /var/www/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('questions/view/...')
+#1 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/yii/blog/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/blog/index.php/questions/view/id/7
+HTTP_REFERER=http://localhost/yii/blog/index.php/questions/category/4
+---
+2015/08/11 15:21:36 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "questions/view/id/7".' in /var/www/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('questions/view/...')
+#1 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/yii/blog/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/blog/index.php/questions/view/id/7
+HTTP_REFERER=http://localhost/yii/blog/index.php/questions/category/4
+---
+2015/08/11 15:21:54 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "questions/view/id/7".' in /var/www/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('questions/view/...')
+#1 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/yii/blog/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/blog/index.php/questions/view/id/7
+HTTP_REFERER=http://localhost/yii/blog/index.php/questions/category/4
+---
+2015/08/11 15:23:49 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "questions/view/id/7".' in /var/www/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('questions/view/...')
+#1 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/yii/blog/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/blog/index.php/questions/view/id/7
+HTTP_REFERER=http://localhost/yii/blog/index.php/questions/category/4
+---
+2015/08/11 15:23:55 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "questions/view/id/7".' in /var/www/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('questions/view/...')
+#1 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/yii/blog/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/blog/index.php/questions/view/id/7
+HTTP_REFERER=http://localhost/yii/blog/index.php/questions/category/4
+---
+2015/08/11 15:26:40 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "questions/view/id/7".' in /var/www/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('questions/view/...')
+#1 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/yii/blog/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/blog/index.php/questions/view/id/7
+HTTP_REFERER=http://localhost/yii/blog/index.php/questions/category/4
+---
+2015/08/11 15:26:43 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "questions/view/id/7".' in /var/www/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('questions/view/...')
+#1 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/yii/blog/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/blog/index.php/questions/view/id/7
+HTTP_REFERER=http://localhost/yii/blog/index.php/questions/category/4
+---
+2015/08/11 15:26:47 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "questions/view/id/7".' in /var/www/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('questions/view/...')
+#1 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/yii/blog/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/blog/index.php/questions/view/id/7
+HTTP_REFERER=http://localhost/yii/blog/index.php/questions/category/4
+---
+2015/08/11 15:26:57 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "questions/view/id/7".' in /var/www/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('questions/view/...')
+#1 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/yii/blog/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/blog/index.php/questions/view/id/7
+HTTP_REFERER=http://localhost/yii/blog/index.php/questions/category/4
+---
+2015/08/11 15:27:10 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "questions/view/id/7".' in /var/www/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('questions/view/...')
+#1 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/yii/blog/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/blog/index.php/questions/view/id/7
+HTTP_REFERER=http://localhost/yii/blog/index.php/questions/category/4
+---
+2015/08/11 15:27:38 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "questions/view/id/7".' in /var/www/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('questions/view/...')
+#1 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/yii/blog/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/blog/index.php/questions/view/id/7
+HTTP_REFERER=http://localhost/yii/blog/index.php/questions/category/4
+---
+2015/08/11 15:29:11 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "questions/view/id/7".' in /var/www/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('questions/view/...')
+#1 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/yii/blog/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/blog/index.php/questions/view/id/7
+HTTP_REFERER=http://localhost/yii/blog/index.php/questions/category/4
+---
+2015/08/11 15:29:15 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "questions/view/id/7".' in /var/www/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('questions/view/...')
+#1 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/yii/blog/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/blog/index.php/questions/view/id/7
+HTTP_REFERER=http://localhost/yii/blog/index.php/questions/category/4
+---
+2015/08/11 16:44:13 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "qeustions/default/index".' in /var/www/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('qeustions/defau...')
+#1 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/yii/blog/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/blog/index.php/qeustions/default/index
+---
+2015/08/11 17:20:37 [error] [php] Undefined variable: ids (/var/www/yii/blog/protected/modules/questions/views/default/view.php:26)
+Stack trace:
+#0 /var/www/yii/framework/web/CController.php(869): DefaultController->renderFile()
+#1 /var/www/yii/framework/web/CController.php(782): DefaultController->renderPartial()
+#2 /var/www/yii/blog/protected/modules/questions/controllers/DefaultController.php(40): DefaultController->render()
+#3 unknown(0): DefaultController->actionView()
+#4 /var/www/yii/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs()
+#5 /var/www/yii/framework/web/actions/CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#6 /var/www/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#7 /var/www/yii/framework/web/filters/CFilterChain.php(133): DefaultController->runAction()
+#8 /var/www/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#9 /var/www/yii/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#10 /var/www/yii/framework/web/filters/CInlineFilter.php(58): DefaultController->filterAccessControl()
+#11 /var/www/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#12 /var/www/yii/framework/web/CController.php(291): CFilterChain->run()
+#13 /var/www/yii/framework/web/CController.php(265): DefaultController->runActionWithFilters()
+#14 /var/www/yii/framework/web/CWebApplication.php(282): DefaultController->run()
+#15 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#16 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#17 /var/www/yii/blog/index.php(13): CWebApplication->run()
+REQUEST_URI=/yii/blog/index.php/questions/view/5
+in /var/www/yii/blog/protected/modules/questions/views/default/view.php (26)
+in /var/www/yii/blog/protected/modules/questions/controllers/DefaultController.php (40)
+in /var/www/yii/blog/index.php (13)
+2015/08/11 17:20:52 [error] [php] Object of class Questions could not be converted to string (/var/www/yii/framework/web/helpers/CHtml.php:162)
+Stack trace:
+#0 /var/www/yii/framework/web/CBaseController.php(126): require()
+#1 /var/www/yii/framework/web/CBaseController.php(95): DefaultController->renderInternal()
+#2 /var/www/yii/framework/web/CController.php(869): DefaultController->renderFile()
+#3 /var/www/yii/framework/web/CController.php(782): DefaultController->renderPartial()
+#4 /var/www/yii/blog/protected/modules/questions/controllers/DefaultController.php(40): DefaultController->render()
+#5 unknown(0): DefaultController->actionView()
+#6 /var/www/yii/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs()
+#7 /var/www/yii/framework/web/actions/CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#8 /var/www/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#9 /var/www/yii/framework/web/filters/CFilterChain.php(133): DefaultController->runAction()
+#10 /var/www/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#11 /var/www/yii/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#12 /var/www/yii/framework/web/filters/CInlineFilter.php(58): DefaultController->filterAccessControl()
+#13 /var/www/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#14 /var/www/yii/framework/web/CController.php(291): CFilterChain->run()
+#15 /var/www/yii/framework/web/CController.php(265): DefaultController->runActionWithFilters()
+#16 /var/www/yii/framework/web/CWebApplication.php(282): DefaultController->run()
+#17 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#18 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#19 /var/www/yii/blog/index.php(13): CWebApplication->run()
+REQUEST_URI=/yii/blog/index.php/questions/view/5
+in /var/www/yii/blog/protected/modules/questions/views/default/view.php (32)
+in /var/www/yii/blog/protected/modules/questions/controllers/DefaultController.php (40)
+in /var/www/yii/blog/index.php (13)
+2015/08/11 17:22:28 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "questions/questions/rate/id_rate/5".' in /var/www/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('questions/quest...')
+#1 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/yii/blog/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/blog/index.php/questions/questions/rate/id_rate/5
+HTTP_REFERER=http://localhost/yii/blog/index.php/questions/view/5
+---
+2015/08/11 17:22:38 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "questions/questions/rate/id_rate/5".' in /var/www/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('questions/quest...')
+#1 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/yii/blog/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/blog/index.php/questions/questions/rate/id_rate/5
+HTTP_REFERER=http://localhost/yii/blog/index.php/questions/view/5
+---
+2015/08/11 17:26:08 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "rate".' in /var/www/yii/framework/web/CController.php:483
+Stack trace:
+#0 /var/www/yii/framework/web/CController.php(270): CController->missingAction('rate')
+#1 /var/www/yii/framework/web/CWebApplication.php(282): CController->run('rate')
+#2 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('questions/defau...')
+#3 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /var/www/yii/blog/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/yii/blog/index.php/questions/rate
+HTTP_REFERER=http://localhost/yii/blog/index.php/questions/view/5
+---
+2015/08/11 17:27:13 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "rate".' in /var/www/yii/framework/web/CController.php:483
+Stack trace:
+#0 /var/www/yii/framework/web/CController.php(270): CController->missingAction('rate')
+#1 /var/www/yii/framework/web/CWebApplication.php(282): CController->run('rate')
+#2 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('questions/defau...')
+#3 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /var/www/yii/blog/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/yii/blog/index.php/questions/rate
+HTTP_REFERER=http://localhost/yii/blog/index.php/questions/view/5
+---
+2015/08/11 17:27:22 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "rate".' in /var/www/yii/framework/web/CController.php:483
+Stack trace:
+#0 /var/www/yii/framework/web/CController.php(270): CController->missingAction('rate')
+#1 /var/www/yii/framework/web/CWebApplication.php(282): CController->run('rate')
+#2 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('questions/defau...')
+#3 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /var/www/yii/blog/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/yii/blog/index.php/questions/rate
+HTTP_REFERER=http://localhost/yii/blog/index.php/questions/view/5
+---
+2015/08/11 17:56:26 [error] [php] Undefined index: question_id (/var/www/yii/blog/protected/modules/questions/controllers/DefaultController.php:110)
+Stack trace:
+#0 /var/www/yii/framework/web/filters/CFilterChain.php(133): DefaultController->runAction()
+#1 /var/www/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#2 /var/www/yii/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#3 /var/www/yii/framework/web/filters/CInlineFilter.php(58): DefaultController->filterAccessControl()
+#4 /var/www/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#5 /var/www/yii/framework/web/CController.php(291): CFilterChain->run()
+#6 /var/www/yii/framework/web/CController.php(265): DefaultController->runActionWithFilters()
+#7 /var/www/yii/framework/web/CWebApplication.php(282): DefaultController->run()
+#8 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#9 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#10 /var/www/yii/blog/index.php(13): CWebApplication->run()
+REQUEST_URI=/yii/blog/index.php/questions/rate
+in /var/www/yii/blog/protected/modules/questions/controllers/DefaultController.php (110)
+in /var/www/yii/blog/index.php (13)
+2015/08/11 17:56:26 [error] [php] Undefined index: question_id (/var/www/yii/blog/protected/modules/questions/controllers/DefaultController.php:110)
+Stack trace:
+#0 /var/www/yii/framework/web/filters/CFilterChain.php(133): DefaultController->runAction()
+#1 /var/www/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#2 /var/www/yii/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#3 /var/www/yii/framework/web/filters/CInlineFilter.php(58): DefaultController->filterAccessControl()
+#4 /var/www/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#5 /var/www/yii/framework/web/CController.php(291): CFilterChain->run()
+#6 /var/www/yii/framework/web/CController.php(265): DefaultController->runActionWithFilters()
+#7 /var/www/yii/framework/web/CWebApplication.php(282): DefaultController->run()
+#8 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#9 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#10 /var/www/yii/blog/index.php(13): CWebApplication->run()
+REQUEST_URI=/yii/blog/index.php/questions/rate
+in /var/www/yii/blog/protected/modules/questions/controllers/DefaultController.php (110)
+in /var/www/yii/blog/index.php (13)
+2015/08/11 17:56:27 [error] [php] Undefined index: question_id (/var/www/yii/blog/protected/modules/questions/controllers/DefaultController.php:110)
+Stack trace:
+#0 /var/www/yii/framework/web/filters/CFilterChain.php(133): DefaultController->runAction()
+#1 /var/www/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#2 /var/www/yii/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#3 /var/www/yii/framework/web/filters/CInlineFilter.php(58): DefaultController->filterAccessControl()
+#4 /var/www/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#5 /var/www/yii/framework/web/CController.php(291): CFilterChain->run()
+#6 /var/www/yii/framework/web/CController.php(265): DefaultController->runActionWithFilters()
+#7 /var/www/yii/framework/web/CWebApplication.php(282): DefaultController->run()
+#8 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#9 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#10 /var/www/yii/blog/index.php(13): CWebApplication->run()
+REQUEST_URI=/yii/blog/index.php/questions/rate
+in /var/www/yii/blog/protected/modules/questions/controllers/DefaultController.php (110)
+in /var/www/yii/blog/index.php (13)
+2015/08/11 17:57:38 [error] [php] Object of class QuestionsRatings could not be converted to string (/var/www/yii/blog/protected/modules/questions/controllers/DefaultController.php:110)
+Stack trace:
+#0 /var/www/yii/framework/web/filters/CFilterChain.php(133): DefaultController->runAction()
+#1 /var/www/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#2 /var/www/yii/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#3 /var/www/yii/framework/web/filters/CInlineFilter.php(58): DefaultController->filterAccessControl()
+#4 /var/www/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#5 /var/www/yii/framework/web/CController.php(291): CFilterChain->run()
+#6 /var/www/yii/framework/web/CController.php(265): DefaultController->runActionWithFilters()
+#7 /var/www/yii/framework/web/CWebApplication.php(282): DefaultController->run()
+#8 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#9 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#10 /var/www/yii/blog/index.php(13): CWebApplication->run()
+REQUEST_URI=/yii/blog/index.php/questions/rate
+in /var/www/yii/blog/protected/modules/questions/controllers/DefaultController.php (110)
+in /var/www/yii/blog/index.php (13)
+2015/08/11 18:01:09 [error] [php] Undefined index: id (/var/www/yii/blog/protected/modules/questions/controllers/DefaultController.php:117)
+Stack trace:
+#0 /var/www/yii/framework/web/filters/CFilterChain.php(133): DefaultController->runAction()
+#1 /var/www/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#2 /var/www/yii/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#3 /var/www/yii/framework/web/filters/CInlineFilter.php(58): DefaultController->filterAccessControl()
+#4 /var/www/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#5 /var/www/yii/framework/web/CController.php(291): CFilterChain->run()
+#6 /var/www/yii/framework/web/CController.php(265): DefaultController->runActionWithFilters()
+#7 /var/www/yii/framework/web/CWebApplication.php(282): DefaultController->run()
+#8 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#9 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#10 /var/www/yii/blog/index.php(13): CWebApplication->run()
+REQUEST_URI=/yii/blog/index.php/questions/rate
+in /var/www/yii/blog/protected/modules/questions/controllers/DefaultController.php (117)
+in /var/www/yii/blog/index.php (13)
+2015/08/11 18:05:42 [error] [php] Undefined index: id (/var/www/yii/blog/protected/modules/questions/controllers/DefaultController.php:114)
+Stack trace:
+#0 /var/www/yii/framework/web/filters/CFilterChain.php(133): DefaultController->runAction()
+#1 /var/www/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#2 /var/www/yii/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#3 /var/www/yii/framework/web/filters/CInlineFilter.php(58): DefaultController->filterAccessControl()
+#4 /var/www/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#5 /var/www/yii/framework/web/CController.php(291): CFilterChain->run()
+#6 /var/www/yii/framework/web/CController.php(265): DefaultController->runActionWithFilters()
+#7 /var/www/yii/framework/web/CWebApplication.php(282): DefaultController->run()
+#8 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#9 /var/www/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#10 /var/www/yii/blog/index.php(13): CWebApplication->run()
+REQUEST_URI=/yii/blog/index.php/questions/rate
+in /var/www/yii/blog/protected/modules/questions/controllers/DefaultController.php (114)
+in /var/www/yii/blog/index.php (13)
