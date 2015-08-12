@@ -2,7 +2,7 @@
 /* @var $this questionsController */
 /* @var $model questions */
 $this->breadcrumbs=array(
-	'adverts'=>array('index'),
+	'Questions'=>array('index'),
 	'Create',
 );
 $this->menu=array(

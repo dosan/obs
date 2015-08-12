@@ -68,6 +68,11 @@
 	</div>
 </div> -->
 
+			<?php $this->beginWidget('LastQuestions',array(
+				'params'=>array(
+					'action' => Yii::app()->getController()->getAction()->getId(),
+				)));
+			$this->endWidget(); ?>
 			<?php $this->beginWidget('LastAdverts',array(
 				'params'=>array(
 					'action' => Yii::app()->getController()->getAction()->getId(),

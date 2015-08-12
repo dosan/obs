@@ -11,6 +11,6 @@ $this->menu=array(
 );
 ?>
 
-<h1>Create questions</h1>
+<h1>Ask questions</h1>
 
 <?php $this->renderPartial('_form', array('model'=>$model, 'categories'=>$categories)); ?>

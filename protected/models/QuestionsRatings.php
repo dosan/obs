@@ -32,7 +32,7 @@ class QuestionsRatings extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('user_id, question_id, rate, date', 'required'),
+			array('user_id, question_id, rate', 'required'),
 			array('user_id, question_id, rate', 'numerical', 'integerOnly'=>true),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
